@@ -6,3 +6,6 @@
 *.iml
 .vscode
 .venv
+
+# projects
+.pbs-project
