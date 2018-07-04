@@ -1,7 +1,7 @@
-.PHONY: bootstrap
-bootstrap:
-	@./scripts/bootstrap.sh
+.PHONY: link
+link:
+	@./scripts/link.sh
 
-.PHONY:
-uninstall:
-	@./scripts/uninstall.sh
+.PHONY: unlink
+unlink:
+	@./scripts/unlink.sh
