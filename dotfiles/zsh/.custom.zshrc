@@ -11,8 +11,8 @@ export KEYTIMEOUT=1  # reduce lag when ESC is pressed
 export PATH="/usr/local/sbin:$PATH"
 
 # travis gem
-[ -f /Users/yzhao/.travis/travis.sh ] && source /Users/yzhao/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
 # google cloud sdk
-if [ -f '/Users/yzhao/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/yzhao/google-cloud-sdk/path.zsh.inc'; fi
-if [ -f '/Users/yzhao/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/yzhao/google-cloud-sdk/completion.zsh.inc'; fi
+[ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
+[ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
