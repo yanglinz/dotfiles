@@ -5,6 +5,8 @@
 .idea
 *.iml
 .vscode
+
+# python
 .venv
 
 # projects
