@@ -1,18 +1,17 @@
-# oh-my-zsh themes
+# Oh-My-Zsh
 ZSH_THEME="robbyrussell"
 
-# oh-my-zsh plguins
 plugins=(git docker npm httpie pip pyenv)
 
-# vi-mode
+# Vim
 export KEYTIMEOUT=1  # reduce lag when ESC is pressed
 
-# brew
+# Homebrew
 export PATH="/usr/local/sbin:$PATH"
 
-# travis gem
+# Travis
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
 
-# google cloud sdk
+# Google SDK
 [ -f ~/google-cloud-sdk/path.zsh.inc ] && source ~/google-cloud-sdk/path.zsh.inc
 [ -f ~/google-cloud-sdk/completion.zsh.inc ] && source ~/google-cloud-sdk/completion.zsh.inc
