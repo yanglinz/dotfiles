@@ -1,7 +1,7 @@
 .PHONY: link
 link:
-	@./scripts/link.sh
+	@./scripts/dot.sh link
 
 .PHONY: unlink
 unlink:
-	@./scripts/unlink.sh
+	@./scripts/dot.sh unlink
