@@ -1,2 +1,6 @@
 # Fish
 fishd.*
+dotfiles/fish/.config/configstore
+dotfiles/fish/.config/fish/completions
+dotfiles/fish/.config/fish/conf.d
+dotfiles/fish/.config/fish/functions
