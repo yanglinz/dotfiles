@@ -22,13 +22,16 @@ function init() {
 function link() {
   echo "Linking dotfiles..."
 
+  # Stow dotfiles
   cd dotfiles
   for d in "${active_dotfiles[@]}"; do
     stow -t $HOME "${d}" && echo -e "${green}Linked ${d}"
   done
   cd -
 
+  # Stow code settings
   if [ -x "$(command -v code)" ]; then
+    code --list-extensions
     stow --adopt -t "/Users/$(whoami)/Library/Application Support/Code/User" vscode
   fi
 }
@@ -36,12 +39,14 @@ function link() {
 function unlink() {
   echo "Unlinking dotfiles"
 
+  # Unstow dotfiles
   cd dotfiles
   for d in "${active_dotfiles[@]}"; do
     stow -t $HOME -D "${d}" && echo -e "${red}Unlinked ${d}"
   done
   cd -
 
+  # Unstow code
   if [ -x "$(command -v code)" ]; then
     stow -t "/Users/$(whoami)/Library/Application Support/Code/User" -D vscode
   fi
