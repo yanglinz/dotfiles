@@ -2,10 +2,11 @@
 
 # Modify the output color of echo statements
 # https://en.wikipedia.org/wiki/ANSI_escape_code
-green='\033[0;32m'
-red='\033[0;31m'
+green="\033[0;32m"
+red="\033[0;31m"
 
 active_dotfiles=(bash fish git tmux vim zsh)
+vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
 function init() {
   # Initialize git submodule
@@ -32,7 +33,7 @@ function link() {
   # Stow code settings
   if [ -x "$(command -v code)" ]; then
     code --list-extensions > ./vscode/extensions.txt
-    stow --adopt -t "/Users/$(whoami)/Library/Application Support/Code/User" vscode
+    stow --adopt -t "${vscode_conf_path}" vscode && echo -e "${green}Linked vscode"
   fi
 }
 
@@ -46,9 +47,9 @@ function unlink() {
   done
   cd -
 
-  # Unstow code
+  # Unstow code settings
   if [ -x "$(command -v code)" ]; then
-    stow -t "/Users/$(whoami)/Library/Application Support/Code/User" -D vscode
+    stow -t "${vscode_conf_path}" -D vscode && echo -e "${red}Unlinked vscode"
   fi
 }
 
