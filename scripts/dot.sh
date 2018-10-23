@@ -29,7 +29,7 @@ function link() {
   cd -
 
   if [ -x "$(command -v code)" ]; then
-    stow -t "/Users/$(whoami)/Library/Application Support/Code/User" vscode
+    stow --adopt -t "/Users/$(whoami)/Library/Application Support/Code/User" vscode
   fi
 }
 
