@@ -31,7 +31,7 @@ function link() {
 
   # Stow code settings
   if [ -x "$(command -v code)" ]; then
-    code --list-extensions
+    code --list-extensions > ./vscode/extensions.txt
     stow --adopt -t "/Users/$(whoami)/Library/Application Support/Code/User" vscode
   fi
 }

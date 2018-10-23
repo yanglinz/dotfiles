@@ -1,0 +1,4 @@
+alefragnani.project-manager
+esbenp.prettier-vscode
+skyapps.fish-vscode
+vscodevim.vim
