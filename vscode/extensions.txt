@@ -1,4 +1,8 @@
 alefragnani.project-manager
 esbenp.prettier-vscode
+mads-hartmann.bash-ide-vscode
+ms-python.python
+msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
 vscodevim.vim
+yzhang.markdown-all-in-one
