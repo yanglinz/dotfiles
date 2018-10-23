@@ -7,6 +7,18 @@ red='\033[0;31m'
 
 active_dotfiles=(bash fish git tmux vim zsh)
 
+function init() {
+    # Initialize git submodule
+    git submodule init
+
+    # Setup homebrew
+    brew tap homebrew/bundle
+    brew bundle
+
+    # Install fonts
+    ./vendor/fonts/install.sh
+}
+
 function link() {
     echo "Linking dotfiles..."
 
@@ -32,6 +44,7 @@ function default() {
 }
 
 case "$1" in
+    init)   init ;;
     link)   link ;;
     unlink) unlink ;;
     *)      default ;;
