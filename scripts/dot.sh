@@ -31,10 +31,7 @@ function link() {
   cd -
 
   # Stow code settings
-  if [ -x "$(command -v code)" ]; then
-    code --list-extensions > ./vscode/extensions.txt
-    stow --adopt -t "${vscode_conf_path}" vscode && echo -e "${green}Linked vscode"
-  fi
+  stow --adopt -t "${vscode_conf_path}" vscode && echo -e "${green}Linked vscode"
 }
 
 function unlink() {
@@ -48,9 +45,14 @@ function unlink() {
   cd -
 
   # Unstow code settings
-  if [ -x "$(command -v code)" ]; then
-    stow -t "${vscode_conf_path}" -D vscode && echo -e "${red}Unlinked vscode"
-  fi
+  stow -t "${vscode_conf_path}" -D vscode && echo -e "${red}Unlinked vscode"
+}
+
+function sync() {
+  echo "Syncing dotfiles..."
+
+  brew bundle dump --force
+  code --list-extensions > ./vscode/extensions.txt
 }
 
 function default() {
@@ -61,5 +63,6 @@ case "$1" in
   init)   init ;;
   link)   link ;;
   unlink) unlink ;;
+  sync)   sync ;;
   *)      default ;;
 esac

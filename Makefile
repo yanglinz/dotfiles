@@ -9,3 +9,7 @@ link:
 .PHONY: unlink
 unlink:
 	@./scripts/dot.sh unlink
+
+.PHONY: sync
+sync:
+	@./scripts/dot.sh sync
