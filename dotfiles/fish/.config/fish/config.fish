@@ -5,10 +5,13 @@ if not functions -q fisher
   fish -c fisher
 end
 
-# Basic themes
+# iTerm shell itegration
+source ~/.shared/iterm-integration.fish
+
+# Set theme options
 # https://github.com/oh-my-fish/theme-bobthefish
 set -g theme_powerline_fonts no
 set -g theme_nerd_fonts no
 
-# iTerm shell itegration
-source ~/.shared/iterm-integration.fish
+# Set editor variable
+set -Ux EDITOR vim

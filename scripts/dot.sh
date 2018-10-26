@@ -5,7 +5,7 @@
 green="\033[0;32m"
 red="\033[0;31m"
 
-active_dotfiles=(bash fish git tmux vim zsh)
+active_dotfiles=(bash fish git iterm tmux vim zsh)
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
 function init() {
