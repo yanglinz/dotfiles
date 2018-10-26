@@ -1,1 +1,5 @@
 source ~/.vimrc
+
+"Disable error bell sound
+set visualbell
+set noerrorbells
