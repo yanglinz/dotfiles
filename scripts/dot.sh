@@ -11,6 +11,7 @@ vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 function init() {
   # Initialize git submodule
   git submodule init
+  git submodule update --recursive
 
   # Setup homebrew
   brew tap homebrew/bundle
