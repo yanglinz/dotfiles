@@ -1,5 +1,6 @@
 alefragnani.project-manager
 esbenp.prettier-vscode
+flowtype.flow-for-vscode
 mads-hartmann.bash-ide-vscode
 ms-python.python
 msjsdiag.debugger-for-chrome
