@@ -8,27 +8,47 @@ red="\033[0;31m"
 active_dotfiles=(bash fish git iterm tmux vim zsh)
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
-function setup() {
+function setup_submodule() {
   # Initialize git submodule
   git submodule init
   git submodule update --recursive
+}
+
+function setup_brew() {
+  echo "Setting up brew..."
 
   # Install brew
   if ! [ -x "$(command -v brew)" ]; then
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
+  echo "Setting up brew bunldes..."
+  # Install brew bundles
+  brew tap homebrew/bundle
+  brew bundle
+}
+
+function setup_nvm() {
+  echo "Setting up nvm..."
+
   # Install nvm
   if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   fi
+}
 
-  # Setup homebrew
-  brew tap homebrew/bundle
-  brew bundle
+function setup_fonts() {
+  echo "Setting up fonts..."
 
-  # Install fonts
+   # Install fonts
   ./vendor/fonts/install.sh
+}
+
+function setup() {
+  setup_submodule
+  setup_brew
+  setup_nvm
+  setup_fonts
 }
 
 function link() {
