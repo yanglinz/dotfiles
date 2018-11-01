@@ -1,6 +1,6 @@
-.PHONE: init
-init:
-	@./scripts/dot.sh init
+.PHONY: setup 
+setup:
+	@./scripts/dot.sh setup 
 
 .PHONY: link
 link:

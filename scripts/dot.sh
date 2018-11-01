@@ -8,7 +8,7 @@ red="\033[0;31m"
 active_dotfiles=(bash fish git iterm tmux vim zsh)
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
-function init() {
+function setup() {
   # Initialize git submodule
   git submodule init
   git submodule update --recursive
@@ -71,7 +71,7 @@ function default() {
 }
 
 case "$1" in
-  init)   init ;;
+  setup)  setup ;;
   link)   link ;;
   unlink) unlink ;;
   sync)   sync ;;
