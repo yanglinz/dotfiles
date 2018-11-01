@@ -5,8 +5,16 @@
 green="\033[0;32m"
 red="\033[0;31m"
 
-active_dotfiles=(bash fish git iterm tmux vim zsh)
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
+
+# Determine which dotfiles to sync based on profile
+active_dotfiles=()
+if python3 ./scripts/profile.py | grep -q "profile:personal"; then
+  active_dotfiles=(bash fish git iterm tmux vim zsh)
+fi
+if python3 ./scripts/profile.py | grep -q "profile:work"; then
+  active_dotfiles=(bash fish git iterm tmux vim zsh)
+fi
 
 function setup_submodule() {
   # Initialize git submodule
