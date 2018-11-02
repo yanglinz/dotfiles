@@ -38,6 +38,8 @@ function setup_nvm() {
   if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
   fi
+
+  nvm install 8
 }
 
 function setup_fonts() {

@@ -17,7 +17,6 @@ set -g theme_nerd_fonts no
 set -Ux EDITOR vim
 
 # Activate node path
-nvm install 8
 nvm use 8
 
 # Add fastlane to PATH
