@@ -19,3 +19,6 @@ set -Ux EDITOR vim
 # Activate node path
 nvm install 8
 nvm use 8
+
+# Add fastlane to PATH
+set -x PATH $HOME/.fastlane/bin $PATH
