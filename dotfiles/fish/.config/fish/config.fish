@@ -15,3 +15,7 @@ set -g theme_nerd_fonts no
 
 # Set editor variable
 set -Ux EDITOR vim
+
+# Activate node path
+nvm install 8
+nvm use 8
