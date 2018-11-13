@@ -21,3 +21,6 @@ nvm use 8
 
 # Add fastlane to PATH
 set -x PATH $HOME/.fastlane/bin $PATH
+
+# Add android home variable
+set -x ANDROID_HOME $HOME/Library/Android/sdk
