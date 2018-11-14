@@ -1,0 +1,14 @@
+# osx
+.DS_Store
+
+# editors
+.idea
+*.iml
+.vscode
+.vs
+
+# python
+.venv
+
+# projects
+.pbs-project

@@ -10,10 +10,10 @@ vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 # Determine which dotfiles to sync based on profile
 active_dotfiles=()
 if python3 ./scripts/profile.py | grep -q "profile:personal"; then
-  active_dotfiles=(bash fish git iterm tmux vim zsh)
+  active_dotfiles=(bash fish iterm tmux vim zsh "git.personal")
 fi
 if python3 ./scripts/profile.py | grep -q "profile:work"; then
-  active_dotfiles=(bash fish git iterm tmux vim zsh "ssh.work")
+  active_dotfiles=(bash fish iterm tmux vim zsh "git.work" "ssh.work")
 fi
 
 function setup_submodule() {
