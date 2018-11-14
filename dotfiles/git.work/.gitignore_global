@@ -10,5 +10,8 @@
 # python
 .venv
 
-# projects
-.pbs-project
+# prettier
+.prettierrc
+
+# react native
+ios/Index
