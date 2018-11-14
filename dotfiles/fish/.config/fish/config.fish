@@ -24,3 +24,6 @@ set -x PATH $HOME/.fastlane/bin $PATH
 
 # Add android home variable
 set -x ANDROID_HOME $HOME/Library/Android/sdk
+
+# Add android bin to PATH
+set -x PATH $ANDROID_HOME/platform-tools $PATH
