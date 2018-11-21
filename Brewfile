@@ -13,6 +13,7 @@ brew "stow"
 brew "tmux"
 brew "vim"
 brew "watchman"
+brew "yarn", args: ["without-node"]
 cask "android-ndk"
 cask "android-sdk"
 cask "fastlane"
