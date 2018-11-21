@@ -7,6 +7,10 @@ dotfiles/fish/.config/fish/functions
 dotfiles/fish/.config/fisher/github.com
 dotfiles/fish/.config/yarn
 
-# SSH
+# SSH work
 dotfiles/ssh.work/.ssh/*
 !dotfiles/ssh.work/.ssh/config
+
+# SSH personal
+dotfiles/ssh.personal/.ssh/*
+!dotfiles/ssh.personal/.ssh/config
