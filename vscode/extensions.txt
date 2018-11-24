@@ -4,6 +4,7 @@ fallenwood.vimL
 flowtype.flow-for-vscode
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
+mauve.terraform
 ms-python.python
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
