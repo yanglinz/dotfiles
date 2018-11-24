@@ -14,3 +14,6 @@ dotfiles/ssh.work/.ssh/*
 # SSH personal
 dotfiles/ssh.personal/.ssh/*
 !dotfiles/ssh.personal/.ssh/config
+
+# AWS personal
+dotfiles/aws.personal/.aws/credentials
