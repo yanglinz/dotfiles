@@ -3,6 +3,7 @@ tap "homebrew/cask"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
+brew "awscli"
 brew "bind"
 brew "cask"
 brew "dnsmasq", restart_service: true
