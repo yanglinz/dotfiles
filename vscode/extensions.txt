@@ -1,4 +1,5 @@
 alefragnani.project-manager
+bungcip.better-toml
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
