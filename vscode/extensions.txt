@@ -7,4 +7,5 @@ ms-python.python
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
 vscodevim.vim
+waderyan.gitblame
 yzhang.markdown-all-in-one
