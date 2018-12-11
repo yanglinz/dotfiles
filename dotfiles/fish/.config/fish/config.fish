@@ -19,6 +19,9 @@ set -Ux EDITOR vim
 # Activate node path
 nvm use 8
 
+# Add custom bin to PATH
+set -x PATH $HOME/.custom-bins $PATH
+
 # Add fastlane to PATH
 set -x PATH $HOME/.fastlane/bin $PATH
 
