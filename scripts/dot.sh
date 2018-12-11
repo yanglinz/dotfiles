@@ -7,13 +7,25 @@ red="\033[0;31m"
 
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
+common_dotfiles=(
+  bash
+  bin
+  fish
+  iterm
+  tmux
+  vim
+  zsh
+)
+work_dotfiles=("git.personal" "ssh.personal")
+personal_dotfiles=("git.personal" "ssh.personal")
+
 # Determine which dotfiles to sync based on profile
 active_dotfiles=()
-if python3 ./scripts/profile.py | grep -q "profile:personal"; then
-  active_dotfiles=(bash bin fish iterm tmux vim zsh "git.personal" "ssh.personal")
-fi
 if python3 ./scripts/profile.py | grep -q "profile:work"; then
-  active_dotfiles=(bash bin fish iterm tmux vim zsh "git.work" "ssh.work")
+  active_dotfiles=("${common_dotfiles[@]}" "${work_dotfiles[@]}")
+fi
+if python3 ./scripts/profile.py | grep -q "profile:personal"; then
+  active_dotfiles=("${common_dotfiles[@]}" "${personal_dotfiles[@]}")
 fi
 
 function setup_submodule() {
