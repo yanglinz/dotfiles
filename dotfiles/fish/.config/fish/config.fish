@@ -27,5 +27,7 @@ set -x ANDROID_HOME $HOME/Library/Android/sdk
 
 # Add android bin to PATH
 if test -d $ANDROID_HOME
+  set -x PATH $ANDROID_HOME/platforms $PATH
   set -x PATH $ANDROID_HOME/platform-tools $PATH
+  set -x PATH $ANDROID_HOME/tools $PATH
 end
