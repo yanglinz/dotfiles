@@ -16,7 +16,7 @@ common_dotfiles=(
   vim
   zsh
 )
-work_dotfiles=("git.personal" "ssh.personal")
+work_dotfiles=("git.work" "ssh.work")
 personal_dotfiles=("git.personal" "ssh.personal")
 
 # Determine which dotfiles to sync based on profile
