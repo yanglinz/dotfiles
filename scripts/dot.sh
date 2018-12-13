@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-# Modify the output color of echo statements
-# https://en.wikipedia.org/wiki/ANSI_escape_code
-green="\033[0;32m"
-red="\033[0;31m"
+source scripts/global.sh
 
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
@@ -70,12 +67,12 @@ function link() {
   # Stow dotfiles
   cd dotfiles || exit
   for d in "${active_dotfiles[@]}"; do
-    stow -t "$HOME" "$d" && echo -e "${green}Linked ${d}"
+    stow -t "$HOME" "$d" && echo -e "${GREEN}Linked ${d}${RESET}"
   done
   cd - || exit
 
   # Stow code settings
-  stow --adopt -t "$vscode_conf_path" vscode && echo -e "${green}Linked vscode"
+  stow --adopt -t "$vscode_conf_path" vscode && echo -e "${GREEN}Linked vscode${RESET}"
 }
 
 function unlink() {
@@ -84,12 +81,12 @@ function unlink() {
   # Unstow dotfiles
   cd dotfiles || exit
   for d in "${active_dotfiles[@]}"; do
-    stow -t "$HOME" -D "$d" && echo -e "${red}Unlinked ${d}"
+    stow -t "$HOME" -D "$d" && echo -e "${RED}Unlinked ${d}${RESET}"
   done
   cd - || exit
 
   # Unstow code settings
-  stow -t "$vscode_conf_path" -D vscode && echo -e "${red}Unlinked vscode"
+  stow -t "$vscode_conf_path" -D vscode && echo -e "${RED}Unlinked vscode${RESET}"
 }
 
 function sync() {
