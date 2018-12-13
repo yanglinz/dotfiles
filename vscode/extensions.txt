@@ -2,6 +2,7 @@ alefragnani.project-manager
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
+kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 ms-python.python
 msjsdiag.debugger-for-chrome
