@@ -70,12 +70,12 @@ function link() {
   # Stow dotfiles
   cd dotfiles || exit
   for d in "${active_dotfiles[@]}"; do
-    stow -t "${HOME}" "${d}" && echo -e "${green}Linked ${d}"
+    stow -t "$HOME" "$d" && echo -e "${green}Linked ${d}"
   done
   cd - || exit
 
   # Stow code settings
-  stow --adopt -t "${vscode_conf_path}" vscode && echo -e "${green}Linked vscode"
+  stow --adopt -t "$vscode_conf_path" vscode && echo -e "${green}Linked vscode"
 }
 
 function unlink() {
@@ -84,12 +84,12 @@ function unlink() {
   # Unstow dotfiles
   cd dotfiles || exit
   for d in "${active_dotfiles[@]}"; do
-    stow -t "${HOME}" -D "${d}" && echo -e "${red}Unlinked ${d}"
+    stow -t "$HOME" -D "$d" && echo -e "${red}Unlinked ${d}"
   done
   cd - || exit
 
   # Unstow code settings
-  stow -t "${vscode_conf_path}" -D vscode && echo -e "${red}Unlinked vscode"
+  stow -t "$vscode_conf_path" -D vscode && echo -e "${red}Unlinked vscode"
 }
 
 function sync() {
