@@ -19,3 +19,7 @@ unlink:
 .PHONY: sync
 sync:
 	@./scripts/dot.sh sync
+
+.PHONY: check
+check:
+	@shellcheck **/*.sh
