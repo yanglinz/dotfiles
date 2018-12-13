@@ -7,6 +7,7 @@ mads-hartmann.bash-ide-vscode
 ms-python.python
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
+swyphcosmo.spellchecker
 vscodevim.vim
 waderyan.gitblame
 yzhang.markdown-all-in-one
