@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+TARGET_PORT="${1}"
+
+lsof -nP -i4TCP:"${TARGET_PORT}" | grep LISTEN
