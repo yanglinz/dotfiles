@@ -14,7 +14,7 @@ To get started, run the initial setup scripts.
 make setup
 ```
 
-Then link the dotfiles by running the stow commands.
+Then link the dotfiles by running the [GNU Stow](https://www.gnu.org/software/stow/) commands.
 
 ```sh
 make link
