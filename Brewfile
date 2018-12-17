@@ -6,6 +6,7 @@ tap "homebrew/services"
 brew "awscli"
 brew "bind"
 brew "cask"
+brew "cloc"
 brew "dnsmasq", restart_service: true
 brew "fish"
 brew "fontconfig"
