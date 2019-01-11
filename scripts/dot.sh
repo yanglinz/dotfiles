@@ -37,7 +37,7 @@ function setup_brew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  echo "Setting up brew bunldes..."
+  echo "Setting up brew bundles..."
   brew tap homebrew/bundle
   brew bundle
 }
@@ -46,6 +46,13 @@ function setup_nvm() {
   echo "Setting up nvm..."
   if [ ! -d ~/.nvm ]; then
     curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+  fi
+}
+
+function setup_rustup() {
+  echo "Setting up rustup"
+  if ! [ -x "$(command -v rustup)" ]; then
+    curl https://sh.rustup.rs -sSf | sh
   fi
 }
 
@@ -58,6 +65,7 @@ function setup() {
   setup_submodule
   setup_brew
   setup_nvm
+  setup_rustup
   setup_fonts
 }
 

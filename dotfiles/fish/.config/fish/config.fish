@@ -19,10 +19,11 @@ set -Ux EDITOR vim
 # Activate node path
 nvm use 8
 
-# Set to PATH
+# Add to PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/.custom-bins $PATH
 set -x PATH $HOME/.fastlane/bin $PATH
+set -x PATH $HOME/.cargo/bin $PATH
 
 # Setup android
 set -x ANDROID_HOME $HOME/Library/Android/sdk
