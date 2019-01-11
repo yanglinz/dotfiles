@@ -11,6 +11,7 @@ brew "dnsmasq", restart_service: true
 brew "fish"
 brew "fontconfig"
 brew "git"
+brew "go"
 brew "gradle"
 brew "httpie"
 brew "hugo"
