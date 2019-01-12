@@ -36,11 +36,8 @@ function setup_mac() {
   setup_fonts
 }
 
-function default() {
-  echo "Welcome to the dotfiles setup script!"
+function setup() {
+  echo "setup"
 }
 
-case "$1" in
-  setup) setup;;
-  *)     default ;;
-esac
+setup
