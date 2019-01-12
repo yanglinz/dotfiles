@@ -24,8 +24,12 @@ set -Ux EDITOR vim
 # Add to PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/.custom-bins $PATH
-set -x PATH $HOME/.fastlane/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+
+# Conditionally add to PATH
+if test -d $HOME/.fastlane/bin
+  set -x PATH $HOME/.fastlane/bin $PATH
+end
 
 # Setup android
 set -x ANDROID_HOME $HOME/Library/Android/sdk
