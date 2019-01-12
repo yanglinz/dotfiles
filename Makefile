@@ -17,4 +17,4 @@ sync:
 
 .PHONY: check
 check:
-	@shellcheck **/*.sh
+	@shellcheck -x **/*.sh
