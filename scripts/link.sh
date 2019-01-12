@@ -25,50 +25,6 @@ if python3 ./scripts/profile.py | grep -q "profile:personal"; then
   active_dotfiles=("${common_dotfiles[@]}" "${personal_dotfiles[@]}")
 fi
 
-function setup_submodule() {
-  # Initialize git submodule
-  git submodule init
-  git submodule update --recursive
-}
-
-function setup_brew() {
-  echo "Setting up brew..."
-  if ! [ -x "$(command -v brew)" ]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  echo "Setting up brew bundles..."
-  brew tap homebrew/bundle
-  brew bundle
-}
-
-function setup_nvm() {
-  echo "Setting up nvm..."
-  if [ ! -d ~/.nvm ]; then
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-  fi
-}
-
-function setup_rustup() {
-  echo "Setting up rustup"
-  if ! [ -x "$(command -v rustup)" ]; then
-    curl https://sh.rustup.rs -sSf | sh
-  fi
-}
-
-function setup_fonts() {
-  echo "Setting up fonts..."
-  ./vendor/fonts/install.sh
-}
-
-function setup() {
-  setup_submodule
-  setup_brew
-  setup_nvm
-  setup_rustup
-  setup_fonts
-}
-
 function link() {
   echo "Linking dotfiles..."
 
@@ -109,7 +65,6 @@ function default() {
 }
 
 case "$1" in
-  setup)  setup ;;
   link)   link ;;
   unlink) unlink ;;
   sync)   sync ;;
