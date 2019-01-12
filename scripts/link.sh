@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 source scripts/utils/colors.sh
+source scripts/utils/func.sh
 
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
@@ -18,10 +19,10 @@ personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
 
 # Determine which dotfiles to sync based on profile
 active_dotfiles=()
-if ./scripts/utils/profile.py | grep -q "profile:work"; then
+if is_work_profile; then
   active_dotfiles=("${common_dotfiles[@]}" "${work_dotfiles[@]}")
 fi
-if ./scripts/utils/profile.py | grep -q "profile:personal"; then
+if is_personal_profile; then
   active_dotfiles=("${common_dotfiles[@]}" "${personal_dotfiles[@]}")
 fi
 
