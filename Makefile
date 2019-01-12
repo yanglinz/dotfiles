@@ -1,12 +1,7 @@
-.PHONY: presetup
-presetup:
-	@./scripts/dot.sh setup
-
-.PHONY: postsetup
-postsetup:
-	@fish ~/.config/fish/post-setup.fish
-
-setup: presetup postsetup
+.PHONY: setup
+setup: 
+	@./scripts/setup.sh
+	@./scripts/setup.fish
 
 .PHONY: link
 link:
