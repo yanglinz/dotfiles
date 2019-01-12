@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+source scripts/utils/func.sh
+
 function setup_submodule() {
   echo "Setting up submodule..."
   git submodule init
@@ -30,7 +32,7 @@ function setup_fonts() {
 }
 
 function setup() {
-  if ./scripts/utils/osname.py | grep -q "Darwin"; then
+  if is_macos; then
     setup_submodule
     setup_brew
     setup_nvm
