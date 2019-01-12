@@ -49,13 +49,3 @@ BRIGHT_BLUE="$ESC[${BRIGHT};${FG_BLUE}m"
 BRIGHT_VIOLET="$ESC[${BRIGHT};${FG_VIOLET}m"
 BRIGHT_CYAN="$ESC[${BRIGHT};${FG_CYAN}m"
 BRIGHT_WHITE="$ESC[${BRIGHT};${FG_WHITE}m"
-
-# Functions
-
-function replace_and_backup() {
-  local source="$1"
-  local target="$2"
-
-  cp -n "${target}" "${target}.bak"
-  cp "${source}" "${target}"
-}
