@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function setup_submodule() {
-  echo "Setting up brew..."
+  echo "Setting up submodule..."
   git submodule init
   git submodule update --recursive
 }
@@ -12,7 +12,7 @@ function setup_brew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  echo "Setting up brew bunldes..."
+  echo "Setting up brew bundles..."
   brew tap homebrew/bundle
   brew bundle
 }
@@ -29,15 +29,13 @@ function setup_fonts() {
   ./vendor/fonts/install.sh
 }
 
-function setup_mac() {
-  setup_submodule
-  setup_brew
-  setup_nvm
-  setup_fonts
-}
-
 function setup() {
-  echo "setup"
+  if ./scripts/utils/osname.py | grep -q "Darwin"; then
+    setup_submodule
+    setup_brew
+    setup_nvm
+    setup_fonts
+  fi
 }
 
 setup
