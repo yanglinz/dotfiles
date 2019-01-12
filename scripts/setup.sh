@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source scripts/global.sh
-
 function setup_submodule() {
   echo "Setting up brew..."
   git submodule init
@@ -43,6 +41,6 @@ function default() {
 }
 
 case "$1" in
-  setup_mac)  setup_mac ;;
-  *)          default ;;
+  setup) setup;;
+  *)     default ;;
 esac
