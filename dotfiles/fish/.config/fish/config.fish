@@ -1,3 +1,5 @@
+#!/usr/bin/env fish
+
 # Install fisher
 if not functions -q fisher
   set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
@@ -17,7 +19,7 @@ set -g theme_nerd_fonts no
 set -Ux EDITOR vim
 
 # Activate node path
-nvm use 8
+# nvm use 8
 
 # Add to PATH
 set -x PATH /usr/local/sbin $PATH

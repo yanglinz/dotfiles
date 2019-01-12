@@ -1,25 +1,20 @@
-.PHONY: presetup
-presetup:
-	@./scripts/dot.sh setup
-
-.PHONY: postsetup
-postsetup:
-	@fish ~/.config/fish/post-setup.fish
-
-setup: presetup postsetup
+.PHONY: setup
+setup: 
+	@./scripts/setup.sh
+	@./scripts/setup.fish
 
 .PHONY: link
 link:
-	@./scripts/dot.sh link
+	@./scripts/link.sh link
 
 .PHONY: unlink
 unlink:
-	@./scripts/dot.sh unlink
+	@./scripts/link.sh unlink
 
 .PHONY: sync
 sync:
-	@./scripts/dot.sh sync
+	@./scripts/link.sh sync
 
 .PHONY: check
 check:
-	@shellcheck **/*.sh
+	@shellcheck -x **/*.sh
