@@ -5,15 +5,15 @@ setup:
 
 .PHONY: link
 link:
-	@./scripts/dot.sh link
+	@./scripts/link.sh link
 
 .PHONY: unlink
 unlink:
-	@./scripts/dot.sh unlink
+	@./scripts/link.sh unlink
 
 .PHONY: sync
 sync:
-	@./scripts/dot.sh sync
+	@./scripts/link.sh sync
 
 .PHONY: check
 check:

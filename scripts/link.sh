@@ -37,7 +37,9 @@ function link() {
   cd - || exit
 
   # Stow code settings
-  stow --adopt -t "$vscode_conf_path" vscode && echo -e "${GREEN}Linked vscode${RESET}"
+  if is_macos; then
+    stow --adopt -t "$vscode_conf_path" vscode && echo -e "${GREEN}Linked vscode${RESET}"
+  fi
 }
 
 function unlink() {
@@ -51,14 +53,18 @@ function unlink() {
   cd - || exit
 
   # Unstow code settings
-  stow -t "$vscode_conf_path" -D vscode && echo -e "${RED}Unlinked vscode${RESET}"
+  if is_macos; then
+    stow -t "$vscode_conf_path" -D vscode && echo -e "${RED}Unlinked vscode${RESET}"
+  fi
 }
 
 function sync() {
   echo "Syncing dotfiles..."
-
-  brew bundle dump --force
-  code --list-extensions > ./vscode/extensions.txt
+  
+  if is_macos; then
+    brew bundle dump --force
+    code --list-extensions > ./vscode/extensions.txt
+  fi
 }
 
 function default() {
