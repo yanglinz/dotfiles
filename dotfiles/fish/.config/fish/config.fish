@@ -23,7 +23,7 @@ set -Ux EDITOR vim
 
 # Add to PATH
 set -x PATH /usr/local/sbin $PATH
-set -x PATH $HOME/.custom-bins $PATH
+set -x PATH $HOME/.bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
 
 # Conditionally add to PATH
