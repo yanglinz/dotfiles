@@ -14,7 +14,6 @@ common_dotfiles=(
   iterm
   tmux
   vim
-  zsh
 )
 
 # Work and personal profile determine which dotfiles to sync based on profile
