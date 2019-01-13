@@ -18,7 +18,7 @@ common_dotfiles=(
 
 # Work and personal profile determine which dotfiles to sync based on profile
 work_dotfiles=("git.work" "ssh.work")
-personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
+personal_dotfiles=("aws.personal" "git.personal")
 
 link_dotfiles=()
 if is_work_profile; then
