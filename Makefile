@@ -15,6 +15,10 @@ unlink:
 sync:
 	@./scripts/link.sh sync
 
+.PHONY: format
+format:
+	@dos2unix ./scripts/**/*.sh
+
 .PHONY: check
 check:
 	@shellcheck -x **/*.sh
