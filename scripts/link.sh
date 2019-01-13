@@ -15,7 +15,8 @@ common_dotfiles=(
   zsh
 )
 work_dotfiles=("git.work" "ssh.work")
-personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
+# personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
+personal_dotfiles=("aws.personal" "git.personal")
 
 # Determine which dotfiles to sync based on profile
 active_dotfiles=()
