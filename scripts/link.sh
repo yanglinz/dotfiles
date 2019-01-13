@@ -5,6 +5,8 @@ source scripts/utils/func.sh
 
 vscode_conf_path="/Users/$(whoami)/Library/Application Support/Code/User"
 
+# Build a list of dotfiles to sync and unsync
+# Common dotfiles are shared across all profiles and environments
 common_dotfiles=(
   bash
   bin
@@ -14,17 +16,17 @@ common_dotfiles=(
   vim
   zsh
 )
-work_dotfiles=("git.work" "ssh.work")
-# personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
-personal_dotfiles=("aws.personal" "git.personal")
 
-# Determine which dotfiles to sync based on profile
-active_dotfiles=()
+# Work and personal profile determine which dotfiles to sync based on profile
+work_dotfiles=("git.work" "ssh.work")
+personal_dotfiles=("aws.personal" "git.personal" "ssh.personal")
+
+link_dotfiles=()
 if is_work_profile; then
-  active_dotfiles=("${common_dotfiles[@]}" "${work_dotfiles[@]}")
+  link_dotfiles=("${common_dotfiles[@]}" "${work_dotfiles[@]}")
 fi
 if is_personal_profile; then
-  active_dotfiles=("${common_dotfiles[@]}" "${personal_dotfiles[@]}")
+  link_dotfiles=("${common_dotfiles[@]}" "${personal_dotfiles[@]}")
 fi
 
 function link() {
@@ -32,14 +34,16 @@ function link() {
 
   # Stow dotfiles
   cd dotfiles || exit
-  for d in "${active_dotfiles[@]}"; do
-    stow -t "$HOME" "$d" && echo -e "${GREEN}Linked ${d}${RESET}"
+  for d in "${link_dotfiles[@]}"; do
+    stow -t "$HOME" "$d" && \
+      echo -e "${GREEN}Linked ${d}${RESET}"
   done
   cd - || exit
 
   # Stow code settings
   if is_macos; then
-    stow --adopt -t "$vscode_conf_path" vscode && echo -e "${GREEN}Linked vscode${RESET}"
+    stow --adopt -t "$vscode_conf_path" vscode && \
+      echo -e "${GREEN}Linked vscode${RESET}"
   fi
 }
 
@@ -48,14 +52,16 @@ function unlink() {
 
   # Unstow dotfiles
   cd dotfiles || exit
-  for d in "${active_dotfiles[@]}"; do
-    stow -t "$HOME" -D "$d" && echo -e "${RED}Unlinked ${d}${RESET}"
+  for d in "${link_dotfiles[@]}"; do
+    stow -t "$HOME" -D "$d" && \
+      echo -e "${RED}Unlinked ${d}${RESET}"
   done
   cd - || exit
 
   # Unstow code settings
   if is_macos; then
-    stow -t "$vscode_conf_path" -D vscode && echo -e "${RED}Unlinked vscode${RESET}"
+    stow -t "$vscode_conf_path" -D vscode && \
+      echo -e "${RED}Unlinked vscode${RESET}"
   fi
 }
 
