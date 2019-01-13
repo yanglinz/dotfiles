@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 
 source scripts/utils/colors.sh
-
-copy_dotfiles=(
-  ".ssh"
-)
+source scripts/utils/func.sh
 
 function copy() {
-  for d in "${copy_dotfiles[@]}"; do
-    echo -e "${GREEN}Copying ${d}${RESET}"
-    rsync -avh "./sync/${d}" ./test-sync;
-  done
+  source=""
+  if is_macos; then
+    source="sync/macos/.ssh"
+  fi
+  if is_linux; then
+    source="sync/linux/.ssh"
+  fi
+
+  rsync -avh "$source" ~;
 }
 
 copy
