@@ -10,8 +10,5 @@
 # python
 .venv
 
-# prettier
-.prettierrc
-
 # react native
 ios/Index
