@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-sh_targets=($(git ls-files | grep "\.sh\$"))
+while IFS=$'\n' read -r line; do
+  sh_targets+=("$line")
+done < <(git ls-files | grep "\.sh\$")
 
 sh_manual_targets=(
   git-churn
@@ -14,5 +16,6 @@ sh_manual_targets=(
 
 format_targets=("${sh_targets[@]}" "${sh_manual_targets[@]}")
 for f in "${format_targets[@]}"; do
+  echo "$f"
   git ls-files | grep "${f}\$" | xargs shfmt -i 2 -w -s -ci -kp
 done
