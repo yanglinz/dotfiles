@@ -3,6 +3,10 @@ setup:
 	@./scripts/setup.sh
 	@./scripts/setup.fish
 
+.PHONY: macos
+macos: 
+	@./scripts/macos.sh
+
 .PHONY: link
 link:
 	@./scripts/link.sh link
