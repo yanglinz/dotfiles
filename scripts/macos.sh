@@ -22,4 +22,17 @@ sudo nvram SystemAudioVolume=" "
 # Restart automatically if the computer freezes
 sudo systemsetup -setrestartfreeze on
 
+# Set dock icon sizes
 defaults write com.apple.dock tilesize -int 36
+
+# Kill affected applications
+affected_apps=(
+  "Address Book"
+  "Calendar"
+  "Contacts"
+  "Dock"
+  "Finder"
+)
+for app in "${affected_apps[@]}"; do
+  killall "${app}" &> /dev/null
+done
