@@ -18,7 +18,7 @@ function setup_nvm() {
 function setup_rust() {
   echo "Setting up rust..."
   if [ ! -d ~/.cargo ]; then
-    curl https://sh.rustup.rs -sSf | sh  
+    curl https://sh.rustup.rs -sSf | sh
   fi
 }
 

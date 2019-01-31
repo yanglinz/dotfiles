@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function is_macos() {
-  ./scripts/utils/osname.py | grep -q "Darwin" 
+  ./scripts/utils/osname.py | grep -q "Darwin"
 }
 
 function is_linux() {
@@ -18,7 +18,7 @@ function is_personal_profile() {
 
 function slugify() {
   declare -r str="$1"
-  
+
   # Replace all / with -
   echo "$str" | sed 's/\//-/g'
 }

@@ -12,7 +12,7 @@ function copy() {
     source="sync/linux/.ssh"
   fi
 
-  rsync -avh "$source" ~;
+  rsync -avh "$source" ~
 }
 
 copy
