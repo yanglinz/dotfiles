@@ -24,6 +24,8 @@ sudo systemsetup -setrestartfreeze on
 
 # Set dock icon sizes
 defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock magnification -bool true
+defaults write com.apple.dock largesize -int 64
 
 # Kill affected applications
 affected_apps=(
