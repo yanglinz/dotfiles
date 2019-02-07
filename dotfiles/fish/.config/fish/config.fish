@@ -20,9 +20,8 @@ set -Ux EDITOR vim
 
 # Activate node path
 if type -q node
-  echo "nvm is already activated!"
+  # Do nothing, nvm is already activated
 else
-  echo "nvm is not activated"
   use nvm
 end
 
