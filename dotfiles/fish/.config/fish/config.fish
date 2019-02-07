@@ -8,7 +8,7 @@ if not functions -q fisher
 end
 
 # iTerm shell itegration
-source ~/.shared/iterm-integration.fish
+source ~/.iterm-integration.fish
 
 # Set theme options
 # https://github.com/oh-my-fish/theme-bobthefish
