@@ -19,7 +19,12 @@ set -g theme_nerd_fonts no
 set -Ux EDITOR vim
 
 # Activate node path
-# nvm use 8
+if type -q node
+  echo "nvm is already activated!"
+else
+  echo "nvm is not activated"
+  use nvm
+end
 
 # Add to PATH
 set -x PATH /usr/local/sbin $PATH
