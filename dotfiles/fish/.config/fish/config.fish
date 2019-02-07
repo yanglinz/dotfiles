@@ -42,3 +42,13 @@ if test -d $ANDROID_HOME
   set -x PATH $ANDROID_HOME/platform-tools $PATH
   set -x PATH $ANDROID_HOME/tools $PATH
 end
+
+# Display an ascii art
+echo "                  "
+echo "  .-------.       "
+echo "  |  Hi   |       "
+echo "  '-------'       "
+echo "      ^      (\_/)"
+echo "      '----- (O.o)"
+echo "             (> <)"
+echo "                  "
