@@ -36,5 +36,5 @@ affected_apps=(
   "Finder"
 )
 for app in "${affected_apps[@]}"; do
-  killall "${app}" &> /dev/null
+  killall "${app}" &>/dev/null
 done
