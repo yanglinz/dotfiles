@@ -2,7 +2,7 @@
 
 import click
 
-from scripts import linker
+from stow import manifest
 
 
 @click.group()
@@ -12,12 +12,12 @@ def cli():
 
 @cli.command()
 def link():
-    linker.link_targets()
+    manifest.link_targets()
 
 
 @cli.command()
 def unlink():
-    linker.unlink_targets()
+    manifest.unlink_targets()
 
 
 if __name__ == "__main__":
