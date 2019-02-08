@@ -1,20 +1,16 @@
 # Fish
 fishd.*
-dotfiles/fish/.config/configstore
-dotfiles/fish/.config/fish/completions
-dotfiles/fish/.config/fish/conf.d
-dotfiles/fish/.config/fish/functions
-dotfiles/fish/.config/fish/fish_variables
-dotfiles/fish/.config/fisher/github.com
-dotfiles/fish/.config/yarn
+stow/shell/.config/configstore
+stow/shell/.config/fish/completions
+stow/shell/.config/fish/conf.d
+stow/shell/.config/fish/functions
+stow/shell/.config/fish/fish_variables
+stow/shell/.config/fisher/github.com
+stow/shell/.config/yarn
 
 # SSH work
 dotfiles/ssh.work/.ssh/*
 !dotfiles/ssh.work/.ssh/config
-
-# SSH personal
-dotfiles/ssh.personal/.ssh/*
-!dotfiles/ssh.personal/.ssh/config
 
 # AWS personal
 dotfiles/aws.personal/.aws/credentials
