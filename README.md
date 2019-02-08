@@ -1,6 +1,6 @@
-# Yanglin's Dotfiles
+# My Personal Dotfiles
 
-This is my personal dotfiles for MacOS.
+This is my personal dotfiles for MacOS/Windows.
 
 > Note that I've not tested much outside of my own personal use. Use at your own risk. 🚧
 
@@ -35,7 +35,7 @@ sudo vim /etc/shells
 
 ## Thanks
 
-Most of the setup have come from helpful articles and other dotfiles
+Most of the setup have come from helpful articles and other dotfiles.
 
 - [Using GNU Stow to manage your dotfiles](http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html)
 - [Zach Holman's dotfiles](https://github.com/holman/dotfiles)
