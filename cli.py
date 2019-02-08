@@ -15,5 +15,10 @@ def link():
     linker.link_targets()
 
 
+@cli.command()
+def unlink():
+    linker.unlink_targets()
+
+
 if __name__ == "__main__":
     cli()

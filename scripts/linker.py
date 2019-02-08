@@ -49,16 +49,26 @@ def get_targets(p=profile.get_profile()):
     return all_targets
 
 
-def link_target(source, target):
+def stow_target(source, target, unlink=False):
     source_path = Path.cwd().joinpath(source)
     *parent_path_parts, source_dir_name = source_path.parts
     source_parent_path = Path(*parent_path_parts)
 
     with working_directory(source_parent_path):
-        print(f"Linking {source}")
-        print(f"Linking {source_parent_path}/{source_dir_name} to {target}")
+        if not unlink:
+            print(f"Linking {source}")
+            print(f"Linking {source_parent_path}/{source_dir_name} to {target}")
+        else:
+            print(f"Unlinking {source}")
+            print(f"Unlinking {source_parent_path}/{source_dir_name} to {target}")
+
         try:
-            subprocess.run(["stow", "-t", target, source_dir_name], capture_output=False)
+            if not unlink:
+                stow_command = ["stow", "-t", target, source_dir_name]
+            else:
+                stow_command = ["stow", "-t", target, "-D", source_dir_name]
+
+            subprocess.run(stow_command, capture_output=False)
         except OSError as e:
             print(e)
 
@@ -68,4 +78,12 @@ def link_targets():
     assert current_dir == "dotfiles"
 
     for source, target in get_targets().items():
-        link_target(source, target)
+        stow_target(source, target)
+
+
+def unlink_targets():
+    current_dir = Path.cwd().parts[-1]
+    assert current_dir == "dotfiles"
+
+    for source, target in get_targets().items():
+        stow_target(source, target, unlink=True)
