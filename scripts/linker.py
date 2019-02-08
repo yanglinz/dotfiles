@@ -4,11 +4,13 @@ import os
 import contextlib
 import subprocess
 from pathlib import Path
+import getpass
 
 from scripts.utils import profile
 
-
-HOME = Path.home()  # Path to ~
+WHO_AM_I = getpass.getuser()
+HOME_PATH = Path.home()
+VS_CODE_PATH = f"/Users/{WHO_AM_I}/Library/Application Support/Code/User"
 
 source_to_targets = {
     # This is a mapping of directories to stow
@@ -16,20 +18,21 @@ source_to_targets = {
     # that will be the target for GNU Stow.
     # The values are absolute directories that GNU Stow
     # will apply the target to.
-    "stow/shell": HOME,
-    "stow/vim": HOME,
+    "stow/shell": HOME_PATH,
+    "stow/vim": HOME_PATH,
+    "stow/vscode": VS_CODE_PATH,
 }
 
 personal_targets = {
     # Peronsal targets are an extension to source_to_targets
     # that only applies to personal profiles/machines.
-    "stow/git/personal": HOME,
+    "stow/git/personal": HOME_PATH,
 }
 
 work_targets = {
     # Work targets are an extension to source_to_targets
     # that only applies to work profiles/machines.
-    "stow/git/work": HOME
+    "stow/git/work": HOME_PATH
 }
 
 
