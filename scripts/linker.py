@@ -59,6 +59,7 @@ def stow_target(source, target, unlink=False):
     source_parent_path = Path(*parent_path_parts)
 
     with working_directory(source_parent_path):
+        # TODO: Tweak outputs to include more info and color
         if not unlink:
             print(f"Linking {source}")
             print(f"Linking {source_parent_path}/{source_dir_name} to {target}")
