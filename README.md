@@ -1,6 +1,6 @@
 # My Personal Dotfiles
 
-This is my personal dotfiles for MacOS/Windows.
+This is my personal dotfiles for MacOS.
 
 > Note that I've not tested much outside of my own personal use. Use at your own risk. 🚧
 
