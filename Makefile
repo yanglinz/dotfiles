@@ -6,11 +6,11 @@ setup:
 
 .PHONY: link
 link:
-	@./scripts/link.sh link
+	@pipenv run ./cli.py link
 
 .PHONY: unlink
 unlink:
-	@./scripts/link.sh unlink
+	@pipenv run ./cli.py unlink
 
 .PHONY: sync
 sync:
