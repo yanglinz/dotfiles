@@ -27,7 +27,7 @@ end
 
 # Add to PATH
 set -x PATH /usr/local/sbin $PATH
-set -x PATH $HOME/.bin $PATH
+set -x PATH $HOME/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
 
 # Conditionally add to PATH
