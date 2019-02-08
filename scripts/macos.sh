@@ -4,7 +4,7 @@ source scripts/utils/func.sh
 
 # Taken most from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-function setuo_osx() {
+function setup_osx() {
   # Close any open System Preferences panes, to prevent them from overriding
   # settings we’re about to change
   osascript -e 'tell application "System Preferences" to quit'
@@ -44,5 +44,5 @@ function setuo_osx() {
 }
 
 if is_macos; then
-  macos
+  setup_osx
 fi
