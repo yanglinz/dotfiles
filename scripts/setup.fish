@@ -4,4 +4,5 @@
 fisher
 
 # Install node
-# nvm install 8
+nvm install 8
+nvm install 10
