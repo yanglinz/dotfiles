@@ -2,9 +2,6 @@
 setup: 
 	@./scripts/setup.sh
 	@./scripts/setup.fish
-
-.PHONY: macos
-macos: 
 	@./scripts/macos.sh
 
 .PHONY: link
@@ -23,6 +20,7 @@ sync:
 format:
 	@dos2unix ./scripts/**/*.sh
 	@./scripts/format.sh
+	@pipenv black scripts
 
 .PHONY: check
 check:
