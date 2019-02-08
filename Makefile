@@ -14,13 +14,14 @@ unlink:
 
 .PHONY: sync
 sync:
-	@./scripts/link.sh sync
+	@brew bundle dump --force
+	@code --list-extensions >./stow/vscode/extensions.txt
 
 .PHONY: format
 format:
-	@dos2unix ./scripts/**/*.sh
-	@./scripts/format.sh
 	@pipenv run black scripts
+	@./scripts/format.sh
+	@dos2unix ./scripts/**/*.sh
 
 .PHONY: check
 check:
