@@ -17,13 +17,13 @@ source_to_targets = {
     # The values are absolute directories that GNU Stow
     # will apply the target to.
     "stow/shell": HOME,
+    "stow/vim": HOME,
 }
 
 personal_targets = {
     # Peronsal targets are an extension to source_to_targets
     # that only applies to personal profiles/machines.
-    "stow/aws/personal": "~",
-    "stow/git/personal": HOME
+    "stow/git/personal": HOME,
 }
 
 work_targets = {
