@@ -11,20 +11,24 @@ from scripts.utils import profile
 HOME = Path.home()  # Path to ~
 
 source_to_targets = {
-    # This is something
-    # Relative to project root
-    # Relative absolute path
+    # This is a mapping of directories to stow
+    # The keys are directories relative to the project to
+    # that will be the target for GNU Stow.
+    # The values are absolute directories that GNU Stow
+    # will apply the target to.
     "stow/shell": HOME,
 }
 
 personal_targets = {
-    # This is something
-    # "stow/aws/personal": "~",
+    # Peronsal targets are an extension to source_to_targets
+    # that only applies to personal profiles/machines.
+    "stow/aws/personal": "~",
     "stow/git/personal": HOME
 }
 
 work_targets = {
-    # This is something
+    # Work targets are an extension to source_to_targets
+    # that only applies to work profiles/machines.
     "stow/git/work": HOME
 }
 
