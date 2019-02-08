@@ -20,7 +20,7 @@ sync:
 format:
 	@dos2unix ./scripts/**/*.sh
 	@./scripts/format.sh
-	@pipenv black scripts
+	@pipenv run black scripts
 
 .PHONY: check
 check:

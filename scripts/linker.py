@@ -26,7 +26,7 @@ source_to_targets = {
 personal_targets = {
     # Peronsal targets are an extension to source_to_targets
     # that only applies to personal profiles/machines.
-    "stow/git/personal": HOME_PATH,
+    "stow/git/personal": HOME_PATH
 }
 
 work_targets = {
