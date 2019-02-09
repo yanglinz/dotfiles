@@ -3,8 +3,10 @@
 import os
 import contextlib
 import subprocess
-from pathlib import Path
 import getpass
+from pathlib import Path
+
+from termcolor import colored, cprint
 
 from scripts.utils import profile
 
@@ -86,7 +88,9 @@ def link_targets():
     assert current_dir == "dotfiles"
 
     for source, target in get_targets().items():
-        stow_target(source, target)
+        cprint("Hello, World!", "green")
+        cprint("Hello, World!", "red")
+        # stow_target(source, target)
 
 
 def unlink_targets():
