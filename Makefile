@@ -3,6 +3,7 @@ setup:
 	@./scripts/setup.sh
 	@./scripts/setup.fish
 	@./scripts/macos.sh
+	@pipenv install
 
 .PHONY: link
 link:
