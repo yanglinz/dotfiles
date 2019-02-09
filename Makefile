@@ -7,13 +7,14 @@ setup:
 .PHONY: link
 link:
 	@pipenv run ./cli.py link
+	@./scripts/sync.sh
 
 .PHONY: unlink
 unlink:
 	@pipenv run ./cli.py unlink
 
-.PHONY: sync
-sync:
+.PHONY: reconcile
+reconcile:
 	@brew bundle dump --force
 	@code --list-extensions >./stow/vscode/extensions.txt
 
