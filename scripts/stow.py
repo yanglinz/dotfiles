@@ -6,7 +6,7 @@ import subprocess
 import getpass
 from pathlib import Path
 
-from termcolor import colored, cprint
+from termcolor import cprint
 
 from scripts.utils import profile
 
@@ -64,13 +64,10 @@ def stow_target(source, target, unlink=False):
     source_parent_path = Path(*parent_path_parts)
 
     with working_directory(source_parent_path):
-        # TODO: Tweak outputs to include more info and color
         if not unlink:
-            print(f"Linking {source}")
-            print(f"Linking {source_parent_path}/{source_dir_name} to {target}")
+            cprint(f"Linking {source}", "green")
         else:
-            print(f"Unlinking {source}")
-            print(f"Unlinking {source_parent_path}/{source_dir_name} to {target}")
+            cprint(f"Unlinking {source}", "red")
 
         try:
             if not unlink:
@@ -80,6 +77,7 @@ def stow_target(source, target, unlink=False):
 
             subprocess.run(stow_command, capture_output=False)
         except OSError as e:
+            cprint(f"Failed to link {source}", "red")
             print(e)
 
 
@@ -88,9 +86,7 @@ def link_targets():
     assert current_dir == "dotfiles"
 
     for source, target in get_targets().items():
-        cprint("Hello, World!", "green")
-        cprint("Hello, World!", "red")
-        # stow_target(source, target)
+        stow_target(source, target)
 
 
 def unlink_targets():
