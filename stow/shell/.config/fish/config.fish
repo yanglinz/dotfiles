@@ -22,7 +22,7 @@ set -Ux EDITOR vim
 if type -q node
   # Do nothing, nvm is already activated
 else
-  use nvm
+  nvm use 8
 end
 
 # Add to PATH
