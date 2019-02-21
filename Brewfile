@@ -26,7 +26,7 @@ brew "terraform"
 brew "tmux"
 brew "vim"
 brew "watchman"
-brew "yarn", args: ["without-node"]
+brew "yarn"
 cask "android-ndk"
 cask "android-sdk"
 cask "fastlane"
