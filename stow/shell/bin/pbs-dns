@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+function bypass() {
+  # Use google DNS
+  networksetup -setdnsservers Wi-Fi 8.8.8.8
+}
+
+function reset() {
+  # Use regular DNS
+  networksetup -setdnsservers Wi-Fi "Empty"
+}
+
+function default() {
+  echo "Please pass the bypass/reset as args!"
+}
+
+case "$1" in
+  bypass) bypass;;
+  reset)  reset;;
+  *)      default;;
+esac

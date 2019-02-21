@@ -9,6 +9,8 @@ sh_manual_targets=(
   git-cloc
   git-lg
   insecure-chrome
+  mfa
+  pbs-dns
   port-usage
   bash_profile
   bashrc
