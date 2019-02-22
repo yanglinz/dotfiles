@@ -53,6 +53,7 @@ end
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+set -x PATH $HOME/.poetry/bin $PATH
 
 # Conditionally add to PATH
 if test -d $HOME/.fastlane/bin
