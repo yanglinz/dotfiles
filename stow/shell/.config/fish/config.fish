@@ -53,7 +53,10 @@ end
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
+
+# Setup poetry PATH and default to python3
 set -x PATH $HOME/.poetry/bin $PATH
+set -x PATH /usr/local/opt/python/libexec/bin:$PATH
 
 # Conditionally add to PATH
 if test -d $HOME/.fastlane/bin
