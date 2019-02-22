@@ -22,6 +22,13 @@ function setup_rust() {
   fi
 }
 
+function setup_poetry() {
+  echo "Setting up poetry..."
+  if [ ! -d ~/.poetry ]; then
+    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+  fi
+}
+
 function setup_fonts() {
   echo "Setting up fonts..."
   ./vendor/fonts/install.sh
