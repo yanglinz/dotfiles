@@ -33,6 +33,10 @@ Then finally, we need to [set fish as the default shell](https://stackoverflow.c
 sudo vim /etc/shells
 ```
 
+Disabling Sophos:
+
+Move /Library/Sophos\ Antivirus to /Library/Sophos\ Antivirus.bak
+
 ## Thanks
 
 Most of the setup have come from helpful articles and other dotfiles.
