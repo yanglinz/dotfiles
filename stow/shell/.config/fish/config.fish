@@ -53,10 +53,17 @@ end
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
-
-# Setup poetry PATH and default to python3
 set -x PATH $HOME/.poetry/bin $PATH
-set -x PATH /usr/local/opt/python/libexec/bin:$PATH
+
+# Default python to use python3
+switch "$PATH"
+case "*pypoetry/virtualenvs*" 
+  # If poetry virtualenv is already activated and in PATH
+  # Avoid overriding the virtualenv PATH
+  # https://github.com/sdispater/poetry/issues/497
+case "*"
+  set -x PATH /usr/local/opt/python/libexec/bin:$PATH
+end
 
 # Conditionally add to PATH
 if test -d $HOME/.fastlane/bin
