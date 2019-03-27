@@ -26,9 +26,24 @@ function setup_osx() {
   sudo systemsetup -setrestartfreeze on
 
   # Set dock icon sizes
-  defaults write com.apple.dock tilesize -int 36
   defaults write com.apple.dock magnification -bool true
+  defaults write com.apple.dock tilesize -int 36
   defaults write com.apple.dock largesize -int 64
+
+  # Autohide the dock
+  defaults write com.apple.dock autohide -bool true
+
+  # Set Dock to add transparency to hidden apps
+  defaults write com.apple.dock showhidden -bool true
+
+  # Minimize applications to its icon
+  defaults write com.apple.dock minimize-to-application -bool true
+
+  # Don’t show recent applications in Dock
+  defaults write com.apple.dock show-recents -bool false
+
+  # Disable dashboard
+  defaults write com.apple.dashboard mcx-disabled -bool true
 
   # Kill affected applications
   affected_apps=(
