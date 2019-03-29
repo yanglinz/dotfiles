@@ -10,5 +10,4 @@
 # python
 .venv
 
-# react native
-ios/Index
+.ignored
