@@ -1,9 +1,9 @@
 trigger:
-  - master
+- master
 
 pool:
   vmImage: macOS-10.13
 
 steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
