@@ -15,7 +15,7 @@ function default() {
 }
 
 case "$1" in
-  bypass) bypass;;
-  reset)  reset;;
-  *)      default;;
+  bypass) bypass ;;
+  reset)  reset ;;
+  *)      default ;;
 esac
