@@ -31,11 +31,6 @@ function setup_poetry() {
   fi
 }
 
-function setup_fonts() {
-  echo "Setting up fonts..."
-  ./vendor/fonts/install.sh
-}
-
 function setup_brew() {
   echo "Setting up brew..."
   if ! [ -x "$(command -v brew)" ]; then
@@ -64,7 +59,6 @@ function setup() {
   setup_rust
 
   if is_macos; then
-    setup_fonts
     setup_brew
   fi
 
