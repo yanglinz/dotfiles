@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 
 function sync() {
-  rsync --exclude ".DS_Store" \
-    -avzh --no-perms \
+  rsync -avzh \
+    --exclude ".DS_Store" \
+    --no-perms \
     --max-delete=0 \
     ./sync-home/ "$HOME"
 
-  sudo rsync --exclude ".DS_Store" \
-    --chown=root:wheel \
+  sudo rsync -avzh \
+    --exclude ".DS_Store" \
     --omit-dir-times \
     --omit-link-times \
     --max-delete=0 \
-    -avzh --no-perms ./sync-root/ /
+    --keep-dirlinks \
+    --no-perms \
+    --chown=root:wheel \
+    ./sync-root/ /
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
