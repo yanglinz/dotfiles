@@ -2,12 +2,16 @@
 
 function sync() {
   rsync --exclude ".DS_Store" \
-    -avh --no-perms ./sync-home/ "$HOME"
+    -avzh --no-perms \
+    --max-delete=0 \
+    ./sync-home/ "$HOME"
 
   sudo rsync --exclude ".DS_Store" \
     --chown=root:wheel \
     --omit-dir-times \
-    -avh --no-perms ./sync-root/ /
+    --omit-link-times \
+    --max-delete=0 \
+    -avzh --no-perms ./sync-root/ /
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
