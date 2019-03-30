@@ -1,6 +1,9 @@
 trigger:
 - master
 
+variables:
+  CI: true
+
 pool:
   vmImage: macOS-10.13
 

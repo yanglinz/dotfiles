@@ -19,14 +19,14 @@ function setup_nvm() {
 
 function setup_rust() {
   echo "Setting up rust..."
-  if [ ! -d ~/.cargo ]; then
+  if [ ! -d ~/.cargo ] && [ -z "$CI" ]; then
     curl https://sh.rustup.rs -sSf | sh
   fi
 }
 
 function setup_poetry() {
   echo "Setting up poetry..."
-  if [ ! -d ~/.poetry ]; then
+  if [ ! -d ~/.poetry ] && [ -z "$CI" ]; then
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
   fi
 }
