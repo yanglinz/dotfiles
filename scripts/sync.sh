@@ -18,7 +18,7 @@ function sync() {
     --no-perms \
     --chown=root:wheel \
     ./sync-root/ /
-  
+
   # Fix brew permissions
   sudo chown -R $(whoami) /usr/local/etc
 }

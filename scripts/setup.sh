@@ -55,8 +55,6 @@ function setup_apt() {
 
 function setup() {
   setup_submodule
-  setup_nvm
-  setup_rust
 
   if is_macos; then
     setup_brew
@@ -65,6 +63,9 @@ function setup() {
   if is_linux; then
     setup_apt
   fi
+
+  setup_nvm
+  setup_rust
 }
 
 setup
