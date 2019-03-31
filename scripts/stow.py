@@ -81,17 +81,30 @@ def stow_target(source, target, unlink=False):
             print(e)
 
 
+def ensure_cwd():
+    current_dir = str(Path.cwd())
+    dir_names = set(os.listdir(path=current_dir))
+    required_names = {
+        "scripts",
+        "stow",
+        "sync-root",
+        "sync-home",
+        "Makefile",
+        "Pipfile",
+        "cli.py",
+    }
+    assert dir_names & (required_names) == required_names, "Must be in dotfile root dir"
+
+
 def link_targets():
-    current_dir = Path.cwd().parts[-1]
-    assert current_dir == "dotfiles"
+    ensure_cwd()
 
     for source, target in get_targets().items():
         stow_target(source, target)
 
 
 def unlink_targets():
-    current_dir = Path.cwd().parts[-1]
-    assert current_dir == "dotfiles"
+    ensure_cwd()
 
     for source, target in get_targets().items():
         stow_target(source, target, unlink=True)
