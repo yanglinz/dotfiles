@@ -20,7 +20,7 @@ function sync() {
     ./sync-root/ /
 
   # Fix brew permissions
-  sudo chown -R $(whoami) /usr/local/etc
+  sudo chown -R "$(whoami)" /usr/local/etc
 }
 
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
