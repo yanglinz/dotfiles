@@ -23,7 +23,7 @@ function sync() {
   sudo chown -R "$(whoami)" /usr/local/etc
 }
 
-if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
+if [ "${1-}" == "--force" ] || [ "${1-}" == "-f" ]; then
   sync
 else
   read -r -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
