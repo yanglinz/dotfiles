@@ -1,19 +1,17 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
+variables:
+  CI: true
+
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: macOS-10.13
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    brew list
+    # Azure already has brew installed, and we need to
+    # unlink the existing node package first before we run setup
+    brew unlink node@6
+    ./scripts/setup.sh
+  displayName: 'Run setup'

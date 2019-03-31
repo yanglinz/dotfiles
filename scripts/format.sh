@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
 while IFS=$'\n' read -r line; do
   sh_targets+=("$line")

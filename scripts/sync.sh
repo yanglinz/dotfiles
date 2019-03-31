@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
 function sync() {
   rsync -avzh \
@@ -16,7 +18,7 @@ function sync() {
     --no-perms \
     --chown=root:wheel \
     ./sync-root/ /
-  
+
   # Fix brew permissions
   sudo chown -R $(whoami) /usr/local/etc
 }

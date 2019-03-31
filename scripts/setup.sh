@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
 
 source scripts/utils/func.sh
 
@@ -17,21 +19,16 @@ function setup_nvm() {
 
 function setup_rust() {
   echo "Setting up rust..."
-  if [ ! -d ~/.cargo ]; then
+  if [ ! -d ~/.cargo ] && [ -z "$CI" ]; then
     curl https://sh.rustup.rs -sSf | sh
   fi
 }
 
 function setup_poetry() {
   echo "Setting up poetry..."
-  if [ ! -d ~/.poetry ]; then
+  if [ ! -d ~/.poetry ] && [ -z "$CI" ]; then
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
   fi
-}
-
-function setup_fonts() {
-  echo "Setting up fonts..."
-  ./vendor/fonts/install.sh
 }
 
 function setup_brew() {
@@ -58,17 +55,17 @@ function setup_apt() {
 
 function setup() {
   setup_submodule
-  setup_nvm
-  setup_rust
 
   if is_macos; then
-    setup_fonts
     setup_brew
   fi
 
   if is_linux; then
     setup_apt
   fi
+
+  setup_nvm
+  setup_rust
 }
 
 setup
