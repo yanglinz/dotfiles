@@ -14,13 +14,16 @@ steps:
     # unlink the existing node package first before we run setup
     brew unlink node@6
     ./scripts/setup.sh
-  displayName: "Run initial setup"
+
+# Run initial setup
+- script: ./scripts/setup.sh
+
+# Run linting
 - script: make check
-  displayName: "Run linter"
-- script: |
-    pipenv install
-    pipenv run ./cli.py link
-    pipenv run ./cli.py unlink
-    pipenv run ./cli.py link
-    ./scripts/sync.sh --force
-  displayName: "Link dotfiles"
+
+# Run dotfile linking
+- script: pipenv install
+- script: pipenv run ./cli.py link
+- script: pipenv run ./cli.py unlink
+- script: pipenv run ./cli.py link
+- script: ./scripts/sync.sh --force
