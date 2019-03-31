@@ -9,5 +9,9 @@ pool:
 
 steps:
 - script: |
+    brew list
+    # Azure already has brew installed, and we need to
+    # unlink the existing node package first before we run setup
+    brew unlink node@6
     ./scripts/setup.sh
   displayName: 'Run setup'
