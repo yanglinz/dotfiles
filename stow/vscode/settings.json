@@ -5,5 +5,8 @@
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.suggest.autoImports": false,
-  "javascript.suggest.autoImports": false
+  "javascript.suggest.autoImports": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
