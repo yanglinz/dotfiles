@@ -7,9 +7,12 @@ kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 mauve.terraform
 ms-python.python
+ms-vscode.Go
 msjsdiag.debugger-for-chrome
+PeterJausovec.vscode-docker
 skyapps.fish-vscode
 swyphcosmo.spellchecker
 vscodevim.vim
 waderyan.gitblame
+william-voyek.vscode-nginx
 yzhang.markdown-all-in-one
