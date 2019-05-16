@@ -47,4 +47,4 @@ source "$BASH_IT"/bash_it.sh
 ~/.load-nvm.sh
 
 # Load z
-source ~/bin/z.sh
+eval "$(fasd --init auto)"
