@@ -46,6 +46,12 @@ source "$BASH_IT"/bash_it.sh
 # Load nvm
 ~/.load-nvm.sh
 
+# Add to path
+export PATH=/usr/local/sbin:$PATH
+export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
+
 # Load z
 eval "$(fasd --init auto)"
 
