@@ -48,3 +48,13 @@ source "$BASH_IT"/bash_it.sh
 
 # Load z
 eval "$(fasd --init auto)"
+
+# Display an ascii art
+echo "                  "
+echo "  .-------.       "
+echo "  |  Hi   |       "
+echo "  '-------'       "
+echo "      ^      (\_/)"
+echo "      '----- (O.o)"
+echo "             (> <)"
+echo "                  "
