@@ -46,11 +46,14 @@ source "$BASH_IT"/bash_it.sh
 # Load nvm
 ~/.load-nvm.sh
 
-# Add to path
+# Add to PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
+
+# Set virual env path Python PATH
+# TODO: Convert fish script to python script
 
 # Load z
 eval "$(fasd --init auto)"
