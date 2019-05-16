@@ -10,6 +10,13 @@ function setup_submodule() {
   git submodule update --recursive
 }
 
+function setup_bash_it() {
+  echo "Setting up bash-it..."
+  if [ ! -d ~/.bash_it ]; then
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  fi
+}
+
 function setup_nvm() {
   echo "Setting up nvm..."
   if [ ! -d ~/.nvm ]; then
@@ -64,6 +71,7 @@ function setup() {
     setup_apt
   fi
 
+  setup_bash_it
   setup_nvm
   setup_rust
 }
