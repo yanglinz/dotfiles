@@ -45,3 +45,6 @@ source "$BASH_IT"/bash_it.sh
 
 # Load nvm
 ~/.load-nvm.sh
+
+# Load z
+source ~/bin/z.sh
