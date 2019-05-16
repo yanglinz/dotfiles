@@ -3,9 +3,6 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
-# Load nvm
-~/.load-nvm.sh
-
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -19,6 +16,7 @@ export BASH_IT="${HOME}/.bash_it"
 # location /.bash_it/themes/
 export BASH_IT_THEME="bobby"
 export THEME_SHOW_CLOCK_CHAR=false
+export THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d"}
 
 # Set this to false to turn off version control status checking within the prompt for all themes
 export SCM_CHECK=true
@@ -44,3 +42,6 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+# Load nvm
+~/.load-nvm.sh
