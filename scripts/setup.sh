@@ -45,7 +45,14 @@ function setup_brew() {
   fi
 
   echo "Setting up brew bundles..."
+  brew tap homebrew/core
+  brew tap homebrew/services
   brew tap homebrew/bundle
+  brew tap homebrew/cask
+  brew tap homebrew/cask-versions
+  brew tap heroku/brew
+  brew tap netlify/netlifyctl
+
   brew bundle
 }
 
