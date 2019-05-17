@@ -50,6 +50,9 @@ export PATH=$HOME/.poetry/bin:$PATH
 # Load z
 eval "$(fasd --init auto)"
 
+# Alias
+alias ls="ls -G"  # output color
+
 # Display an ascii art
 echo "                  "
 echo "  .-------.       "
