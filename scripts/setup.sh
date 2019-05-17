@@ -10,6 +10,13 @@ function setup_submodule() {
   git submodule update --recursive
 }
 
+function setup_bash_it() {
+  echo "Setting up bash-it..."
+  if [ ! -d ~/.bash_it ]; then
+    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+  fi
+}
+
 function setup_nvm() {
   echo "Setting up nvm..."
   if [ ! -d ~/.nvm ]; then
@@ -38,7 +45,14 @@ function setup_brew() {
   fi
 
   echo "Setting up brew bundles..."
+  brew tap homebrew/core
+  brew tap homebrew/services
   brew tap homebrew/bundle
+  brew tap homebrew/cask
+  brew tap homebrew/cask-versions
+  brew tap heroku/brew
+  brew tap netlify/netlifyctl
+
   brew bundle
 }
 
@@ -64,6 +78,7 @@ function setup() {
     setup_apt
   fi
 
+  setup_bash_it
   setup_nvm
   setup_rust
 }

@@ -26,13 +26,6 @@ Next, we need to configure iTerm to load its default configuration from our newl
 Preferences -> Load preferenes from custom folder or URL
 ```
 
-Then finally, we need to [set fish as the default shell](https://stackoverflow.com/questions/453236/how-to-set-my-default-shell-on-mac).
-
-```sh
-# Add $(which fish) to /etc/shells
-sudo vim /etc/shells
-```
-
 ## Thanks
 
 Most of the setup have come from helpful articles and other dotfiles.
