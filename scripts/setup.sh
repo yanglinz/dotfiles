@@ -20,7 +20,7 @@ function setup_bash_it() {
 function setup_nvm() {
   echo "Setting up nvm..."
   if [ ! -d ~/.nvm ]; then
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
   fi
 }
 

@@ -38,9 +38,6 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
 
-# Load nvm
-~/.load-nvm.sh
-
 # Add to PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
@@ -62,3 +59,8 @@ echo "      ^      (\_/)"
 echo "      '----- (O.o)"
 echo "             (> <)"
 echo "                  "
+
+# Load nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
