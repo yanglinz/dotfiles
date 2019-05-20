@@ -41,6 +41,7 @@ source "$BASH_IT"/bash_it.sh
 # Add to PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
