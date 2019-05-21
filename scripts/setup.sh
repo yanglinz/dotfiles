@@ -34,7 +34,7 @@ function setup_rust() {
 function setup_poetry() {
   echo "Setting up poetry..."
   if [ ! -d ~/.poetry ] && [ -z "$CI" ]; then
-    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python
+    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
   fi
 }
 
