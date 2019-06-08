@@ -1,7 +1,6 @@
 .PHONY: setup
 setup: 
 	@./scripts/setup.sh
-	@./scripts/setup.fish
 	# @./scripts/fonts.sh
 	@./scripts/macos.sh
 	@pipenv install
