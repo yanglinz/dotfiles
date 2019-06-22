@@ -49,6 +49,20 @@ export PATH=$(pyenv root)/shims:$PATH
 # Load z
 eval "$(fasd --init auto)"
 
+# Load hstr
+alias hh=hstr
+export HSTR_CONFIG=hicolor
+shopt -s histappend
+export HISTCONTROL=ignorespace
+export HISTFILESIZE=10000
+export HISTSIZE=${HISTFILESIZE}
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+
+# If this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
+# If this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+
 # Alias
 alias ls="ls -G"  # output color
 
