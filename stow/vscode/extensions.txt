@@ -1,15 +1,16 @@
 alefragnani.project-manager
 bungcip.better-toml
+EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 mauve.terraform
+ms-azuretools.vscode-docker
 ms-python.python
 ms-vscode.Go
 msjsdiag.debugger-for-chrome
-PeterJausovec.vscode-docker
 skyapps.fish-vscode
 swyphcosmo.spellchecker
 vscodevim.vim
