@@ -12,7 +12,7 @@ sh_manual_targets=(
   git-lg
   insecure-chrome
   mfa
-  pbs-dns
+  sdns
   port-usage
   bash_profile
   bashrc

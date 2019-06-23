@@ -21,9 +21,11 @@ reconcile:
 
 .PHONY: format
 format:
-	@pipenv run black scripts
-	@./scripts/format.sh
+	@pipenv run black ./scripts
+	@pipenv run black stow/shell/bin/profile
+	@pipenv run black stow/shell/bin/vscode
 	@dos2unix ./scripts/**/*.sh
+	@./scripts/format.sh
 
 .PHONY: check
 check:
