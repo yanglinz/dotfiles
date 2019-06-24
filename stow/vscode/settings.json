@@ -24,7 +24,28 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
   // Golang
-  "go.useLanguageServer": true
+  "go.useLanguageServer": true,
+
+  // Spellcheck
+  "cSpell.language": "en",
+  "cSpell.minWordLength": 4,
+  "cSpell.spellCheckDelayMs": 100,
+  "cSpell.enabledLanguageIds": [
+    "go",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "python",
+    "typescript",
+    "typescriptreact",
+  ],
+  "cSpell.words": [
+    // PBS
+    "mvod"
+  ]
 }
