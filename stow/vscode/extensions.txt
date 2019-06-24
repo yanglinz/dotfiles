@@ -1,4 +1,5 @@
 bungcip.better-toml
+eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
@@ -14,6 +15,5 @@ skyapps.fish-vscode
 streetsidesoftware.code-spell-checker
 swyphcosmo.spellchecker
 vscodevim.vim
-waderyan.gitblame
 william-voyek.vscode-nginx
 yzhang.markdown-all-in-one
