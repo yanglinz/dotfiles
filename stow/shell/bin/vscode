@@ -46,15 +46,18 @@ def get_project_color(seed):
         material_colors = json.loads(f.read())
 
     colors = []
-    for _, v in material_colors.items():
+    skip = ("pink", "yellow")
+    for k, v in material_colors.items():
+        if k in skip:
+            continue
         colors.append(v.get("600"))
         colors.append(v.get("700"))
         colors.append(v.get("800"))
         colors.append(v.get("a700"))
     colors = sorted([c for c in colors if c])
 
-    index = naive_hash(seed) % len(colors)
-    return colors[index]
+    i = naive_hash(seed) % len(colors)
+    return colors[i]
 
 
 def get_vscode_settings():
