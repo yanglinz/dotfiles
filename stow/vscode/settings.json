@@ -1,12 +1,13 @@
 {
   // General editor settings
+  // https://code.visualstudio.com/docs/getstarted/settings
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // Javacript
   "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
-
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
@@ -31,6 +32,10 @@
   // Golang
   "go.useLanguageServer": true,
 
+
+  // Terraform
+  "terraform.telemetry.enabled": false,
+
   // Spellcheck
   "cSpell.language": "en",
   "cSpell.minWordLength": 4,
@@ -42,15 +47,12 @@
     "markdown",
     "python",
     "typescript",
-    "typescriptreact",
+    "typescriptreact"
   ],
   "cSpell.words": [
-    // Python
     "venv",
     "pipenv",
     "pylint",
-
-    // PBS
     "mvod"
   ]
 }
