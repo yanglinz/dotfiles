@@ -1,0 +1,8 @@
+# Prospector profile
+# https://github.com/PyCQA/prospector/blob/master/prospector/profiles/profiles/default.yaml
+
+strictness: medium
+doc-warnings: false
+test-warnings: false
+autodetect: true
+member-warnings: false
