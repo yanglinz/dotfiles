@@ -1,7 +1,7 @@
 # Prospector profile
 # https://github.com/PyCQA/prospector/blob/master/prospector/profiles/profiles/default.yaml
 
-strictness: medium
+strictness: high
 doc-warnings: false
 test-warnings: false
 autodetect: true

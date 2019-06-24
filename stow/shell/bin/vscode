@@ -38,10 +38,6 @@ def has_package_json():
     return os.path.isfile(pipfile)
 
 
-def int():
-    pass
-
-
 def get_project_color(seed):
     material_colors = {}
     material_constants = pathlib.Path(__file__)
@@ -84,14 +80,7 @@ def get_vscode_settings():
         venv_path = pathlib.Path(venv_path) / "bin/python"
         python_settings = {
             "python.path": str(venv_path),
-            # Pylint
-            "python.linting.pylintEnabled": True,
-            # Flake8
-            "python.linting.flake8Enabled": True,
-            "python.linting.flake8Args": ["--ignore=E501"],
-            "python.linting.flake8Path": get_shell_output("which flake8"),
-            # Prospector
-            "python.linting.prospectorEnabled": False,
+            "python.linting.prospectorEnabled": True,
             "python.linting.prospectorPath": get_shell_output("which prospector"),
             "python.linting.prospectorArgs": [
                 "--profile-path",
