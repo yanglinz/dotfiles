@@ -1,9 +1,9 @@
 bungcip.better-toml
-eamodio.gitlens
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
+howardzuo.vscode-git-blamer
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 mauve.terraform
