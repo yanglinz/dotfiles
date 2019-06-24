@@ -1,11 +1,20 @@
 {
+  // General editor settings
   "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+
+  // Javacript
+  "javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Typescript
   "typescript.suggest.autoImports": false,
-  "javascript.suggest.autoImports": false,
+
+  // Prettier
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -15,6 +24,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.confirmDragAndDrop": false,
+
+  // Golang
   "go.useLanguageServer": true
 }
