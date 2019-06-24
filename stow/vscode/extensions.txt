@@ -1,4 +1,3 @@
-alefragnani.project-manager
 bungcip.better-toml
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
@@ -12,6 +11,7 @@ ms-python.python
 ms-vscode.Go
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
+streetsidesoftware.code-spell-checker
 swyphcosmo.spellchecker
 vscodevim.vim
 waderyan.gitblame
