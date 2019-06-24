@@ -74,12 +74,14 @@ def get_vscode_settings():
     }
 
     # Python settings
-    venv_path = get_shell_output("pipenv --venv")
-    venv_path = pathlib.Path(venv_path) / "bin/python"
-    python_settings = {
-        "python.path": str(venv_path),
-        "python.linting.pylintEnabled": True,
-    }
+    python_settings = {}
+    if has_pipenv():
+        venv_path = get_shell_output("pipenv --venv")
+        venv_path = pathlib.Path(venv_path) / "bin/python"
+        python_settings = {
+            "python.path": str(venv_path),
+            "python.linting.pylintEnabled": True,
+        }
 
     return {**color_settings, **python_settings}
 

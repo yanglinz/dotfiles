@@ -45,6 +45,11 @@
     "typescriptreact",
   ],
   "cSpell.words": [
+    // Python
+    "venv",
+    "pipenv",
+    "pylint",
+
     // PBS
     "mvod"
   ]
