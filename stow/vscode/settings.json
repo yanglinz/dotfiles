@@ -32,7 +32,6 @@
   // Golang
   "go.useLanguageServer": true,
 
-
   // Terraform
   "terraform.telemetry.enabled": false,
 
@@ -49,10 +48,12 @@
     "typescript",
     "typescriptreact"
   ],
-  "cSpell.words": [
-    "venv",
-    "pipenv",
-    "pylint",
-    "mvod"
-  ]
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    ".git",
+    "*rc",
+  ],
+  "cSpell.words": ["venv", "pipenv", "pylint", "mvod"]
 }
