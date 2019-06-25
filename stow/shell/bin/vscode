@@ -83,7 +83,7 @@ def get_vscode_settings():
             "python.linting.prospectorEnabled": True,
             "python.linting.prospectorPath": get_shell_output("which prospector"),
             "python.linting.prospectorArgs": [
-                "--profile-path",
+                "--profile",
                 "~/etc/.prospector.yaml",
             ],
         }
