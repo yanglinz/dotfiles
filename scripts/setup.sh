@@ -71,6 +71,11 @@ function setup_apt() {
   sudo apt-get install stow
 }
 
+function setup_pyenv() {
+  pyenv install -s 3.7.3
+  pyenv global 3.7.3
+}
+
 function setup() {
   setup_submodule
 
@@ -85,6 +90,7 @@ function setup() {
   setup_bash_it
   setup_nvm
   setup_rust
+  setup_pyenv
 }
 
 setup
