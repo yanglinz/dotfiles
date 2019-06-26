@@ -53,7 +53,11 @@ function setup_brew() {
   brew tap heroku/brew
   brew tap netlify/netlifyctl
 
-  brew bundle
+  if [[ -z "$CI" ]]; then
+    brew bundle
+  else
+    brew bundle --cask
+  fi
 }
 
 function setup_apt() {
