@@ -26,14 +26,14 @@ function setup_nvm() {
 
 function setup_rust() {
   echo "Setting up rust..."
-  if [[ ! -d ~/.cargo ]] && [[ -z "${CI-}" ]]; then
+  if [[ ! -d ~/.cargo ]] && [[ -z ${CI-}   ]]; then
     curl https://sh.rustup.rs -sSf | sh
   fi
 }
 
 function setup_poetry() {
   echo "Setting up poetry..."
-  if [[ ! -d ~/.poetry ]] && [[ -z "${CI-}" ]]; then
+  if [[ ! -d ~/.poetry ]] && [[ -z ${CI-}   ]]; then
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
   fi
 }
@@ -53,7 +53,7 @@ function setup_brew() {
   brew tap heroku/brew
   brew tap netlify/netlifyctl
 
-  if [[ -z "${CI-}" ]]; then
+  if [[ -z ${CI-}   ]]; then
     brew bundle
   else
     brew bundle --cask

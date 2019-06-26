@@ -82,10 +82,7 @@ def get_vscode_settings():
             "python.path": str(venv_path),
             "python.linting.prospectorEnabled": True,
             "python.linting.prospectorPath": get_shell_output("which prospector"),
-            "python.linting.prospectorArgs": [
-                "--profile",
-                "~/etc/.prospector.yaml",
-            ],
+            "python.linting.prospectorArgs": ["--profile", "~/etc/.prospector.yaml"],
         }
 
     return {**color_settings, **python_settings}
