@@ -41,20 +41,23 @@ def has_package_json():
 def get_project_color(seed):
     material_colors = {}
     material_constants = pathlib.Path(__file__)
-    material_constants = material_constants.parent / "material-colors.json"
+    material_constants = material_constants.parent / "vscode-colors.json"
     with material_constants.open() as f:
         material_colors = json.loads(f.read())
 
     colors = []
-    for _, v in material_colors.items():
+    skip = ("pink", "yellow")
+    for k, v in material_colors.items():
+        if k in skip:
+            continue
         colors.append(v.get("600"))
         colors.append(v.get("700"))
         colors.append(v.get("800"))
         colors.append(v.get("a700"))
     colors = sorted([c for c in colors if c])
 
-    index = naive_hash(seed) % len(colors)
-    return colors[index]
+    i = naive_hash(seed) % len(colors)
+    return colors[i]
 
 
 def get_vscode_settings():
@@ -71,12 +74,19 @@ def get_vscode_settings():
     }
 
     # Python settings
-    venv_path = get_shell_output("pipenv --venv")
-    venv_path = pathlib.Path(venv_path) / "bin/python"
-    python_settings = {
-        "python.path": str(venv_path),
-        "python.linting.pylintEnabled": True,
-    }
+    python_settings = {}
+    if has_pipenv():
+        venv_path = get_shell_output("pipenv --venv")
+        venv_path = pathlib.Path(venv_path) / "bin/python"
+        python_settings = {
+            "python.path": str(venv_path),
+            "python.linting.prospectorEnabled": True,
+            "python.linting.prospectorPath": get_shell_output("which prospector"),
+            "python.linting.prospectorArgs": [
+                "--profile",
+                "~/etc/.prospector.yaml",
+            ],
+        }
 
     return {**color_settings, **python_settings}
 

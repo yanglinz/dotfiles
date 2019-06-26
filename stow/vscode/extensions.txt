@@ -1,9 +1,9 @@
-alefragnani.project-manager
 bungcip.better-toml
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
+howardzuo.vscode-git-blamer
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 mauve.terraform
@@ -12,8 +12,8 @@ ms-python.python
 ms-vscode.Go
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
+streetsidesoftware.code-spell-checker
 swyphcosmo.spellchecker
 vscodevim.vim
-waderyan.gitblame
 william-voyek.vscode-nginx
 yzhang.markdown-all-in-one

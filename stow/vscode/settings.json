@@ -1,11 +1,21 @@
 {
+  // General editor settings
+  // https://code.visualstudio.com/docs/getstarted/settings
   "window.zoomLevel": 0,
+  "explorer.confirmDragAndDrop": false,
+  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+
+  // Javacript
+  "javascript.suggest.autoImports": false,
+  "javascript.updateImportsOnFileMove.enabled": "always",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // Typescript
   "typescript.suggest.autoImports": false,
-  "javascript.suggest.autoImports": false,
+
+  // Prettier
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -15,6 +25,35 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.confirmDragAndDrop": false,
-  "go.useLanguageServer": true
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Golang
+  "go.useLanguageServer": true,
+
+  // Terraform
+  "terraform.telemetry.enabled": false,
+
+  // Spellcheck
+  "cSpell.language": "en",
+  "cSpell.minWordLength": 4,
+  "cSpell.spellCheckDelayMs": 100,
+  "cSpell.enabledLanguageIds": [
+    "go",
+    "javascript",
+    "javascriptreact",
+    "markdown",
+    "python",
+    "typescript",
+    "typescriptreact"
+  ],
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "**/node_modules",
+    "**/node_modules/**",
+    ".git",
+    "*rc",
+  ],
+  "cSpell.words": ["venv", "pipenv", "pylint", "mvod"]
 }
