@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import argparse
 import json
 import pathlib
 import os
@@ -124,8 +125,18 @@ def get_vscode_settings():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Vscode project helper")
+    parser.add_argument("--write", action="store_true")
+    args = parser.parse_args()
+
     settings = get_vscode_settings()
-    print(json.dumps(settings, indent=4))
+    settings_json = json.dumps(settings, indent=4)
+    print(settings_json)
+
+    if args.write:
+        get_shell_output("mkdir -p .vscode")
+        get_shell_output("touch .vscode/settings.json")
+        pathlib.Path(".vscode/settings.json").write_text(settings_json)
 
 
 if __name__ == "__main__":
