@@ -44,7 +44,9 @@ export PATH=$HOME/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
-export PATH=$(pyenv root)/shims:$PATH
+
+# Load pyenv
+eval "$(pyenv init -)"
 
 # Load z
 eval "$(fasd --init auto)"
