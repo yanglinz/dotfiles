@@ -6,7 +6,7 @@ import subprocess
 import getpass
 from pathlib import Path
 
-from termcolor import cprint
+from .termcolor import cprint
 
 from scripts.utils import profile
 
