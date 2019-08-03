@@ -2,14 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-source scripts/utils/func.sh
-
-function setup_submodule() {
-  echo "Setting up submodule..."
-  git submodule init
-  git submodule update --recursive
-}
-
 function setup_bash_it() {
   echo "Setting up bash-it..."
   if [ ! -d ~/.bash_it ]; then
@@ -77,8 +69,6 @@ function setup_pyenv() {
 }
 
 function setup() {
-  setup_submodule
-
   [[ $OSTYPE == "darwin18"   ]] && setup_brew
 
   setup_bash_it
