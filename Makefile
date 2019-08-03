@@ -1,8 +1,7 @@
 .PHONY: setup
 setup: 
-	@./scripts/macos.sh
-	@pipenv install
 	@./bootstrap/init.sh
+	@./bootstrap/macos.sh
 
 .PHONY: link
 link:
