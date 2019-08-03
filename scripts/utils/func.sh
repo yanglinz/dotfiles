@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-function is_macos() {
-  ./scripts/utils/osname.py | grep -q "Darwin"
-}
-
-function is_linux() {
-  ./scripts/utils/osname.py | grep -q "Linux"
-}
-
 function is_work_profile() {
   ./scripts/utils/profile.py | grep -q "profile:work"
 }

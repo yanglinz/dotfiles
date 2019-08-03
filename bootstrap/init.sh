@@ -79,13 +79,7 @@ function setup_pyenv() {
 function setup() {
   setup_submodule
 
-  if is_macos; then
-    setup_brew
-  fi
-
-  if is_linux; then
-    setup_apt
-  fi
+  [[ $OSTYPE == "darwin18"   ]] && setup_brew
 
   setup_bash_it
   setup_nvm
