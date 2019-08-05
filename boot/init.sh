@@ -45,7 +45,7 @@ function setup_brew() {
   brew tap heroku/brew
   brew tap netlify/netlifyctl
 
-  if [[ -z ${CI-}   ]]; then
+  if [[ -z ${CI-} ]]; then
     brew bundle
   else
     brew bundle --cask
@@ -64,8 +64,12 @@ function setup_apt() {
 }
 
 function setup_pyenv() {
-  pyenv install -s 3.7.3
-  pyenv global 3.7.3
+  echo "Setting up pyenv"
+
+  if [[ -z ${CI-} ]]; then
+    pyenv install -s 3.7.3
+    pyenv global 3.7.3
+  fi
 }
 
 function setup() {

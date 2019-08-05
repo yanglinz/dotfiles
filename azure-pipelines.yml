@@ -13,10 +13,10 @@ steps:
     # Azure already has brew installed, and we need to
     # unlink the existing node package first before we run setup
     brew unlink node@6
-    ./scripts/setup.sh
+    ./boot/init.sh
 
 # Run initial setup
-- script: ./scripts/setup.sh
+- script: ./boot/init.sh
 
 # Run linting
 - script: make check
