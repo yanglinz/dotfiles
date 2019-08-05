@@ -1,6 +1,5 @@
 .PHONY: setup
 setup: 
-	@./bootstrap/repo.sh
 	@./bootstrap/init.sh
 	@./bootstrap/macos.sh
 
