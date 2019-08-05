@@ -15,8 +15,8 @@ steps:
     brew unlink node@6
     ./boot/init.sh
 
-# Run initial setup
-- script: ./boot/init.sh
+# Install dependencies
+- script: brew bundle
 
 # Run linting
 - script: make check

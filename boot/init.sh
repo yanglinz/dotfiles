@@ -36,15 +36,6 @@ function setup_brew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  echo "Setting up brew bundles..."
-  brew tap homebrew/core
-  brew tap homebrew/services
-  brew tap homebrew/bundle
-  brew tap homebrew/cask
-  brew tap homebrew/cask-versions
-  brew tap heroku/brew
-  brew tap netlify/netlifyctl
-
   if [[ -z ${CI-} ]]; then
     brew bundle
   else
@@ -54,7 +45,6 @@ function setup_brew() {
 
 function setup_apt() {
   echo "Setting up apt"
-
   sudo apt-get update
   sudo apt-get install dos2unix
   sudo apt-get install fish
@@ -65,7 +55,6 @@ function setup_apt() {
 
 function setup_pyenv() {
   echo "Setting up pyenv"
-
   if [[ -z ${CI-} ]]; then
     pyenv install -s 3.7.3
     pyenv global 3.7.3
