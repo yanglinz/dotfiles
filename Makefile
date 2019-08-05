@@ -1,7 +1,7 @@
 .PHONY: setup
 setup: 
-	@./bootstrap/init.sh
-	@./bootstrap/macos.sh
+	@./boot/init.sh
+	@./boot/macos.sh
 
 .PHONY: link
 link:
