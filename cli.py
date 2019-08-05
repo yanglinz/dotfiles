@@ -2,7 +2,7 @@
 
 import click
 
-from scripts import stow
+from lib import stow
 
 
 @click.group()
