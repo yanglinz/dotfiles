@@ -46,8 +46,8 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
 # Load bash completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] \
-  && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] &&
+  .    "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Load pyenv
 eval "$(pyenv init -)"

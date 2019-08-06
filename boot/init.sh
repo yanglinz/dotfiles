@@ -2,14 +2,6 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-source scripts/utils/func.sh
-
-function setup_submodule() {
-  echo "Setting up submodule..."
-  git submodule init
-  git submodule update --recursive
-}
-
 function setup_bash_it() {
   echo "Setting up bash-it..."
   if [ ! -d ~/.bash_it ]; then
@@ -26,14 +18,14 @@ function setup_nvm() {
 
 function setup_rust() {
   echo "Setting up rust..."
-  if [[ ! -d ~/.cargo ]] && [[ -z ${CI-}   ]]; then
+  if [[ ! -d ~/.cargo ]] && [[ -z ${CI-} ]]; then
     curl https://sh.rustup.rs -sSf | sh
   fi
 }
 
 function setup_poetry() {
   echo "Setting up poetry..."
-  if [[ ! -d ~/.poetry ]] && [[ -z ${CI-}   ]]; then
+  if [[ ! -d ~/.poetry ]] && [[ -z ${CI-} ]]; then
     curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
   fi
 }
@@ -44,16 +36,7 @@ function setup_brew() {
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  echo "Setting up brew bundles..."
-  brew tap homebrew/core
-  brew tap homebrew/services
-  brew tap homebrew/bundle
-  brew tap homebrew/cask
-  brew tap homebrew/cask-versions
-  brew tap heroku/brew
-  brew tap netlify/netlifyctl
-
-  if [[ -z ${CI-}   ]]; then
+  if [[ -z ${CI-} ]]; then
     brew bundle
   else
     brew bundle --cask
@@ -62,7 +45,6 @@ function setup_brew() {
 
 function setup_apt() {
   echo "Setting up apt"
-
   sudo apt-get update
   sudo apt-get install dos2unix
   sudo apt-get install fish
@@ -72,20 +54,15 @@ function setup_apt() {
 }
 
 function setup_pyenv() {
-  pyenv install -s 3.7.3
-  pyenv global 3.7.3
+  echo "Setting up pyenv"
+  if [[ -z ${CI-} ]]; then
+    pyenv install -s 3.7.3
+    pyenv global 3.7.3
+  fi
 }
 
 function setup() {
-  setup_submodule
-
-  if is_macos; then
-    setup_brew
-  fi
-
-  if is_linux; then
-    setup_apt
-  fi
+  [[ $OSTYPE == "darwin18"   ]] && setup_brew
 
   setup_bash_it
   setup_nvm

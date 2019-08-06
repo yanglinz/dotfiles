@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-source scripts/utils/func.sh
-
 # Taken most from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 function setup_osx() {
@@ -58,6 +56,4 @@ function setup_osx() {
   done
 }
 
-if is_macos; then
-  setup_osx
-fi
+[[ $OSTYPE == "darwin18"   ]] && setup_osx
