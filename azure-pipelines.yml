@@ -16,7 +16,11 @@ steps:
     ./boot/init.sh
 
 # Install dependencies
-- script: brew bundle
+- script: |
+    # Remove cask entries first
+    cat Brewfile | grep -vE "cask " > Brewfile.alt
+    mv Brewfile.alt Brewfile
+    brew bundle
 
 # Run linting
 - script: make check
