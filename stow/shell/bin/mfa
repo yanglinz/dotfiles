@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-# ~/Dev/mfa/mfa.sh "$@"
-echo "Use redyl for now"
+~/Dev/mfa/mfa.sh "$@"
