@@ -2,6 +2,19 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+function setup_brew() {
+  echo "Setting up brew..."
+  if ! [ -x "$(command -v brew)" ]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+
+  if [[ -z ${CI-} ]]; then
+    brew bundle
+  else
+    brew bundle --cask
+  fi
+}
+
 function setup_bash_it() {
   echo "Setting up bash-it..."
   if [ ! -d ~/.bash_it ]; then
@@ -30,19 +43,6 @@ function setup_poetry() {
   fi
 }
 
-function setup_brew() {
-  echo "Setting up brew..."
-  if ! [ -x "$(command -v brew)" ]; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  fi
-
-  if [[ -z ${CI-} ]]; then
-    brew bundle
-  else
-    brew bundle --cask
-  fi
-}
-
 function setup_apt() {
   echo "Setting up apt"
   sudo apt-get update
@@ -62,7 +62,7 @@ function setup_pyenv() {
 }
 
 function setup() {
-  [[ $OSTYPE == "darwin18"   ]] && setup_brew
+  [[ $OSTYPE == "darwin18" ]] && setup_brew
 
   setup_bash_it
   setup_nvm
