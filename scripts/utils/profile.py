@@ -8,11 +8,7 @@ PROFILE_PERSONAL = "profile:personal"
 
 def get_profile():
     username = getpass.getuser()
-    profile_by_user = {
-        "y0z04ss": PROFILE_WORK,
-        "yzhao": PROFILE_WORK,
-        "sheep": PROFILE_PERSONAL,
-    }
+    profile_by_user = {"yzhao": PROFILE_WORK, "sheep": PROFILE_PERSONAL}
     return profile_by_user.get(username) or PROFILE_PERSONAL
 
 

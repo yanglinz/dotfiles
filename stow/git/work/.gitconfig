@@ -1,6 +1,0 @@
-[user]
-	name = Yanglin Zhao
-	email = yz1876@gmail.com
-[core]
-	editor = vim
-	excludesfile = ~/.gitignore_global

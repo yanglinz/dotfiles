@@ -22,19 +22,8 @@ source_to_targets = {
     # will apply the target to.
     "stow/shell": HOME_PATH,
     "stow/vim": HOME_PATH,
+    "stow/git": HOME_PATH,
     "stow/vscode": VS_CODE_PATH,
-}
-
-personal_targets = {
-    # Personal targets are an extension to source_to_targets
-    # that only applies to personal profiles/machines.
-    "stow/git/personal": HOME_PATH
-}
-
-work_targets = {
-    # Work targets are an extension to source_to_targets
-    # that only applies to work profiles/machines.
-    "stow/git/work": HOME_PATH
 }
 
 
@@ -46,16 +35,6 @@ def working_directory(path):
         yield
     finally:
         os.chdir(str(prev_cwd))
-
-
-def get_targets(p=profile.get_profile()):
-    all_targets = {}
-    if p == profile.PROFILE_PERSONAL:
-        all_targets = {**source_to_targets, **personal_targets}
-    if p == profile.PROFILE_WORK:
-        all_targets = {**source_to_targets, **work_targets}
-
-    return all_targets
 
 
 def stow_target(source, target, unlink=False):
@@ -98,13 +77,11 @@ def ensure_cwd():
 
 def link_targets():
     ensure_cwd()
-
-    for source, target in get_targets().items():
+    for source, target in source_to_targets.items():
         stow_target(source, target)
 
 
 def unlink_targets():
     ensure_cwd()
-
-    for source, target in get_targets().items():
+    for source, target in source_to_targets.items():
         stow_target(source, target, unlink=True)
