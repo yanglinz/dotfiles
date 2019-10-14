@@ -66,8 +66,7 @@ def ensure_cwd():
     required_names = {
         "scripts",
         "stow",
-        "sync-root",
-        "sync-home",
+        "configs",
         "Makefile",
         "Pipfile",
         "cli.py",
