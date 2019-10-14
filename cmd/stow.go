@@ -5,13 +5,13 @@ import (
 	"github.com/yanglinz/dotfiles/internal"
 )
 
-var linkCmd = &cobra.Command{
-	Use:   "link",
-	Short: "Link stow",
-	Long:  "Link stow",
+var stowCmd = &cobra.Command{
+	Use:   "stow",
+	Short: "Stow symlinks",
+	Long:  "Stow symlinks",
 	Run: func(cmd *cobra.Command, args []string) {
 
-		err := internal.EnsureCWD()
+		err := internal.StowAll()
 		if err != nil {
 			panic(err)
 		}
@@ -19,5 +19,5 @@ var linkCmd = &cobra.Command{
 }
 
 func init() {
-	rootCmd.AddCommand(linkCmd)
+	rootCmd.AddCommand(stowCmd)
 }

@@ -9,8 +9,23 @@ import (
 	"github.com/fatih/color"
 )
 
-// EnsureCWD makes sure we're in the correct cwd when stowing files
-func EnsureCWD() error {
+type stowLink struct {
+	Source string
+	Target string
+}
+
+func getLinks() []stowLink {
+	home, _ := os.UserHomeDir()
+	links := []stowLink{
+		stowLink{Source: "git", Target: home},
+		stowLink{Source: "shell", Target: home},
+		stowLink{Source: "vim", Target: home},
+	}
+	return links
+}
+
+// checkCWD makes sure we're in the correct cwd when stowing files
+func checkCWD() error {
 	dir, err := os.Getwd()
 	if err != nil {
 		return err
@@ -44,11 +59,28 @@ func EnsureCWD() error {
 	return nil
 }
 
-// Stow files
-func Stow(source string, target string) error {
-	c := color.New(color.FgGreen)
-	c.Printf("Linking %s to %s \n", source, target)
-	command := fmt.Sprintf("stow -t %s %s", target, source)
+// stow source to target
+func stow(link stowLink) error {
+	formatter := color.New(color.FgGreen)
+	formatter.Printf("Linking %s to %s \n", link.Source, link.Target)
+
+	command := fmt.Sprintf("stow -t %s %s", link.Target, link.Source)
+	c := GetCommand(command)
+	c.Dir = "stow"
+	err := c.Run()
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// unstow source from target
+func unstow(link stowLink) error {
+	c := color.New(color.FgRed)
+	c.Printf("Unlinking %s from %s \n", link.Source, link.Target)
+	command := fmt.Sprintf("stow -t %s -D %s", link.Target, link.Source)
 	err := RunCommand(command)
 	if err != nil {
 		return err
@@ -57,14 +89,31 @@ func Stow(source string, target string) error {
 	return nil
 }
 
-// Unstow files
-func Unstow(source string, target string) error {
-	c := color.New(color.FgRed)
-	c.Printf("Unlinking %s from %s \n", source, target)
-	command := fmt.Sprintf("stow -t %s -D %s", target, source)
-	err := RunCommand(command)
-	if err != nil {
-		return err
+// StowAll sources to targets
+func StowAll() error {
+	checkCWD()
+
+	links := getLinks()
+	for _, link := range links {
+		err := stow(link)
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+// UnstowAll sources from targets
+func UnstowAll() error {
+	checkCWD()
+
+	links := getLinks()
+	for _, link := range links {
+		err := unstow(link)
+		if err != nil {
+			return err
+		}
 	}
 
 	return nil

@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-// RunCommand runs a shell command in cwd
-func RunCommand(command string) error {
+// GetCommand returns a exec cmd
+func GetCommand(command string) *exec.Cmd {
 	commandList := strings.Split(command, " ")
 	first := commandList[0]
 	rest := commandList[1:]
@@ -18,6 +18,12 @@ func RunCommand(command string) error {
 	c.Stdin = os.Stdin
 	c.Stderr = os.Stderr
 
+	return c
+}
+
+// RunCommand runs a shell command in cwd
+func RunCommand(command string) error {
+	c := GetCommand(command)
 	err := c.Run()
 	if err != nil {
 		return err
