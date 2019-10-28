@@ -78,10 +78,13 @@ func stow(link stowLink) error {
 
 // unstow source from target
 func unstow(link stowLink) error {
-	c := color.New(color.FgRed)
-	c.Printf("Unlinking %s from %s \n", link.Source, link.Target)
+	formatter := color.New(color.FgRed)
+	formatter.Printf("Unlinking %s from %s \n", link.Source, link.Target)
+
 	command := fmt.Sprintf("stow -t %s -D %s", link.Target, link.Source)
-	err := RunCommand(command)
+	c := GetCommand(command)
+	c.Dir = "stow"
+	err := c.Run()
 	if err != nil {
 		return err
 	}
