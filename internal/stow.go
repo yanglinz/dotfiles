@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"os/user"
 
 	"github.com/fatih/color"
 )
@@ -15,11 +16,14 @@ type stowLink struct {
 }
 
 func getLinks() []stowLink {
-	home, _ := os.UserHomeDir()
+	currentUser, _ := user.Current()
+	homeDir, _ := os.UserHomeDir()
+	vscodeDir := fmt.Sprintf("/Users/%s/Library/ApplicationSupport/Code/User", currentUser.Username)
 	links := []stowLink{
-		stowLink{Source: "git", Target: home},
-		stowLink{Source: "shell", Target: home},
-		stowLink{Source: "vim", Target: home},
+		stowLink{Source: "git", Target: homeDir},
+		stowLink{Source: "shell", Target: homeDir},
+		stowLink{Source: "vim", Target: homeDir},
+		stowLink{Source: "vscode", Target: vscodeDir},
 	}
 	return links
 }
