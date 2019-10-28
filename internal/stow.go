@@ -24,8 +24,8 @@ func getLinks() []stowLink {
 	return links
 }
 
-// checkCWD makes sure we're in the correct cwd when stowing files
-func checkCWD() error {
+// checkContext makes sure we're stowing the right files
+func checkContext() error {
 	dir, err := os.Getwd()
 	if err != nil {
 		return err
@@ -91,7 +91,7 @@ func unstow(link stowLink) error {
 
 // StowAll sources to targets
 func StowAll() error {
-	checkCWD()
+	checkContext()
 
 	links := getLinks()
 	for _, link := range links {
@@ -106,7 +106,7 @@ func StowAll() error {
 
 // UnstowAll sources from targets
 func UnstowAll() error {
-	checkCWD()
+	checkContext()
 
 	links := getLinks()
 	for _, link := range links {
