@@ -10,7 +10,6 @@ var stowCmd = &cobra.Command{
 	Short: "Stow symlinks",
 	Long:  "Stow symlinks",
 	Run: func(cmd *cobra.Command, args []string) {
-
 		err := internal.StowAll()
 		if err != nil {
 			panic(err)
