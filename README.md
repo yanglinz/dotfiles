@@ -23,7 +23,7 @@ make link
 Next, we need to configure iTerm to load its default configuration from our newly linked `~/.iterm` directory.
 
 ```
-Preferences -> Load preferenes from custom folder or URL
+Preferences -> Load preferences from custom folder or URL
 ```
 
 ## Thanks
