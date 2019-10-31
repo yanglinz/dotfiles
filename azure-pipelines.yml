@@ -26,8 +26,7 @@ steps:
 - script: make check
 
 # Run dotfile linking
-- script: pipenv install
-- script: pipenv run ./cli.py link
-- script: pipenv run ./cli.py unlink
-- script: pipenv run ./cli.py link
+# - script: pipenv run ./cli.py link
+# - script: pipenv run ./cli.py unlink
+# - script: pipenv run ./cli.py link
 - script: ./scripts/sync.sh --force
