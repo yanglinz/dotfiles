@@ -63,5 +63,23 @@
     ".git",
     "*rc"
   ],
-  "cSpell.words": ["venv", "pipenv", "pylint", "mvod"]
+  "cSpell.userWords": [
+    // General
+    "yanglin",
+    "zhao",
+
+    // Software
+    "dotfile",
+    "dotfiles",
+    "iterm",
+    "macos",
+
+    // Work related domain terms
+    "mvod",
+
+    // Python
+    "pylint",
+    "pipenv",
+    "venv"
+  ]
 }
