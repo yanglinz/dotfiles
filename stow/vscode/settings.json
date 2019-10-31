@@ -5,6 +5,11 @@
   "explorer.confirmDragAndDrop": false,
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
+  // Custom file associations
+  "files.associations": {
+    "*.Jenkinsfile": "groovy"
+  },
+
   // Javacript
   "javascript.suggest.autoImports": false,
   "javascript.updateImportsOnFileMove.enabled": "always",
