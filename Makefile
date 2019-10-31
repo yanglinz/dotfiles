@@ -5,12 +5,12 @@ setup:
 
 .PHONY: link
 link:
-	@pipenv run ./cli.py link
+	@go run main.go stow
 	@./scripts/sync.sh
 
 .PHONY: unlink
 unlink:
-	@pipenv run ./cli.py unlink
+	@go run main.go unstow
 
 .PHONY: reconcile
 reconcile:
