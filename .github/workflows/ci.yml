@@ -5,6 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: macos-10.14
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v1
       - name: Run setup 
