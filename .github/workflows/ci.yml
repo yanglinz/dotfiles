@@ -7,19 +7,13 @@ jobs:
     runs-on: macos-10.14
     steps:
       - uses: actions/checkout@v1
-      - name: Setup environment
+      - name: Run setup 
         run: |
           brew list
           # Actions VMs already has brew installed, and we need to
           # unlink the existing node package first before we run setup
           brew unlink node@6
           ./boot/init.sh
-      - name: Install dependencies
-        run: |
-          # Remove cask entries first
-          cat Brewfile | grep -vE "cask " > Brewfile.alt
-          mv Brewfile.alt Brewfile
-          brew bundle
       - name: Run linters
         run: make check
       - name: Test linking and syncing

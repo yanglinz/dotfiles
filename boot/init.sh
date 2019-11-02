@@ -11,7 +11,10 @@ function setup_brew() {
   if [[ -z ${CI-} ]]; then
     brew bundle
   else
-    brew bundle --cask
+    # Install everything but the cask entries
+    cat Brewfile | grep -vE "cask " > Brewfile.alt
+    mv Brewfile.alt Brewfile
+    brew bundle
   fi
 }
 
