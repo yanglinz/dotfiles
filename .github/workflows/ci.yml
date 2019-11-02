@@ -3,6 +3,14 @@ name: Continuous Integration
 on: [push]
 
 jobs:
+  test:
+    runs-on: macos-10.14
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v1
+      - name: 
+        run: make check
   build:
     runs-on: macos-10.14
     env:
@@ -16,7 +24,5 @@ jobs:
           # unlink the existing node package first before we run setup
           brew unlink node@6
           ./boot/init.sh
-      - name: Run linters
-        run: make check
       - name: Test linking and syncing
         run: ./scripts/sync.sh --force
