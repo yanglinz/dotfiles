@@ -1,15 +1,28 @@
-name: CI
+name: Continuous Integration
 
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: macos-10.14
+    env:
+      CI: true
     steps:
-    - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+      - uses: actions/checkout@v1
+      - name: 
+        run: make check || true
+  build:
+    runs-on: macos-10.14
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run setup 
+        run: |
+          brew list
+          # Actions VMs already has brew installed, and we need to
+          # unlink the existing node package first before we run setup
+          brew unlink node@6
+          ./boot/init.sh
+      - name: Test linking and syncing
+        run: ./scripts/sync.sh --force
