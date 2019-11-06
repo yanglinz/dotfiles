@@ -12,6 +12,7 @@ function setup_brew() {
     brew bundle
   else
     # Install everything but the cask entries
+    echo "Setting up brew without cask"
     cat Brewfile | grep -vE "cask " > Brewfile.alt
     mv Brewfile.alt Brewfile
     brew bundle
@@ -65,8 +66,7 @@ function setup_pyenv() {
 }
 
 function setup() {
-  [[ $OSTYPE == "darwin18" ]] && setup_brew
-
+  setup_brew
   setup_bash_it
   setup_nvm
   setup_rust

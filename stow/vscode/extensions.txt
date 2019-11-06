@@ -1,3 +1,4 @@
+4ops.terraform
 bungcip.better-toml
 EditorConfig.EditorConfig
 esbenp.prettier-vscode

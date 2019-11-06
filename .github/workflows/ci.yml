@@ -9,20 +9,12 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@v1
-      - name: 
-        run: make check || true
+      - run: make check || true
   build:
     runs-on: macos-10.14
     env:
       CI: true
     steps:
       - uses: actions/checkout@v1
-      - name: Run setup 
-        run: |
-          brew list
-          # Actions VMs already has brew installed, and we need to
-          # unlink the existing node package first before we run setup
-          brew unlink node@6
-          ./boot/init.sh
-      - name: Test linking and syncing
-        run: ./scripts/sync.sh --force
+      - run: brew list
+      - run: ./boot/init.sh
