@@ -18,5 +18,4 @@ jobs:
       - uses: actions/checkout@v1
       - run: brew list
       - run: ./boot/init.sh
-      - run: sudo apt-get install rsync
       - run: ./scripts/sync.sh --force

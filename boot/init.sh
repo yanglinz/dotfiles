@@ -66,8 +66,7 @@ function setup_pyenv() {
 }
 
 function setup() {
-  [[ $OSTYPE == "darwin18" ]] && setup_brew
-
+  setup_brew
   setup_bash_it
   setup_nvm
   setup_rust
