@@ -20,9 +20,6 @@ jobs:
       - name: Run setup 
         run: |
           brew list
-          # Actions VMs already has brew installed, and we need to
-          # unlink the existing node package first before we run setup
-          brew unlink node@6
           ./boot/init.sh
       - name: Test linking and syncing
         run: ./scripts/sync.sh --force
