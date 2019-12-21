@@ -33,6 +33,13 @@ function setup_nvm() {
   fi
 }
 
+function setup_yarn() {
+  echo "Setting up yarn..."
+  if ! [ -x "$(command -v yarn)" ]; then
+    curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.21.1
+  fi
+}
+
 function setup_rust() {
   echo "Setting up rust..."
   if [[ ! -d ~/.cargo ]] && [[ -z ${CI-} ]]; then
@@ -69,6 +76,7 @@ function setup() {
   setup_brew
   setup_bash_it
   setup_nvm
+  setup_yarn
   setup_rust
   setup_pyenv
 }
