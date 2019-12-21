@@ -72,8 +72,11 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 # Golang
 export GOPATH=$HOME/go
 
-# Alias
+# Output color listing directories
 alias ls="ls -G"  # output color
+
+# Make brew play nice with pyenv
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 
 # Display an ascii art
 echo "                  "
