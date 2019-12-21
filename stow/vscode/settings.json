@@ -90,6 +90,8 @@
 
     // Work related domain terms
     "mvod",
+    "interstitial",
+    "interstitials",
 
     // Python
     "pylint",
