@@ -50,7 +50,8 @@ export PATH=$HOME/.poetry/bin:$PATH
   . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Load pyenv
-eval "$(pyenv init -)"
+# Disable pyenv for now
+# eval "$(pyenv init -)"
 
 # Load z
 eval "$(fasd --init auto)"
