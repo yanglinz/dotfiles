@@ -7,7 +7,7 @@ esac
 # Path to the bash it configuration
 export BASH_IT="${HOME}/.bash_it"
 
-# Lock and Load a custom theme file.
+# Lock and load a custom theme file.
 # location /.bash_it/themes/
 export BASH_IT_THEME="pure"
 export THEME_SHOW_CLOCK_CHAR=false
@@ -35,7 +35,7 @@ export SHORT_TERM_LINE=true
 # after enabling or disabling aliases, plugins, and completions.
 export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 
-# Load Bash It
+# Load bash-it
 source "$BASH_IT"/bash_it.sh
 
 # Add to PATH
@@ -96,6 +96,14 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load yarn
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Load gogle cloud sdk
+if [ -f "~/google-cloud-sdk/path.bash.inc" ]; then 
+  . "~/google-cloud-sdk/path.bash.inc"
+fi
+if [ -f "~/google-cloud-sdk/completion.bash.inc" ]; then 
+  . "//google-cloud-sdk/completion.bash.inc"
+fi
 
 # AWS
 # https://github.com/apex/apex/issues/426#issuecomment-290307874
