@@ -91,14 +91,6 @@ echo "      '----- (O.o)"
 echo "             (> <)"
 echo "                  "
 
-# Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Load yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # Load gogle cloud sdk
 if [ -f "~/google-cloud-sdk/path.bash.inc" ]; then 
   . "~/google-cloud-sdk/path.bash.inc"
