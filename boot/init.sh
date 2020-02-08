@@ -40,6 +40,13 @@ function setup_yarn() {
   fi
 }
 
+function setup_volta() {
+  echo "Setting up volta..."
+  if ! [ -x "$(command -v volta)" ]; then
+    curl https://get.volta.sh | bash
+  fi
+}
+
 function setup_rust() {
   echo "Setting up rust..."
   if [[ ! -d ~/.cargo ]] && [[ -z ${CI-} ]]; then
@@ -77,6 +84,7 @@ function setup() {
   setup_bash_it
   setup_nvm
   setup_yarn
+  setup_volta
   setup_rust
   setup_pyenv
 }
