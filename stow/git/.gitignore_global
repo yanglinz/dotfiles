@@ -9,3 +9,6 @@
 
 # python
 .venv
+
+# tools
+.envrc

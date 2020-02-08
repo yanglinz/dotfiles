@@ -55,6 +55,9 @@ eval "$(pyenv init -)"
 # Load z
 eval "$(fasd --init auto)"
 
+# Load autoenv
+eval "$(direnv hook bash)"
+
 # Load hstr
 alias hh=hstr
 export HSTR_CONFIG=hicolor
