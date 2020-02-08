@@ -61,16 +61,6 @@ function setup_poetry() {
   fi
 }
 
-function setup_apt() {
-  echo "Setting up apt"
-  sudo apt-get update
-  sudo apt-get install dos2unix
-  sudo apt-get install fish
-  sudo apt-get install tmux
-  sudo apt-get install zsh
-  sudo apt-get install stow
-}
-
 function setup_pyenv() {
   echo "Setting up pyenv"
   if [[ -z ${CI-} ]]; then
