@@ -26,20 +26,6 @@ function setup_bash_it() {
   fi
 }
 
-function setup_nvm() {
-  echo "Setting up nvm..."
-  if [ ! -d ~/.nvm ]; then
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
-  fi
-}
-
-function setup_yarn() {
-  echo "Setting up yarn..."
-  if ! [ -x "$(command -v yarn)" ]; then
-    curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.21.1
-  fi
-}
-
 function setup_volta() {
   echo "Setting up volta..."
   if ! [ -x "$(command -v volta)" ]; then
@@ -72,8 +58,6 @@ function setup_pyenv() {
 function setup() {
   setup_brew
   setup_bash_it
-  setup_nvm
-  setup_yarn
   setup_volta
   setup_rust
   setup_pyenv
