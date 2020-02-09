@@ -13,7 +13,7 @@ function setup_brew() {
   else
     # Install everything but the cask entries
     echo "Setting up brew without cask"
-    cat Brewfile | grep -vE "cask " > Brewfile.alt
+    cat Brewfile | grep -vE "cask " >Brewfile.alt
     mv Brewfile.alt Brewfile
     brew bundle
   fi
@@ -55,12 +55,22 @@ function setup_pyenv() {
   fi
 }
 
+function setup_code_extension() {
+  echo "Setting up code extensions..."
+  if [[ -z ${CI-} ]]; then
+    cat "$(dirname $0)/../stow/vscode/extensions.txt" | while read extension; do
+      code --install-extension $extension
+    done
+  fi
+}
+
 function setup() {
   setup_brew
   setup_bash_it
   setup_volta
   setup_rust
   setup_pyenv
+  setup_code_extension
 }
 
 setup

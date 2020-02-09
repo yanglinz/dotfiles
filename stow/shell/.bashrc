@@ -80,7 +80,7 @@ eval "$(direnv hook bash)"
 
 # Initialize Volta
 export VOLTA_HOME="$HOME/.volta"
-grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
+grep --silent "$VOLTA_HOME/bin" <<<$PATH  || export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Load gogle cloud sdk
 [[ -r "~/google-cloud-sdk/path.bash.inc" ]] &&
@@ -101,3 +101,6 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # If this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+
+# Create some aliases
+alias dc="docker-compose"

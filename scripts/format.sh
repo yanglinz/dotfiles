@@ -11,7 +11,6 @@ sh_manual_targets=(
   git-cloc
   git-lg
   insecure-chrome
-  mfa
   sdns
   port-usage
   bash_profile
