@@ -80,7 +80,7 @@ eval "$(direnv hook bash)"
 
 # Initialize Volta
 export VOLTA_HOME="$HOME/.volta"
-grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
+grep --silent "$VOLTA_HOME/bin" <<<$PATH  || export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Load gogle cloud sdk
 [[ -r "~/google-cloud-sdk/path.bash.inc" ]] &&

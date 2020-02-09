@@ -13,7 +13,7 @@ function setup_brew() {
   else
     # Install everything but the cask entries
     echo "Setting up brew without cask"
-    cat Brewfile | grep -vE "cask " > Brewfile.alt
+    cat Brewfile | grep -vE "cask " >Brewfile.alt
     mv Brewfile.alt Brewfile
     brew bundle
   fi
