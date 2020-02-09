@@ -15,7 +15,6 @@ unlink:
 .PHONY: reconcile
 reconcile:
 	@brew bundle dump --force
-	@pip freeze > stow/shell/etc/tools.requirements.txt
 	@code --list-extensions >./stow/vscode/extensions.txt
 	@cp ~/.iterm/com.googlecode.iterm2.plist configs/home/.iterm/
 
