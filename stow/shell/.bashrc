@@ -4,7 +4,7 @@ case $- in
   *)   return ;;
 esac
 
-# Path to the bash it configuration
+# Setup bash-it
 export BASH_IT="${HOME}/.bash_it"
 
 # Lock and load a custom theme file.
@@ -38,6 +38,16 @@ export BASH_IT_AUTOMATIC_RELOAD_AFTER_CONFIG_CHANGE=1
 # Load bash-it
 source "$BASH_IT"/bash_it.sh
 
+# Display an ascii art
+echo "                  "
+echo "  .-------.       "
+echo "  |  Hi   |       "
+echo "  '-------'       "
+echo "      ^      (\_/)"
+echo "      '----- (O.o)"
+echo "             (> <)"
+echo "                  "
+
 # Add to PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
@@ -45,20 +55,40 @@ export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
+# Output color listing directories
+alias ls="ls -G"  # output color
+
 # Load bash completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] &&
   . "/usr/local/etc/profile.d/bash_completion.sh"
 
-# Load pyenv
-eval "$(pyenv init -)"
+# Setup Go environment variables
+export GOPATH=$HOME/go
+# https://github.com/apex/apex/issues/426#issuecomment-290307874
+export AWS_SDK_LOAD_CONFIG=true
 
-# Load z
+# Initialize pyenv
+eval "$(pyenv init -)"
+# Make brew play nice with pyenv
+alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
+
+# Initialize z
 eval "$(fasd --init auto)"
 
-# Load autoenv
+# Initialize autoenv
 eval "$(direnv hook bash)"
 
-# Load hstr
+# Initialize Volta
+export VOLTA_HOME="$HOME/.volta"
+grep --silent "$VOLTA_HOME/bin" <<< $PATH || export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Load gogle cloud sdk
+[[ -r "~/google-cloud-sdk/path.bash.inc" ]] &&
+  . "~/google-cloud-sdk/path.bash.inc"
+[[ -r "~/google-cloud-sdk/completion.bash.inc" ]] &&
+  . "~/google-cloud-sdk/completion.bash.inc"
+
+# Setup hstr
 alias hh=hstr
 export HSTR_CONFIG=hicolor
 shopt -s histappend
@@ -71,34 +101,3 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # If this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
-
-# Golang
-export GOPATH=$HOME/go
-
-# Output color listing directories
-alias ls="ls -G"  # output color
-
-# Make brew play nice with pyenv
-alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
-
-# Display an ascii art
-echo "                  "
-echo "  .-------.       "
-echo "  |  Hi   |       "
-echo "  '-------'       "
-echo "      ^      (\_/)"
-echo "      '----- (O.o)"
-echo "             (> <)"
-echo "                  "
-
-# Load gogle cloud sdk
-if [ -f "~/google-cloud-sdk/path.bash.inc" ]; then 
-  . "~/google-cloud-sdk/path.bash.inc"
-fi
-if [ -f "~/google-cloud-sdk/completion.bash.inc" ]; then 
-  . "//google-cloud-sdk/completion.bash.inc"
-fi
-
-# AWS
-# https://github.com/apex/apex/issues/426#issuecomment-290307874
-export AWS_SDK_LOAD_CONFIG=true
