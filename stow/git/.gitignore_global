@@ -12,3 +12,6 @@
 
 # tools
 .envrc
+
+# temporary stash
+.stash
