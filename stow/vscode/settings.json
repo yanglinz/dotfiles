@@ -3,6 +3,7 @@
   // https://code.visualstudio.com/docs/getstarted/settings
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // Custom file associations
@@ -22,9 +23,6 @@
 
   // Golang
   "go.useLanguageServer": true,
-
-  // Terraform
-  "terraform.telemetry.enabled": false,
 
   // Prettier
   "[html]": {
@@ -50,6 +48,7 @@
   },
 
   // Terraform
+  "terraform.telemetry.enabled": false,
   "terraform.indexing": {
     "enabled": true,
     "liveIndexing": false,
