@@ -46,11 +46,11 @@ def get_project_color(seed):
     with material_constants.open() as f:
         material_colors = json.loads(f.read())
 
-    skip = ("pink", "grey")
+    skip = ("pink", "purple", "grey")
     for k in skip:
         assert k in material_colors.keys()
 
-    allow_light = ("purple", "deeppurple", "deeporange")
+    allow_light = ("deeppurple", "deeporange")
     for k in allow_light:
         assert k in material_colors.keys()
 
