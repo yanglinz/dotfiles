@@ -56,8 +56,10 @@
     "exclude": [".terraform/**/*", "**/.terraform/**/*"]
   },
   "terraform.languageServer": {
-    "enabled": false,
-    "args": []
+    "external": true,
+    "args": [
+      "serve"
+    ]
   },
 
   // Spellcheck
