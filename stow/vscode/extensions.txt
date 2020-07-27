@@ -6,7 +6,6 @@ flowtype.flow-for-vscode
 golang.go
 hashicorp.terraform
 howardzuo.vscode-git-blamer
-JamesBirtles.svelte-vscode
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
 ms-azuretools.vscode-docker
