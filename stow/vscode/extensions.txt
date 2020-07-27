@@ -3,13 +3,14 @@ EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
 flowtype.flow-for-vscode
+golang.go
+hashicorp.terraform
 howardzuo.vscode-git-blamer
+JamesBirtles.svelte-vscode
 kumar-harsh.graphql-for-vscode
 mads-hartmann.bash-ide-vscode
-mauve.terraform
 ms-azuretools.vscode-docker
 ms-python.python
-ms-vscode.Go
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
 streetsidesoftware.code-spell-checker
