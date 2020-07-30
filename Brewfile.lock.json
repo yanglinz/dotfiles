@@ -11,16 +11,16 @@
         "revision": "d9a7cd1116ae7c7f44875cc1b1e3f18ce5aac1c8"
       },
       "homebrew/bundle": {
-        "revision": "b4eb00f9b3af2b96a6362f041673fb487307494e"
+        "revision": "94d474d9ab199720ff34560c82493e18da9b612d"
       },
       "homebrew/cask": {
-        "revision": "9a1081905c166e5cbbb7b67b8562b7c870588011"
+        "revision": "8ec7302b0328c1ab258c97885e14c2c2f6389ac2"
       },
       "homebrew/cask-versions": {
-        "revision": "b09b6420f059ed6d5274da50d1b21fc520f2221b"
+        "revision": "4acbedc3a4635fe5022aac93ea98937dc2700afa"
       },
       "homebrew/core": {
-        "revision": "820dff07f0fb772ef93ef2f9ece694bd79d21a2e"
+        "revision": "3e84a313cec7d8c482484dd127b64ae32a330921"
       },
       "homebrew/services": {
         "revision": "e68b1b8a05ee097338d2b21a0edbe1dda905c61e"
@@ -55,22 +55,22 @@
         }
       },
       "awscli": {
-        "version": "2.0.34",
+        "version": "2.0.35",
         "bottle": {
           "cellar": "/usr/local/Cellar",
           "prefix": "/usr/local",
           "files": {
             "catalina": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.34.catalina.bottle.tar.gz",
-              "sha256": "19cdd983f90881d6856068298ea469c1608bfb5fafe80608ffb6befefcd73e85"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.35.catalina.bottle.tar.gz",
+              "sha256": "566e560b81f56beb888a6c73fa617b6c73a4ec7bfa7ffaf4a3c606a55cc94aa6"
             },
             "mojave": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.34.mojave.bottle.tar.gz",
-              "sha256": "9f438540a6c7c8797b5f2dcd7e127813db42816883f14d76fb62bf5309a67273"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.35.mojave.bottle.tar.gz",
+              "sha256": "dcf772d8683d91e09dc0308dd493888f125ff29701d78dc227d211770b666f7d"
             },
             "high_sierra": {
-              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.34.high_sierra.bottle.tar.gz",
-              "sha256": "8229a1870ea70b2745e2c0b2aebcf2c952b0db82156e80cebfe1e6771e7b73f5"
+              "url": "https://homebrew.bintray.com/bottles/awscli-2.0.35.high_sierra.bottle.tar.gz",
+              "sha256": "7431ce4f6b072eceebd8a8fb0384544595e672dc14f777d72f4c4048a1d566ad"
             }
           }
         }
@@ -990,31 +990,31 @@
         }
       },
       "cyberduck": {
-        "version": "7.4.1.33065",
+        "version": "7.0.1.30930",
         "options": {
           "full_name": "cyberduck"
         }
       },
       "docker": {
-        "version": "2.3.0.3,45519",
+        "version": "2.0.0.3-ce-mac81,31259",
         "options": {
           "full_name": "docker"
         }
       },
       "firefox": {
-        "version": "78.0.2",
+        "version": "67.0.4",
         "options": {
           "full_name": "firefox"
         }
       },
       "flux": {
-        "version": "40.1",
+        "version": "39.987",
         "options": {
           "full_name": "flux"
         }
       },
       "gitup": {
-        "version": "1.1.3",
+        "version": "1.0.11",
         "options": {
           "full_name": "gitup"
         }
@@ -1026,7 +1026,7 @@
         }
       },
       "iterm2": {
-        "version": "3.3.12",
+        "version": "3.2.9",
         "options": {
           "full_name": "iterm2"
         }
@@ -1050,13 +1050,13 @@
         }
       },
       "postman": {
-        "version": "7.29.1",
+        "version": "7.2.2",
         "options": {
           "full_name": "postman"
         }
       },
       "slack": {
-        "version": "4.8.0",
+        "version": "3.4.2",
         "options": {
           "full_name": "slack"
         }
@@ -1074,13 +1074,13 @@
         }
       },
       "visual-studio-code": {
-        "version": "1.47.2",
+        "version": "1.36.1,2213894ea0415ee8c85c5eea0d0ff81ecc191529",
         "options": {
           "full_name": "visual-studio-code"
         }
       },
       "vlc": {
-        "version": "3.0.11",
+        "version": "3.0.7.1",
         "options": {
           "full_name": "vlc"
         }
@@ -1096,12 +1096,12 @@
   "system": {
     "macos": {
       "catalina": {
-        "HOMEBREW_VERSION": "2.4.8",
+        "HOMEBREW_VERSION": "2.4.9",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "820dff07f0fb772ef93ef2f9ece694bd79d21a2e",
-        "CLT": "11.5.0.0.1.1588476445",
-        "Xcode": "11.5",
-        "macOS": "10.15.3"
+        "Homebrew/homebrew-core": "3e84a313cec7d8c482484dd127b64ae32a330921",
+        "CLT": "",
+        "Xcode": "11.0",
+        "macOS": "10.15.6"
       }
     }
   }
