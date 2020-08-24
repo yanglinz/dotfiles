@@ -1,4 +1,5 @@
 bungcip.better-toml
+DevonDCarew.bazel-code
 EditorConfig.EditorConfig
 esbenp.prettier-vscode
 fallenwood.vimL
