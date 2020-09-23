@@ -10,6 +10,7 @@ tap "lucagrulla/tap"
 tap "netlify/netlifyctl"
 brew "openssl@1.1"
 brew "python@3.8", link: false
+brew "ansible"
 brew "awscli"
 brew "bash-completion"
 brew "bazel"
