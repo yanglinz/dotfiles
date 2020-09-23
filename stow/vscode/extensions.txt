@@ -14,7 +14,9 @@ ms-python.python
 msjsdiag.debugger-for-chrome
 skyapps.fish-vscode
 streetsidesoftware.code-spell-checker
+svelte.svelte-vscode
 swyphcosmo.spellchecker
 vscodevim.vim
+wholroyd.HCL
 william-voyek.vscode-nginx
 yzhang.markdown-all-in-one
