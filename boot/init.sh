@@ -70,6 +70,7 @@ function setup() {
   setup_volta
   setup_rust
   setup_pyenv
+  setup_poetry
   setup_code_extension
 }
 
