@@ -55,6 +55,8 @@ alias dc="docker-compose"
 # Output color listing directories
 alias ls="ls -G"
 alias ks="exa -l"
+# Change rg defaults
+alias rg="rg --hidden --glob '!.git'"
 
 # Section 03
 # ----------
