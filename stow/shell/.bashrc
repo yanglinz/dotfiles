@@ -76,7 +76,7 @@ alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 
 # Initialize Volta
 export VOLTA_HOME="$HOME/.volta"
-grep --silent "$VOLTA_HOME/bin" <<<$PATH  || export PATH="$VOLTA_HOME/bin:$PATH"
+export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Section 04
 # ----------

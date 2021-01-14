@@ -2,4 +2,4 @@
 
 brew update
 brew upgrade
-brew cask upgrade
+brew upgrade --cask
