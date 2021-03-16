@@ -108,5 +108,12 @@
     "pylint",
     "pipenv",
     "venv"
+  ],
+  "python.languageServer": "Pylance",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
   ]
 }
