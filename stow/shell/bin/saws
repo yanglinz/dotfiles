@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+function personal() {
+  echo "Activating personal AWS profiles"
+  ln -nsf ~/.aws-personal ~/.aws
+}
+
+function work() {
+  echo "Activating work AWS profiles"
+  ln -nsf ~/.aws-work ~/.aws
+}
+
+function default() {
+  echo "Please pass the personal/work as args!"
+}
+
+case "$1" in
+  personal) personal;;
+  work)     work;;
+  *)        default ;;
+esac
