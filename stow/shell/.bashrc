@@ -70,6 +70,9 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.poetry/bin:$PATH
 
 # Initialize pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 # Make brew play nice with pyenv
 alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
@@ -88,7 +91,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Initialize z
 eval "$(fasd --init auto)"
 
-# Initialize autoenv
+# Initialize direnv 
 eval "$(direnv hook bash)"
 
 # Setup Go
