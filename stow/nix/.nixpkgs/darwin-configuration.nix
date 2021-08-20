@@ -8,11 +8,15 @@
     pkgs.wget
     # Shell
     pkgs.bash-completion
+    pkgs.exa
     pkgs.ripgrep
     # Utilities
+    pkgs.jq
     pkgs.mkcert
     pkgs.nginx
     pkgs.nss
+    pkgs.rsync
+    pkgs.stow
     pkgs.tldr
     pkgs.tree
     pkgs.watchman
