@@ -15,6 +15,7 @@ interface StowLink {
 function links(): StowLink[] {
   return [
     { source: "git", target: home },
+    { source: "nix", target: home },
     { source: "shell", target: home },
     { source: "vim", target: home },
     {
