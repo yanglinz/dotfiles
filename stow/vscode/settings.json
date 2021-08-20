@@ -27,6 +27,20 @@
   // Golang
   "go.useLanguageServer": true,
 
+  // Python
+  "[python]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "python.languageServer": "Pylance",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+
   // Prettier
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -63,9 +77,7 @@
   },
   "terraform.languageServer": {
     "external": true,
-    "args": [
-      "serve"
-    ]
+    "args": ["serve"]
   },
 
   // Spellcheck
@@ -111,9 +123,5 @@
     "pylint",
     "pipenv",
     "venv"
-  ],
-  "python.languageServer": "Pylance",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  }
+  ]
 }
