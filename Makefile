@@ -5,8 +5,7 @@ setup:
 
 .PHONY: link
 link:
-	@go run main.go stow
-	@./scripts/sync.sh
+	@deno run ./scripts/stow.ts link
 
 .PHONY: unlink
 unlink:
