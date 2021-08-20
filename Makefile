@@ -5,11 +5,11 @@ setup:
 
 .PHONY: link
 link:
-	@deno run ./scripts/stow.ts link
+	@deno run --unstable --allow-read --allow-run --allow-env ./scripts/stow.ts link
 
 .PHONY: unlink
 unlink:
-	@go run main.go unstow
+	@deno run --unstable --allow-read --allow-run --allow-env ./scripts/stow.ts unlink
 
 .PHONY: reconcile
 reconcile:
