@@ -1,11 +1,11 @@
-import * as Path from "https://deno.land/std@0.105.0/path/mod.ts";
-import { exists } from "https://deno.land/std/fs/mod.ts";
-import { parse } from "https://deno.land/std@0.105.0/flags/mod.ts";
 import * as Colors from "https://deno.land/std@0.105.0/fmt/colors.ts";
+import * as Path from "https://deno.land/std@0.105.0/path/mod.ts";
+import { exists } from "https://deno.land/std@0.105.0/fs/mod.ts";
+import { parse } from "https://deno.land/std@0.105.0/flags/mod.ts";
 
-const user = String(Deno.env.get("USER"));
 const cwd = Deno.cwd();
 const home = String(Deno.env.get("HOME"));
+const user = String(Deno.env.get("USER"));
 
 interface StowLink {
   source: string;
