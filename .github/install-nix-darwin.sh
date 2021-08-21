@@ -2,7 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-sudo ln -s private/var/run /run
+# sudo ln -s private/var/run /run
 
 # Configure the channel
 nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
