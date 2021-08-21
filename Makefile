@@ -21,7 +21,3 @@ reconcile:
 format:
 	@dos2unix ./scripts/*.sh
 	@./scripts/format.sh
-
-.PHONY: check
-check:
-	@shellcheck -x **/*.sh

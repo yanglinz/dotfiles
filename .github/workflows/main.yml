@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Main Workflow
 
 on: [push]
 
@@ -9,12 +9,11 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@v1
-      - run: make check || true
   build:
     runs-on: macos-10.14
     env:
       CI: true
     steps:
       - uses: actions/checkout@v1
-      - run: brew list
-      - run: ./boot/init.sh
+      # - run: brew list
+      # - run: ./boot/init.sh
