@@ -2,15 +2,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# sudo ln -s private/var/run /run
+# Or use a local git repository
+git clone https://github.com/LnL7/nix-darwin.git ~/.nix-defexpr/darwin
+cp ~/.nix-defexpr/darwin/modules/examples/simple.nix ~/.nixpkgs/darwin-configuration.nix
 
 # Configure the channel
 nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
 nix-channel --update
-
-# Or use a local git repository
-git clone https://github.com/LnL7/nix-darwin.git ~/.nix-defexpr/darwin
-cp ~/.nix-defexpr/darwin/modules/examples/simple.nix ~/.nixpkgs/darwin-configuration.nix
 
 export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
