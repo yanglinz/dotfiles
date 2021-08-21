@@ -10,7 +10,7 @@ nix-channel --update
 export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
 
 # Or use a local git repository
-git clone git@github.com:LnL7/nix-darwin.git ~/.nix-defexpr/darwin
+git clone https://github.com/LnL7/nix-darwin.git ~/.nix-defexpr/darwin
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
 
 cp ~/.nix-defexpr/darwin/modules/examples/simple.nix ~/.nixpkgs/darwin-configuration.nix
