@@ -7,17 +7,13 @@ IFS=$'\n\t'
 # Configure the channel
 nix-channel --add https://github.com/LnL7/nix-darwin/archive/master.tar.gz darwin
 nix-channel --update
-export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
 
 # Or use a local git repository
 git clone https://github.com/LnL7/nix-darwin.git ~/.nix-defexpr/darwin
-export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
-
-echo "foo"
-ls -la ~/.nix-defexpr/darwin
-echo "bar"
-
 cp ~/.nix-defexpr/darwin/modules/examples/simple.nix ~/.nixpkgs/darwin-configuration.nix
+
+export NIX_PATH=darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$HOME/.nix-defexpr/channels:$NIX_PATH
+export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/darwin-configuration.nix:$NIX_PATH
 
 # you can also use this to rebootstrap nix-darwin in case
 # darwin-rebuild is to old to activate the system.
