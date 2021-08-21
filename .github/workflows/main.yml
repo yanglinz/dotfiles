@@ -15,5 +15,9 @@ jobs:
       CI: true
     steps:
       - uses: actions/checkout@v1
+      - uses: cachix/install-nix-action@v13
+        with:
+          install_url: https://releases.nixos.org/nix/nix-2.3.15/install
+          nix_path: nixpkgs=channel:nixos-unstable
       # - run: brew list
       # - run: ./boot/init.sh
