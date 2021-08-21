@@ -4,6 +4,7 @@ IFS=$'\n\t'
 
 # Or use a local git repository
 git clone https://github.com/LnL7/nix-darwin.git ~/.nix-defexpr/darwin
+mkdir -p ~/.nixpkgs
 cp ~/.nix-defexpr/darwin/modules/examples/simple.nix ~/.nixpkgs/darwin-configuration.nix
 
 # Configure the channel
