@@ -21,9 +21,9 @@ export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.nixpkgs/da
 
 echo "foo: 3"
 
-mkdir -p /run
+darwin-rebuild switch
 
-$(nix-build '<darwin>' -A system --no-out-link)/sw/bin/darwin-rebuild build
+# $(nix-build '<darwin>' -A system --no-out-link)/sw/bin/darwin-rebuild build
 $(nix-build '<darwin>' -A system --no-out-link)/sw/bin/darwin-rebuild switch
 
 . /etc/static/bashrc
