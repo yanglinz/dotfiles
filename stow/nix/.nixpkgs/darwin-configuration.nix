@@ -8,16 +8,19 @@
     pkgs.wget
     # Shell
     pkgs.bash-completion
+    pkgs.direnv
     pkgs.exa
+    pkgs.fasd
+    pkgs.fzf
     pkgs.hstr
     pkgs.ripgrep
-    pkgs.fzf
     # Utilities
     pkgs.dos2unix
     pkgs.jq
     pkgs.mkcert
     pkgs.nginx
     pkgs.nss
+    pkgs.rlwrap
     pkgs.rsync
     pkgs.shellcheck
     pkgs.stow
@@ -26,7 +29,13 @@
     pkgs.watchman
     # Programming languages
     pkgs.deno
+    pkgs.dep
+    pkgs.git
+    pkgs.go
+    pkgs.jdk11
+    pkgs.leiningen
     pkgs.perl
+    pkgs.shfmt
     # Editors
     pkgs.neovim
     # Services
