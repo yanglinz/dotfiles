@@ -9,19 +9,24 @@
     # Shell
     pkgs.bash-completion
     pkgs.exa
+    pkgs.hstr
     pkgs.ripgrep
+    pkgs.fzf
     # Utilities
+    pkgs.dos2unix
     pkgs.jq
     pkgs.mkcert
     pkgs.nginx
     pkgs.nss
     pkgs.rsync
+    pkgs.shellcheck
     pkgs.stow
     pkgs.tldr
     pkgs.tree
     pkgs.watchman
     # Programming languages
     pkgs.deno
+    pkgs.perl
     # Editors
     pkgs.neovim
     # Services
