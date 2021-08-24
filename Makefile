@@ -5,12 +5,11 @@ setup:
 
 .PHONY: link
 link:
-	@go run main.go stow
-	@./scripts/sync.sh
+	@deno run --unstable --allow-read --allow-run --allow-env ./scripts/stow.ts link
 
 .PHONY: unlink
 unlink:
-	@go run main.go unstow
+	@deno run --unstable --allow-read --allow-run --allow-env ./scripts/stow.ts unlink
 
 .PHONY: reconcile
 reconcile:
@@ -22,7 +21,3 @@ reconcile:
 format:
 	@dos2unix ./scripts/*.sh
 	@./scripts/format.sh
-
-.PHONY: check
-check:
-	@shellcheck -x **/*.sh

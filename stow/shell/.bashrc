@@ -81,6 +81,9 @@ alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+# Initialize nix
+. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
 # Initialize rust
 . "$HOME/.cargo/env"
 
