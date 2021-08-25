@@ -7,6 +7,7 @@
     # System dependencies
     pkgs.wget
     # Shell
+    pkgs.bashInteractive
     pkgs.bash-completion
     pkgs.direnv
     pkgs.exa
@@ -51,8 +52,11 @@
   # nix.package = pkgs.nix;
 
   # Create /etc/bashrc that loads the nix-darwin environment.
-  # programs.zsh.enable = true;  # default shell on catalina
-  # programs.fish.enable = true;
+  programs.bash.enable = true;
+  programs.bash.enableCompletion = true;
+  programs.zsh.enable = true;
+  programs.fish.enable = true;
+  environment.shells = with pkgs; [ bashInteractive fish zsh ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
