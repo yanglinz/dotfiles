@@ -26,6 +26,12 @@ Next, we need to configure iTerm to load its default configuration from our newl
 Preferences -> Load preferences from custom folder or URL
 ```
 
+Use the Nix managed bash.
+
+```
+chsh -s $(which bash)
+```
+
 ## Daily Use
 
 ```sh
