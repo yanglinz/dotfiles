@@ -20,5 +20,5 @@ jobs:
           install_url: https://releases.nixos.org/nix/nix-2.3.15/install
           nix_path: nixpkgs=channel:nixos-unstable
       - run: ./.github/install-nix-darwin.sh
-      # - run: brew list
-      # - run: ./boot/init.sh
+      - run: brew list
+      - run: ./boot/init.sh
