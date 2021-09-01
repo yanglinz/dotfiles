@@ -29,7 +29,6 @@
     pkgs.tree
     pkgs.watchman
     # Programming languages
-    pkgs.cargo
     pkgs.deno
     pkgs.dep
     pkgs.git

@@ -32,12 +32,6 @@ Use the Nix managed bash.
 chsh -s $(which bash)
 ```
 
-## Daily Use
-
-```sh
-darwin-rebuild switch
-```
-
 ## Thanks
 
 Most of the setup have come from helpful articles and other dotfiles.
