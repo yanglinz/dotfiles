@@ -19,6 +19,20 @@ function setup_brew() {
   fi
 }
 
+function setup_nix() {
+  echo "Setting up nix..."
+  if [[ -z ${CI-} ]]; then
+    if ! [ -x "$(command -v nix)" ]; then
+      # Install nix
+      curl -L https://nixos.org/nix/install | sh
+
+      # Install nix-darwin
+      nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+      ./result/bin/darwin-installer
+    fi
+  fi
+}
+
 function setup_bash_it() {
   echo "Setting up bash-it..."
   if [ ! -d ~/.bash_it ]; then
@@ -66,6 +80,7 @@ function setup_code_extension() {
 
 function setup() {
   setup_brew
+  setup_nix
   setup_bash_it
   setup_volta
   setup_rust
