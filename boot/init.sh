@@ -47,13 +47,6 @@ function setup_volta() {
   fi
 }
 
-function setup_rust() {
-  echo "Setting up rust..."
-  if [[ ! -d ~/.cargo ]] && [[ -z ${CI-} ]]; then
-    curl https://sh.rustup.rs -sSf | sh
-  fi
-}
-
 function setup_poetry() {
   echo "Setting up poetry..."
   if [[ ! -d ~/.poetry ]] && [[ -z ${CI-} ]]; then
@@ -83,7 +76,6 @@ function setup() {
   setup_nix
   setup_bash_it
   setup_volta
-  setup_rust
   setup_pyenv
   setup_poetry
   setup_code_extension
