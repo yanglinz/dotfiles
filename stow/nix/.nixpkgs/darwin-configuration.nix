@@ -36,6 +36,7 @@
     pkgs.jdk11
     pkgs.leiningen
     pkgs.perl
+    pkgs.rustup
     pkgs.shfmt
     # Editors
     pkgs.neovim
