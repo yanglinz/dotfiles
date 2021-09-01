@@ -29,6 +29,7 @@
     pkgs.tree
     pkgs.watchman
     # Programming languages
+    pkgs.cargo
     pkgs.deno
     pkgs.dep
     pkgs.git
@@ -36,6 +37,7 @@
     pkgs.jdk11
     pkgs.leiningen
     pkgs.perl
+    pkgs.rustup
     pkgs.shfmt
     # Editors
     pkgs.neovim
