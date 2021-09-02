@@ -1,0 +1,8 @@
+runtime node@14.17.1 (default)
+package-manager yarn@1.22.0 (default)
+package @microsoft/rush@5.47.0 / rush, rushx / node@12.15.0 npm@built-in (default)
+package cloc@2.5.1 / cloc / node@12.15.0 npm@built-in (default)
+package lighthouse@6.0.0 / lighthouse, chrome-debug / node@12.18.0 npm@built-in (default)
+package now@17.0.3 / now / node@12.15.0 npm@built-in (default)
+package prettier@1.19.1 / prettier / node@12.16.1 npm@built-in (default)
+package vercel@19.1.1 / vc, vercel / node@12.18.1 npm@built-in (default)
