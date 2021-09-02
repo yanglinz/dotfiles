@@ -13,7 +13,7 @@ unlink:
 
 .PHONY: reconcile
 reconcile:
-	@brew bundle dump --force
+	@brew bundle dump --force && sort Brewfile -o Brewfile
 	@code --list-extensions | sort -f > ./configs/manifest/vscode-extensions.txt
 	@volta list --format=plain > ./configs/manifest/volta-list.txt
 	@cp ~/.iterm/com.googlecode.iterm2.plist configs/home/.iterm/
