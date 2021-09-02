@@ -21,7 +21,6 @@ rust-lang.rust
 skyapps.fish-vscode
 streetsidesoftware.code-spell-checker
 swyphcosmo.spellchecker
-vscodevim.vim
 wholroyd.HCL
 william-voyek.vscode-nginx
 yzhang.markdown-all-in-one
