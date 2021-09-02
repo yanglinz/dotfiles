@@ -7,7 +7,7 @@
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
   // VIM
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",
 
   // Custom file associations
   "files.associations": {
