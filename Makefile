@@ -14,7 +14,7 @@ unlink:
 .PHONY: reconcile
 reconcile:
 	@brew bundle dump --force
-	@code --list-extensions > ./configs/manifest/vscode-extensions.txt
+	@code --list-extensions | sort > ./configs/manifest/vscode-extensions.txt
 	@cp ~/.iterm/com.googlecode.iterm2.plist configs/home/.iterm/
 
 .PHONY: format
