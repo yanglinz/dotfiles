@@ -85,7 +85,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Initialize rust
-. "$HOME/.cargo/env"
+[[ -r "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
 # Section 04
 # ----------
@@ -94,19 +94,19 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # Initialize z
 eval "$(fasd --init auto)"
 
-# Initialize direnv 
+# Initialize direnv
 eval "$(direnv hook bash)"
 
 # Setup Go
-export GOPATH=$HOME/go
+export GOPATH="$HOME/go"
 # https://github.com/apex/apex/issues/426#issuecomment-290307874
 export AWS_SDK_LOAD_CONFIG=true
 
 # Load google cloud sdk
-[[ -r "~/google-cloud-sdk/path.bash.inc" ]] &&
-  . "~/google-cloud-sdk/path.bash.inc"
-[[ -r "~/google-cloud-sdk/completion.bash.inc" ]] &&
-  . "~/google-cloud-sdk/completion.bash.inc"
+[[ -r "$HOME/google-cloud-sdk/path.bash.inc" ]] &&
+  . "$HOME/google-cloud-sdk/path.bash.inc"
+[[ -r "$HOME/google-cloud-sdk/completion.bash.inc" ]] &&
+  . "$HOME/google-cloud-sdk/completion.bash.inc"
 
 # Setup alternative history tool
 alias hh=hstr
