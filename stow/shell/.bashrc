@@ -97,6 +97,9 @@ eval "$(fasd --init auto)"
 # Initialize direnv
 eval "$(direnv hook bash)"
 
+# Setup nvim
+export VIMINIT="$HOME/.config/nvim/init.vim"
+
 # Setup Go
 export GOPATH="$HOME/go"
 # https://github.com/apex/apex/issues/426#issuecomment-290307874
