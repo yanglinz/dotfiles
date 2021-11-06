@@ -56,4 +56,4 @@ function setup_osx() {
   done
 }
 
-[[ $OSTYPE == "darwin18" || $OSTYPE == "darwin19" ]] && setup_osx
+[[ $OSTYPE == "darwin18" || $OSTYPE == "darwin19"|| $OSTYPE == "darwin20"|| $OSTYPE == "darwin21" ]] && setup_osx
