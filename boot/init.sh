@@ -57,8 +57,8 @@ function setup_poetry() {
 function setup_pyenv() {
   echo "Setting up pyenv"
   if [[ -z ${CI-} ]]; then
-    pyenv install -s 3.7.3
-    pyenv global 3.7.3
+    pyenv install -s 3.10.0
+    pyenv global 3.10.0
   fi
 }
 
