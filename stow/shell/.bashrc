@@ -82,7 +82,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Initialize nix
-. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+# . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Initialize rust
 [[ -r "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
