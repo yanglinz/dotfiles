@@ -2,7 +2,6 @@ asvetliakov.vscode-neovim
 bbenoist.Nix
 betterthantomorrow.calva
 bungcip.better-toml
-denoland.vscode-deno
 DevonDCarew.bazel-code
 esbenp.prettier-vscode
 fallenwood.vimL
