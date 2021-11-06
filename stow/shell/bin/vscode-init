@@ -109,6 +109,11 @@ def get_vscode_settings():
         },
     }
 
+    # Editor settings
+    editor_settings = {
+        "vscode-neovim.neovimExecutablePaths.darwin": get_shell_output("which nvim")
+    }
+
     # Python settings
     python_settings = {}
     if has_pipenv():
@@ -121,7 +126,7 @@ def get_vscode_settings():
             "python.linting.prospectorArgs": ["--profile", "~/etc/.prospector.yaml"],
         }
 
-    return {**color_settings, **python_settings}
+    return {**color_settings, **editor_settings, **python_settings}
 
 
 def main():

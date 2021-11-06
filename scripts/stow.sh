@@ -16,9 +16,9 @@ function validate_cwd() {
   )
 
   for f in "${expected_cwd_files[@]}"; do
-    if [[ ! -f "$f" ]]; then
+    if [[ ! -f $f   ]]; then
       echo "Expected file \"${f}\" does not exist."
-      exit 1;
+      exit 1
     fi
   done
 }
