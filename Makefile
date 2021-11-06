@@ -2,6 +2,7 @@
 setup: 
 	@./boot/init.sh
 	@./boot/macos.sh
+	@./boot/sync.sh
 
 .PHONY: link
 link:
