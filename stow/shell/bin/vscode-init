@@ -1,0 +1,152 @@
+#!/usr/bin/env python3
+
+import argparse
+import json
+import pathlib
+import os
+import subprocess
+import sys
+
+
+def naive_hash(s):
+    return sum([ord(c) for c in s]) * len(s)
+
+
+def get_shell_output(s):
+    command_parts = s.split(" ")
+    output = subprocess.check_output(command_parts)
+    output = output.decode("utf-8")
+    return output.strip()
+
+
+def pre_condition_git():
+    cwd = pathlib.Path(os.getcwd())
+    git_dir = cwd / ".git"
+    is_git_project = os.path.isdir(git_dir)
+    if not is_git_project:
+        sys.exit(1)
+
+
+def has_pipenv():
+    cwd = pathlib.Path(os.getcwd())
+    pipfile = cwd / "Pipfile"
+    return os.path.isfile(pipfile)
+
+
+def has_package_json():
+    cwd = pathlib.Path(os.getcwd())
+    pipfile = cwd / "package.json"
+    return os.path.isfile(pipfile)
+
+
+def get_project_color(seed):
+    material_colors = {}
+    material_constants = pathlib.Path(__file__)
+    material_constants = material_constants.parent / "vscode-colors.json"
+    with material_constants.open() as f:
+        material_colors = json.loads(f.read())
+
+    skip = ("pink", "purple", "grey")
+    for k in skip:
+        assert k in material_colors.keys()
+
+    allow_light = ("deeppurple", "deeporange")
+    for k in allow_light:
+        assert k in material_colors.keys()
+
+    allow_mid = (
+        "red",
+        "deeppurple",
+        "indigo",
+        "blue",
+        "cyan",
+        "teal",
+        "green",
+        "lightgreen",
+        "orange",
+        "deeporange",
+        "brown",
+        "bluegrey",
+    )
+    for k in allow_mid:
+        assert k in material_colors.keys()
+
+    colors = []
+    for k, v in material_colors.items():
+        if k in skip:
+            continue
+
+        if k in allow_light:
+            colors.append(v.get("a100"))
+            colors.append(v.get("a200"))
+            colors.append(v.get("300"))
+            colors.append(v.get("400"))
+
+        if k in allow_mid:
+            colors.append(v.get("500"))
+            colors.append(v.get("600"))
+            colors.append(v.get("700"))
+
+        colors.append(v.get("800"))
+        colors.append(v.get("a700"))
+
+    colors = sorted([c for c in colors if c])
+
+    i = naive_hash(seed) % len(colors)
+    return colors[i]
+
+
+def get_vscode_settings():
+    project_name = os.path.basename(os.getcwd())
+
+    # Color settings
+    color = get_project_color(project_name)
+    color_settings = {
+        "window.titleBarStyle": "custom",
+        "workbench.colorCustomizations": {
+            "statusBar.background": color,
+            "titleBar.activeBackground": color,
+        },
+    }
+
+    # Editor settings
+    editor_settings = {
+        "vscode-neovim.neovimExecutablePaths.darwin": get_shell_output("which nvim")
+    }
+
+    # Python settings
+    python_settings = {
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "~/bin/black-darwin",
+    }
+    if has_pipenv():
+        venv_path = get_shell_output("pipenv --venv")
+        venv_path = pathlib.Path(venv_path) / "bin/python"
+        python_settings = {
+            "python.path": str(venv_path),
+            "python.linting.prospectorEnabled": True,
+            "python.linting.prospectorPath": get_shell_output("which prospector"),
+            "python.linting.prospectorArgs": ["--profile", "~/etc/.prospector.yaml"],
+        }
+
+    return {**color_settings, **editor_settings, **python_settings}
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Vscode project helper")
+    parser.add_argument("--write", action="store_true")
+    args = parser.parse_args()
+
+    settings = get_vscode_settings()
+    settings_json = json.dumps(settings, indent=4)
+    print(settings_json)
+
+    if args.write:
+        get_shell_output("mkdir -p .vscode")
+        get_shell_output("touch .vscode/settings.json")
+        pathlib.Path(".vscode/settings.json").write_text(settings_json)
+
+
+if __name__ == "__main__":
+    pre_condition_git()
+    main()

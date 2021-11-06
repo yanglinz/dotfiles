@@ -6,7 +6,7 @@
   "explorer.confirmDelete": false,
   "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
 
-  // VIM
+  // NeoVim
   "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",
 
   // Custom file associations

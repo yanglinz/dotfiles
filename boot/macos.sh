@@ -23,6 +23,9 @@ function setup_osx() {
   # Restart automatically if the computer freezes
   sudo systemsetup -setrestartfreeze on
 
+  # Allow application from unidentified developers
+  spctl --master-disable
+
   # Set dock icon sizes
   defaults write com.apple.dock magnification -bool true
   defaults write com.apple.dock tilesize -int 36
@@ -56,4 +59,4 @@ function setup_osx() {
   done
 }
 
-[[ $OSTYPE == "darwin18" || $OSTYPE == "darwin19"|| $OSTYPE == "darwin20"|| $OSTYPE == "darwin21" ]] && setup_osx
+[[ $OSTYPE == "darwin18" || $OSTYPE == "darwin19" || $OSTYPE == "darwin20" || $OSTYPE == "darwin21" ]] && setup_osx

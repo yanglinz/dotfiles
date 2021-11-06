@@ -82,7 +82,7 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Initialize nix
-. "$HOME/.nix-profile/etc/profile.d/nix.sh"
+# . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Initialize rust
 [[ -r "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
@@ -96,9 +96,6 @@ eval "$(fasd --init auto)"
 
 # Initialize direnv
 eval "$(direnv hook bash)"
-
-# Setup nvim
-export VIMINIT="$HOME/.config/nvim/init.vim"
 
 # Setup Go
 export GOPATH="$HOME/go"
