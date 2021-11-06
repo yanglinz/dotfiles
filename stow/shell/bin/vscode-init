@@ -115,7 +115,10 @@ def get_vscode_settings():
     }
 
     # Python settings
-    python_settings = {}
+    python_settings = {
+        "python.formatting.provider": "black",
+        "python.formatting.blackPath": "~/bin/black-darwin",
+    }
     if has_pipenv():
         venv_path = get_shell_output("pipenv --venv")
         venv_path = pathlib.Path(venv_path) / "bin/python"
