@@ -57,6 +57,7 @@ alias ls="ls -G"
 alias ks="exa -l"
 # Change rg defaults
 alias rg="rg --hidden --glob '!.git'"
+alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 
 # Section 03
 # ----------
