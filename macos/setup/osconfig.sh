@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Taken most from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# Taken mostly as-is from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
 function setup_osx() {
   # Close any open System Preferences panes, to prevent them from overriding

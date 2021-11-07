@@ -1,8 +1,8 @@
 .PHONY: setup
 setup: 
-	@./boot/init.sh
-	@./boot/macos.sh
-	@./boot/sync.sh
+	@./macos/setup/bootstrap.sh
+	@./macos/setup/osconfig.sh
+	@./scripts/sync.sh
 
 .PHONY: link
 link:
