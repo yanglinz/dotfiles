@@ -7,7 +7,7 @@ function sync() {
     --exclude ".DS_Store" \
     --no-perms \
     --max-delete=0 \
-    ./configs/home/ "$HOME"
+    ./macos/home/ "$HOME"
 
   sudo rsync -avzh \
     --exclude ".DS_Store" \
@@ -17,7 +17,7 @@ function sync() {
     --keep-dirlinks \
     --no-perms \
     --chown=root:wheel \
-    ./configs/root/ /
+    ./macos/root/ /
 
   # Fix brew permissions
   sudo chown -R "$(whoami)" /usr/local/etc

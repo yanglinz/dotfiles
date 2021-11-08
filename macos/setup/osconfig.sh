@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Taken most from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# Taken mostly as-is from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-function setup_osx() {
+function setup_macos() {
   # Close any open System Preferences panes, to prevent them from overriding
   # settings we’re about to change
   osascript -e 'tell application "System Preferences" to quit'
@@ -59,4 +59,4 @@ function setup_osx() {
   done
 }
 
-[[ $OSTYPE == "darwin18" || $OSTYPE == "darwin19" || $OSTYPE == "darwin20" || $OSTYPE == "darwin21" ]] && setup_osx
+[[ $OSTYPE == darwin* ]] && setup_macos
