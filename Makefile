@@ -2,15 +2,15 @@
 setup: 
 	@./macos/setup/bootstrap.sh
 	@./macos/setup/osconfig.sh
-	@./scripts/sync.sh
+	@./macos/scripts/sync.sh
 
 .PHONY: link
 link:
-	@./scripts/stow.sh link
+	@./macos/scripts/stow.sh link
 
 .PHONY: unlink
 unlink:
-	@./scripts/stow.sh unlink
+	@./macos/scripts/stow.sh unlink
 
 .PHONY: reconcile
 reconcile:
@@ -22,4 +22,5 @@ reconcile:
 .PHONY: format
 format:
 	@dos2unix ./scripts/*.sh
+	@dos2unix ./macos/scripts/*.sh
 	@./scripts/format.sh
