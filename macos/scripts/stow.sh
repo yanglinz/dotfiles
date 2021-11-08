@@ -26,7 +26,7 @@ function validate_cwd() {
 function stow_link() {
   validate_cwd
 
-  cd ./stow
+  cd ./macos/home
 
   stow -t $HOME git
   echo -e "${GREEN}Linked git${RESET}"
@@ -50,7 +50,7 @@ function stow_link() {
 function stow_unlink() {
   validate_cwd
 
-  cd ./stow
+  cd ./macos/home
 
   stow -t $HOME -D git
   echo -e "${RED}Linked git${RESET}"
