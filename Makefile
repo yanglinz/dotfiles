@@ -18,7 +18,7 @@ reconcile:
 	@code --list-extensions | sort -f > ./manifest/vscode-extensions.txt
 	@volta list --format=plain > ./manifest/volta-list.txt
 	@cp "~/Library/Application Support/Spectacle/Shortcuts.json" ./macos/manifest/spectacle.json
-	@cp ~/.iterm/com.googlecode.iterm2.plist ./macos/home/.iterm/
+	@cp ~/.iterm/com.googlecode.iterm2.plist ./macos/home/iterm/
 
 .PHONY: format
 format:
