@@ -1,36 +1,38 @@
 # My Personal Dotfiles
 
-This is my personal dotfiles for MacOS.
+This repo houses my personal [dotfiles](https://dotfiles.github.io/) across
+MacOS, Windows, and Linux.
 
-> Note that I've not tested much outside of my own personal use. Use at your own risk. 🚧
+> Note that this project is tailored for my own specific use-cases, and I've not
+> tested much outside of my own personal use. Use at your own risk. 🚧
 
-## Setup
+## My Setup
 
-Most of the initial setup is automated, with the exception of a couple of manual steps.
+I'm not sure how common my setup is but I do development work on either my
+Macbook Pro or my Windows desktop as the host, with a Linux development VM
+running inside of them. It's evolved from the fact that:
 
-To get started, run the initial setup scripts.
+- I genuinely like Apple hardware and the polish of its OS. I'm also locked in
+  to their ecosystem via iPhone, iMessage, etc.
+- I have a beefy Windows desktop that's mostly for gaming that I do occasional
+  development work on. I've tried multiple times to convert to running Linux
+  directly, but I got tired of fighting the GPU drivers and poor support for
+  most of the games I play.
+- I prefer Linux as the OS for development work - I find that running it in a VM
+  is plenty fast enough, and it's easy to share commonality with both my MacOS
+  and Windows machines.
 
-```sh
-make setup
-```
+So this `dotfile` project is my own attempt to help myself bootstrap and
+reconcile changes my cross platform development environment across MacOS,
+Windows, and Linux.
 
-Then link the dotfiles by running the [GNU Stow](https://www.gnu.org/software/stow/) commands.
+## Feature Highlights
 
-```sh
-make link
-```
-
-Next, we need to configure iTerm to load its default configuration from our newly linked `~/.iterm` directory.
-
-```
-Preferences -> Load preferences from custom folder or URL
-```
-
-Use the Nix managed bash.
-
-```
-chsh -s $(which bash)
-```
+- Development dependencies managed via [Nix](https://nixos.org/) and
+  [Nix Darwin](https://github.com/LnL7/nix-darwin).
+- Home directory symlinks managed via
+  [Stow](https://www.gnu.org/software/stow/).
+- TBD.
 
 ## Thanks
 

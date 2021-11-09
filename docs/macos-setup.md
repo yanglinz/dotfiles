@@ -58,3 +58,18 @@ upgrade
 > NOTE: If `nix-darwin` throws some errors about pre-existing files, we can
 > simply move them via `sudo mv /etc/shells /etc/shells.back` and
 > `sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.back`.
+
+# Configure iTerm
+
+Next, we need to configure iTerm to load its default configuration from our
+newly linked `~/.iterm` directory.
+
+```
+Preferences -> Load preferences from custom folder or URL
+```
+
+We should also use the Nix managed bash.
+
+```
+chsh -s $(which bash)
+```
