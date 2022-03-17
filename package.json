@@ -7,5 +7,9 @@
   "volta": {
     "node": "16.14.0",
     "yarn": "1.22.17"
+  },
+  "devDependencies": {
+    "generator-code": "^1.6.8",
+    "yo": "^4.3.0"
   }
 }
