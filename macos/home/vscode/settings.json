@@ -4,6 +4,7 @@
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
+  "editor.lineNumbers": "relative",
 
   // NeoVim
   "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",
