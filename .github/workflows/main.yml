@@ -21,4 +21,4 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - run: ./.github/install-nix-darwin.sh
       - run: brew list
-      - run: ./macos/setup/bootstrap.sh
+      - run: ./scripts/bootstrap.sh

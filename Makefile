@@ -3,9 +3,9 @@ UNAME := $(shell uname)
 .PHONY: setup
 setup:
 ifeq ($(UNAME), Darwin)
-	@./macos/setup/bootstrap.sh
-	@./macos/setup/osconfig.sh
-	@./macos/scripts/sync.sh
+	@./scripts/bootstrap.sh
+	@./macos/scripts/set-system-config.sh
+	@./macos/scripts/copy-root-config.sh
 endif
 
 .PHONY: link
@@ -20,10 +20,10 @@ ifeq ($(UNAME), Darwin)
 	@./macos/scripts/stow.sh unlink
 endif
 
-.PHONY: reconcile
-reconcile:
+.PHONY: drift
+drift:
 ifeq ($(UNAME), Darwin)
-	@./macos/scripts/reconcile.sh
+	@./macos/scripts/track-drift.sh
 endif
 
 .PHONY: format
