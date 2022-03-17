@@ -1,0 +1,25 @@
+{
+    "name": "custom-nginx-syntax",
+    "displayName": "custom-nginx-syntax",
+    "description": "Custom nginx syntax",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.65.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "nginx",
+            "aliases": ["Nginx configuration language", "nginx"],
+            "extensions": [".conf"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "nginx",
+            "scopeName": "source.nginx",
+            "path": "./syntaxes/nginx.tmLanguage"
+        }]
+    }
+}
