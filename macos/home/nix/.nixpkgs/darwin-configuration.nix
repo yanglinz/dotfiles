@@ -9,6 +9,7 @@
     # Shell
     pkgs.bashInteractive
     pkgs.bash-completion
+    pkgs.delta
     pkgs.direnv
     pkgs.exa
     pkgs.fasd
@@ -24,9 +25,9 @@
     pkgs.rlwrap
     pkgs.rsync
     pkgs.shellcheck
-    pkgs.stow
     pkgs.tldr
     pkgs.tree
+    pkgs.tflint
     pkgs.watchman
     # Programming languages
     pkgs.deno
