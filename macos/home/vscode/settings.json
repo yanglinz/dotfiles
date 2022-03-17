@@ -4,7 +4,7 @@
   "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif",
+  "editor.lineNumbers": "relative",
 
   // NeoVim
   "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",

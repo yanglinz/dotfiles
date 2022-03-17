@@ -1,2 +1,3 @@
+node_modules/
 stow/shell/.config
 Brewfile.lock.json
