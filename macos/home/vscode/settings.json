@@ -23,6 +23,7 @@
 
   // Typescript
   "typescript.suggest.autoImports": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
 
   // Golang
   "go.useLanguageServer": true,
@@ -85,11 +86,13 @@
   "cSpell.minWordLength": 4,
   "cSpell.spellCheckDelayMs": 100,
   "cSpell.enabledLanguageIds": [
+    // https://code.visualstudio.com/docs/languages/identifiers
     "go",
     "javascript",
     "javascriptreact",
     "markdown",
     "python",
+    "shellscript",
     "typescript",
     "typescriptreact"
   ],
