@@ -27,6 +27,7 @@
     pkgs.shellcheck
     pkgs.tldr
     pkgs.tree
+    pkgs.tflint
     pkgs.watchman
     # Programming languages
     pkgs.deno
