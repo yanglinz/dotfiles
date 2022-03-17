@@ -20,10 +20,10 @@ ifeq ($(UNAME), Darwin)
 	@./macos/scripts/stow.sh unlink
 endif
 
-.PHONY: reconcile
-reconcile:
+.PHONY: drift
+drift:
 ifeq ($(UNAME), Darwin)
-	@./macos/scripts/reconcile.sh
+	@./macos/scripts/track-drift.sh
 endif
 
 .PHONY: format
