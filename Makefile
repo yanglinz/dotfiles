@@ -4,7 +4,7 @@ UNAME := $(shell uname)
 setup:
 ifeq ($(UNAME), Darwin)
 	@./scripts/bootstrap.sh
-	@./macos/setup/osconfig.sh
+	@./macos/scripts/set-system-config.sh
 	@./macos/scripts/sync.sh
 endif
 
