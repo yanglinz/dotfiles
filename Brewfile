@@ -1,9 +1,6 @@
 brew "cask"
 brew "dnsmasq", restart_service: true
 brew "fontconfig"
-brew "glib"
-brew "neovim"
-brew "openssl@1.1"
 brew "pyenv"
 brew "python@3.8"
 brew "stow"
