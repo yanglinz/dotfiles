@@ -25,7 +25,6 @@
     pkgs.rlwrap
     pkgs.rsync
     pkgs.shellcheck
-    pkgs.stow
     pkgs.tldr
     pkgs.tree
     pkgs.watchman
