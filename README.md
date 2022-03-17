@@ -1,4 +1,4 @@
-# My Personal Dotfiles
+# Dotfiles
 
 This repo houses my personal [dotfiles](https://dotfiles.github.io/) across
 MacOS, Windows, and Linux.
