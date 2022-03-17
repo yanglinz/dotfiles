@@ -9,6 +9,7 @@
     # Shell
     pkgs.bashInteractive
     pkgs.bash-completion
+    pkgs.delta
     pkgs.direnv
     pkgs.exa
     pkgs.fasd
