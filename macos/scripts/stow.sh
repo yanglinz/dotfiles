@@ -10,7 +10,7 @@ VSCODE_PATH="/Users/${USER}/Library/ApplicationSupport/Code/User"
 
 function validate_cwd() {
   local expected_cwd_files=(
-    "macos/setup/bootstrap.sh"
+    "scripts/bootstrap.sh"
     Brewfile
     Makefile
   )
