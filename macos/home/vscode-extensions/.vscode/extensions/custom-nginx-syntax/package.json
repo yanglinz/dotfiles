@@ -1,5 +1,6 @@
 {
     "name": "custom-nginx-syntax",
+    "publisher": "local-extensions",
     "displayName": "custom-nginx-syntax",
     "description": "Custom nginx syntax",
     "version": "0.0.1",
