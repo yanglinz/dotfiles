@@ -1,7 +1,6 @@
 # Dotfiles
 
-This repo houses my personal [dotfiles](https://dotfiles.github.io/) across
-MacOS, Windows, and Linux.
+This repo houses my personal [dotfiles](https://dotfiles.github.io/).
 
 > Note that this project is tailored for my own specific use-cases, and I've not
 > tested much outside of my own personal use. Use at your own risk. 🚧
