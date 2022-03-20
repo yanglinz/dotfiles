@@ -28,6 +28,9 @@ function stow_link() {
 
   cd ./macos/home
 
+  stow -t $HOME bin
+  echo -e "${GREEN}Linked bin${RESET}"
+
   stow -t $HOME git
   echo -e "${GREEN}Linked git${RESET}"
 
@@ -55,6 +58,9 @@ function stow_unlink() {
 
   cd ./macos/home
 
+  stow -t $HOME -D bin
+  echo -e "${RED}Unlinked bin${RESET}"
+
   stow -t $HOME -D git
   echo -e "${RED}Unlinked git${RESET}"
 
@@ -71,7 +77,7 @@ function stow_unlink() {
   stow -t $VSCODE_PATH -D vscode
   echo -e "${RED}Unlinked vscode${RESET}"
 
-  stow -t $HOME -D vscode-extensions 
+  stow -t $HOME -D vscode-extensions
   echo -e "${RED}Unlinked vim${RESET}"
 
   cd - &>/dev/null
