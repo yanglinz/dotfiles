@@ -16,8 +16,8 @@ Here are some of the things that are included in these dotfiles:
 - MacOS applications managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
 - Configuration and theme for [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator.
 - Configurations for various shell related utilities like `bash`, `git`, `vim`, etc.
-- Configuration for VSCode, including [locally managed extensions](macos/home/vscode-extensions).
 - One-off [`bin`](macos/home/bin/.bin) scripts.
+- Configuration for VSCode, including [locally managed extensions](macos/home/vscode-extensions).
 
 ## Thanks
 
