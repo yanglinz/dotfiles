@@ -14,8 +14,8 @@ Here are some of the things that's taken care of by these dotfiles:
 - Shell related dependencies managed via [Nix](https://nixos.org/) and
   [Nix Darwin](https://github.com/LnL7/nix-darwin).
 - MacOS applications managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
-- Managed configuration and themes for [kitty terminal emulator](https://sw.kovidgoyal.net/kitty/).
-- VSCode configuration and [custom extensions](macos/home/vscode-extensions).
+- Custom configuration and theme for [kitty terminal emulator](https://sw.kovidgoyal.net/kitty/).
+- Custom configuration for VSCode, including [local extensions](macos/home/vscode-extensions).
 
 ## Thanks
 
