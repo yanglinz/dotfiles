@@ -7,11 +7,17 @@ This repo houses my personal [dotfiles](https://dotfiles.github.io/).
 
 ## Feature Highlights
 
-- Quick bootstrapping for new MacOS.
+Here are some of the things that are included in these dotfiles:
+
+- [Setup scripts](scripts/bootstrap.sh) for bootstrapping new MacOS installations.
+- Symlinks managed by [GNU Stow](https://www.gnu.org/software/stow/).
 - Shell related dependencies managed via [Nix](https://nixos.org/) and
   [Nix Darwin](https://github.com/LnL7/nix-darwin).
-- GUI related dependencies managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
-- Home directory symlinks managed via [Stow](https://www.gnu.org/software/stow/).
+- MacOS applications managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
+- Configuration and theme for [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator.
+- Configurations for various shell related utilities like `bash`, `git`, `vim`, etc.
+- One-off [`bin`](macos/home/bin/.bin) scripts.
+- Configuration for VSCode, including [locally managed extensions](macos/home/vscode-extensions).
 
 ## Thanks
 
