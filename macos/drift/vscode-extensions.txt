@@ -4,6 +4,7 @@ bungcip.better-toml
 esbenp.prettier-vscode
 golang.go
 kumar-harsh.graphql-for-vscode
+local-extensions.custom-nginx-syntax
 mads-hartmann.bash-ide-vscode
 ms-azuretools.vscode-docker
 ms-python.python
