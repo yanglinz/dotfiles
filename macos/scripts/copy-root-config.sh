@@ -3,12 +3,6 @@ set -euo pipefail
 IFS=$'\n\t'
 
 function sync() {
-  rsync -avzh \
-    --exclude ".DS_Store" \
-    --no-perms \
-    --max-delete=0 \
-    ./macos/home/ "$HOME"
-
   sudo rsync -avzh \
     --exclude ".DS_Store" \
     --omit-dir-times \
