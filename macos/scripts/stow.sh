@@ -6,7 +6,7 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 RESET='\033[0m'
 
-VSCODE_PATH="/Users/${USER}/Library/ApplicationSupport/Code/User"
+VSCODE_PATH="/Users/${USER}/Library/Application Support/Code/User"
 
 function validate_cwd() {
   local expected_cwd_files=(
