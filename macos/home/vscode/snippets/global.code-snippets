@@ -1,38 +1,51 @@
 {
-	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	"HTML5 Boilerplate": {
-		"scope": "html,html5",
-		"prefix": "sindex",
-		"body": [
-			"<!DOCTYPE html>",
-			"<html class=\"no-js\" lang=\"\">",
-			"  <head>",
-			"    <meta charset=\"utf-8\" />",
-			"    <title></title>",
-			"    <meta name=\"description\" content=\"\" />",
-			"    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
-			"",
-			"    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\" />",
-			"    <link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\" />",
-			"    <link rel=\"apple-touch-icon\" href=\"icon.png\" />",
-			"",
-			"    <link rel=\"manifest\" href=\"site.webmanifest\" />",
-			"    <meta name=\"theme-color\" content=\"#fafafa\" />",
-			"",
-			"    <link rel=\"stylesheet\" href=\"css/style.css\" />",
-			"  </head>",
-			"",
-			"  <body>",
-			"    $1<script src=\"js/app.js\"></script>",
-			"  </body>",
-			"</html>",
-			""
-		]
-	}
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  "HTML5 Boilerplate": {
+    "scope": "html,html5",
+    "prefix": "s-html",
+    "body": [
+      "<!DOCTYPE html>",
+      "<html class=\"no-js\" lang=\"\">",
+      "  <head>",
+      "    <meta charset=\"utf-8\" />",
+      "    <title></title>",
+      "    <meta name=\"description\" content=\"\" />",
+      "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+      "",
+      "    <link rel=\"icon\" href=\"/favicon.ico\" sizes=\"any\" />",
+      "    <link rel=\"icon\" href=\"/icon.svg\" type=\"image/svg+xml\" />",
+      "    <link rel=\"apple-touch-icon\" href=\"icon.png\" />",
+      "",
+      "    <link rel=\"manifest\" href=\"site.webmanifest\" />",
+      "    <meta name=\"theme-color\" content=\"#fafafa\" />",
+      "",
+      "    <link rel=\"stylesheet\" href=\"css/style.css\" />",
+      "  </head>",
+      "",
+      "  <body>",
+      "    $1<script src=\"js/app.js\"></script>",
+      "  </body>",
+      "</html>",
+      ""
+    ]
+  },
+  "On Ready Event": {
+    "scope": "javascript,javascriptreact",
+    "prefix": "s-onready",
+    "body": [
+      "function ready(fn) {",
+      "  if (document.readyState != 'loading'){",
+      "    fn();",
+      "  } else {",
+      "    document.addEventListener('DOMContentLoaded', fn);",
+      "  }",
+      "}"
+    ]
+  }
 }
