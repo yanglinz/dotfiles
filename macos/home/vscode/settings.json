@@ -1,10 +1,12 @@
 {
   // General editor settings
   // https://code.visualstudio.com/docs/getstarted/settings
-  "window.zoomLevel": 0,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": "relative",
+  "editor.autoIndent": "advanced",
+  "workbench.tree.renderIndentGuides": "always",
+  "window.zoomLevel": 0,
 
   // NeoVim
   "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",
