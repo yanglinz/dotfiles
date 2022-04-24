@@ -15,7 +15,9 @@
     pkgs.fasd
     pkgs.fzf
     pkgs.hstr
-    pkgs.ripgrep
+    # Running into ruby compilation errors for ripgrep
+    # https://github.com/NixOS/nixpkgs/issues/101877
+    # pkgs.ripgrep
     # Utilities
     pkgs.dos2unix
     pkgs.jq
