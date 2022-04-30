@@ -44,6 +44,10 @@
     "jupyter-notebook": "left"
   },
 
+  // Rust
+  "rust-analyzer.inlayHints.chainingHints": false,
+  "rust-analyzer.inlayHints.typeHints": false,
+
   // Prettier
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
