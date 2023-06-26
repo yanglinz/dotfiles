@@ -4,6 +4,6 @@
 # so that tools across the MacOs toolchain can share a single source
 # of truth for custom spellings. It takes a file
 
-# 1. check some env var UPDATE_SPELLCHECK_PATH
-# 2. copy the contents and generate macos native dictionary
-# 3. copy the contents and generate vscode spellings
+if [[ ! -f ~/.bin/update-spellcheck.conf ]]; then
+  echo "Hello world"
+fi
