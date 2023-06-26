@@ -129,7 +129,7 @@
   "cSpell.customDictionaries": {
     "wordsCustom": {
       "name": "wordsCustom",
-      "path": "~/Users/yz/Dev/dotfiles.txt",
+      "path": "/Users/yz/Dev/dotfiles/custom-words.txt",
       "scope": "user",
       "addWords": true
     }

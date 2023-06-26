@@ -1,5 +1,4 @@
 yanglin
-Yanglin
 zhao
 omakase
 tmpl
