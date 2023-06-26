@@ -89,6 +89,14 @@
   },
 
   // Spellcheck
+  "cSpell.customDictionaries": {
+    "wordsCustom": {
+      "name": "wordsCustom",
+      "path": "/Users/yz/Dev/dotfiles/custom-words.txt",
+      "scope": "user",
+      "addWords": true
+    }
+  },
   "cSpell.languageSettings": [
     {"languageId": "*", "locale": "en", "dictionaries": ["wordsEn"]},
     {"languageId": "*", "locale": "en-US", "dictionaries": ["wordsEn"]},
@@ -125,13 +133,5 @@
     "**/node_modules",
     "**/node_modules/**",
     ".git"
-  ],
-  "cSpell.customDictionaries": {
-    "wordsCustom": {
-      "name": "wordsCustom",
-      "path": "/Users/yz/Dev/dotfiles/custom-words.txt",
-      "scope": "user",
-      "addWords": true
-    }
-  }
+  ]
 }
