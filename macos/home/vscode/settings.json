@@ -107,31 +107,14 @@
     "node_modules",
     "**/node_modules",
     "**/node_modules/**",
-    ".git",
-    "*rc"
+    ".git"
   ],
-  "cSpell.userWords": [
-    // General
-    "yanglin",
-    "zhao",
-    "omakase",
-    "tmpl",
-
-    // Software
-    "dotfile",
-    "dotfiles",
-    "iterm",
-    "macos",
-    "postgres",
-
-    // Work related domain terms
-    "mvod",
-    "interstitial",
-    "interstitials",
-
-    // Python
-    "pylint",
-    "pipenv",
-    "venv"
-  ]
+  "cSpell.customDictionaries": {
+    "customWords": {
+      "name": "Custom Words",
+      "path": "~/Users/yz/Dev/dotfiles.txt",
+      "scope": "user",
+      "addWords": true
+    }
+  }
 }
