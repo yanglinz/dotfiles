@@ -13,7 +13,7 @@ export BASH_IT="${HOME}/.bash_it"
 
 # Lock and load a custom theme file.
 # location /.bash_it/themes/
-export BASH_IT_THEME="pure"
+export BASH_IT_THEME="newin"
 export THEME_SHOW_CLOCK_CHAR=false
 export THEME_CLOCK_FORMAT=${THEME_CLOCK_FORMAT:-"%Y-%m-%d"}
 

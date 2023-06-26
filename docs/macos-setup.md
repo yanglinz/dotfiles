@@ -59,17 +59,6 @@ upgrade
 > simply move them via `sudo mv /etc/shells /etc/shells.back` and
 > `sudo mv /etc/nix/nix.conf /etc/nix/nix.conf.back`.
 
-# Configure iTerm
+# Configure Terminal.app
 
-Next, we need to configure iTerm to load its default configuration from our
-newly linked `~/.iterm` directory.
-
-```
-Preferences -> Load preferences from custom folder or URL
-```
-
-We should also use the Nix managed bash.
-
-```
-chsh -s $(which bash)
-```
+Open the `Terminal.app` preference menu, and import the profile from `macos/drift/A.Personalized.terminal`. Make sure the set the newly imported profile as the default.
