@@ -93,7 +93,7 @@
     {"languageId": "*", "locale": "en", "dictionaries": ["wordsEn"]},
     {"languageId": "*", "locale": "en-US", "dictionaries": ["wordsEn"]},
     {"languageId": "*", "locale": "en-GB", "dictionaries": ["wordsEnGb"]},
-    {"languageId": "*", "dictionaries": ["companies", "softwareTerms", "misc"]},
+    {"languageId": "*", "dictionaries": ["companies", "softwareTerms", "misc", "wordsCustom"]},
     {"languageId": "python", "allowCompoundWords": true, "dictionaries": ["python"]},
     {"languageId": "go", "allowCompoundWords": true, "dictionaries": ["go"]},
     {"languageId": "javascript", "dictionaries": ["typescript", "node"]},
@@ -127,8 +127,8 @@
     ".git"
   ],
   "cSpell.customDictionaries": {
-    "customWords": {
-      "name": "Custom Words",
+    "wordsCustom": {
+      "name": "wordsCustom",
       "path": "~/Users/yz/Dev/dotfiles.txt",
       "scope": "user",
       "addWords": true
