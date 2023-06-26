@@ -109,29 +109,5 @@
     "**/node_modules/**",
     ".git",
     "*rc"
-  ],
-  "cSpell.userWords": [
-    // General
-    "yanglin",
-    "zhao",
-    "omakase",
-    "tmpl",
-
-    // Software
-    "dotfile",
-    "dotfiles",
-    "iterm",
-    "macos",
-    "postgres",
-
-    // Work related domain terms
-    "mvod",
-    "interstitial",
-    "interstitials",
-
-    // Python
-    "pylint",
-    "pipenv",
-    "venv"
   ]
 }
