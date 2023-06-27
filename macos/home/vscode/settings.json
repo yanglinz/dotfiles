@@ -91,8 +91,8 @@
   // Spellcheck
   "cSpell.customDictionaries": {
     "wordsCustom": {
-      "name": "wordsCustom",
-      "path": "/Users/yz/Dev/dotfiles/custom-words.txt",
+      "name": "Custom Words",
+      "path": "~/.words/custom-words.txt",
       "scope": "user",
       "addWords": true
     }
