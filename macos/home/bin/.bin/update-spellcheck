@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# This script generates native MacOS spelling and VSCode
+# spelling configs so that tools across the MacOS toolchain
+# can share a single source of truth for custom spellings.
+
+SOURCE_PATH="${HOME}/.bin/update-spellcheck.conf"
+NATIVE_DICT="${HOME}/Library/Spelling/LocalDictionary"
+VSCODE_DICT="${HOME}/.words/custom-words.txt"
+
+if [[ ! -f "$SOURCE_PATH" ]]; then
+  echo "Expected ${SOURCE_PATH} not found".
+  exit 1
+fi
+
+# Copy over source words to native MacOS spelling words.
+sudo cat "$SOURCE_PATH" \
+  | grep -v "^\ " \
+  | grep -v "^\#" \
+  > "$NATIVE_DICT"
+
+# Restart spellcheck service for the change to take effect.
+launchctl stop com.apple.applespell && launchctl start com.apple.applespell
+
+# Copy over source words to VSCode spelling words.
+mkdir -p "$(dirname "$VSCODE_DICT")"
+cat $NATIVE_DICT > $VSCODE_DICT

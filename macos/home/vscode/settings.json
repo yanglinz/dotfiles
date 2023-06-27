@@ -89,6 +89,31 @@
   },
 
   // Spellcheck
+  "cSpell.customDictionaries": {
+    "wordsCustom": {
+      "name": "Custom Words",
+      "path": "~/.words/custom-words.txt",
+      "scope": "user",
+      "addWords": true
+    }
+  },
+  "cSpell.languageSettings": [
+    {"languageId": "*", "locale": "en", "dictionaries": ["wordsEn"]},
+    {"languageId": "*", "locale": "en-US", "dictionaries": ["wordsEn"]},
+    {"languageId": "*", "locale": "en-GB", "dictionaries": ["wordsEnGb"]},
+    {"languageId": "*", "dictionaries": ["companies", "softwareTerms", "misc", "wordsCustom"]},
+    {"languageId": "python", "allowCompoundWords": true, "dictionaries": ["python"]},
+    {"languageId": "go", "allowCompoundWords": true, "dictionaries": ["go"]},
+    {"languageId": "javascript", "dictionaries": ["typescript", "node"]},
+    {"languageId": "javascriptreact", "dictionaries": ["typescript", "node"]},
+    {"languageId": "typescript", "dictionaries": ["typescript", "node"]},
+    {"languageId": "typescriptreact", "dictionaries": ["typescript", "node"]},
+    {"languageId": "html", "dictionaries": ["html", "fonts", "typescript", "css"]},
+    {"languageId": "php", "dictionaries": ["php", "html", "fonts", "css", "typescript"]},
+    {"languageId": "css", "dictionaries": ["fonts", "css"]},
+    {"languageId": "less", "dictionaries": ["fonts", "css"]},
+    {"languageId": "scss", "dictionaries": ["fonts", "css"]}
+  ],
   "cSpell.language": "en",
   "cSpell.minWordLength": 4,
   "cSpell.spellCheckDelayMs": 100,
@@ -107,7 +132,6 @@
     "node_modules",
     "**/node_modules",
     "**/node_modules/**",
-    ".git",
-    "*rc"
+    ".git"
   ]
 }
