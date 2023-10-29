@@ -1,3 +1,0 @@
-runtime node@16.13.0 (default)
-package-manager yarn@1.22.18 (default)
-package prettier@2.4.1 / prettier / node@16.13.0 npm@built-in (default)

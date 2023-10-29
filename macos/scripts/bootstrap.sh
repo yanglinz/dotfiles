@@ -40,13 +40,6 @@ function setup_bash_it() {
   fi
 }
 
-function setup_volta() {
-  echo "Setting up volta..."
-  if ! [ -x "$(command -v volta)" ]; then
-    curl https://get.volta.sh | bash
-  fi
-}
-
 function setup_poetry() {
   echo "Setting up poetry..."
   if [[ ! -d ~/.poetry ]] && [[ -z ${CI-} ]]; then
@@ -66,7 +59,6 @@ function setup() {
   setup_brew
   setup_nix
   setup_bash_it
-  setup_volta
   setup_pyenv
   setup_poetry
 }
