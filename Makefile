@@ -3,7 +3,7 @@ UNAME := $(shell uname)
 .PHONY: setup
 setup:
 ifeq ($(UNAME), Darwin)
-	@./scripts/bootstrap.sh
+	@./macos/scripts/bootstrap.sh
 	@./macos/scripts/set-system-config.sh
 	@./macos/scripts/copy-root-config.sh
 endif
