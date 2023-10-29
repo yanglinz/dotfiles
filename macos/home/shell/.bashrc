@@ -80,12 +80,6 @@ eval "$(fasd --init auto)"
 # Initialize direnv
 eval "$(direnv hook bash)"
 
-# Load google cloud sdk
-[[ -r "$HOME/google-cloud-sdk/path.bash.inc" ]] &&
-  . "$HOME/google-cloud-sdk/path.bash.inc"
-[[ -r "$HOME/google-cloud-sdk/completion.bash.inc" ]] &&
-  . "$HOME/google-cloud-sdk/completion.bash.inc"
-
 # Vim mode
 set -o vi
 
