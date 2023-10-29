@@ -53,21 +53,6 @@ end
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/bin $PATH
 set -x PATH $HOME/.cargo/bin $PATH
-set -x PATH $HOME/.poetry/bin $PATH
-
-switch "$PATH"
-  # We want to make sure the brew's python is the first PATH.
-  # However, we don't want it before virtual environment's PATH.
-  # If Pipenv/Poetry virtualenv is already activated and in PATH
-  # Avoid overriding the virtualenv PATH
-  # https://github.com/sdispater/poetry/issues/497
-case "*pypoetry/virtualenvs*" 
-  # Poetry shell is active. Do nothing.
-case "*share/virtualenvs*"
-  # Pipenv shell is active. Do nothing.
-case "*"
-  set -x PATH /usr/local/opt/python/libexec/bin:$PATH
-end
 
 # Conditionally add to PATH
 if test -d $HOME/.fastlane/bin

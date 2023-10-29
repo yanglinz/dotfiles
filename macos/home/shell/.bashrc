@@ -68,7 +68,6 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.poetry/bin:$PATH
 
 # Initialize nix
 # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
