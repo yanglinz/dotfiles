@@ -66,7 +66,6 @@ alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 # Add relevant dirs to path
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Initialize nix
@@ -84,11 +83,6 @@ eval "$(fasd --init auto)"
 
 # Initialize direnv
 eval "$(direnv hook bash)"
-
-# Setup Go
-export GOPATH="$HOME/go"
-# https://github.com/apex/apex/issues/426#issuecomment-290307874
-export AWS_SDK_LOAD_CONFIG=true
 
 # Load google cloud sdk
 [[ -r "$HOME/google-cloud-sdk/path.bash.inc" ]] &&
