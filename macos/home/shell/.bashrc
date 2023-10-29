@@ -4,6 +4,7 @@ case $- in
   *)   return ;;
 esac
 
+
 # Section 01
 # ----------
 # Setup bash-it
@@ -32,6 +33,7 @@ export SHORT_TERM_LINE=true
 # Load bash-it
 source "$BASH_IT"/bash_it.sh
 
+
 # Section 02
 # ----------
 # Common setup
@@ -58,6 +60,7 @@ alias rg="rg --hidden --glob '!.git'"
 
 # Disable brew auto update
 export HOMEBREW_NO_AUTO_UPDATE=1
+
 
 # Section 03
 # ----------
