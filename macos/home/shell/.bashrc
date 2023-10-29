@@ -76,10 +76,10 @@ export PATH=$HOME/.bin:$PATH
 # Setup other tools
 
 # Initialize z
-eval "$(fasd --init auto)"
+. /usr/local/etc/profile.d/z.sh
 
 # Initialize direnv
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 # Vim mode
 set -o vi

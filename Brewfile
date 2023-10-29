@@ -3,6 +3,7 @@ brew "dnsmasq", restart_service: true
 brew "git"
 brew "neovim"
 brew "stow"
+brew "z"
 cask "docker"
 cask "firefox"
 cask "flux"
