@@ -47,19 +47,10 @@ function setup_poetry() {
   fi
 }
 
-function setup_pyenv() {
-  echo "Setting up pyenv"
-  if [[ -z ${CI-} ]]; then
-    pyenv install -s 3.10.0
-    pyenv global 3.10.0
-  fi
-}
-
 function setup() {
   setup_brew
   setup_nix
   setup_bash_it
-  setup_pyenv
   setup_poetry
 }
 
