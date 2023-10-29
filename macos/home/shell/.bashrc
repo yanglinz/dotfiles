@@ -4,6 +4,7 @@ case $- in
   *)   return ;;
 esac
 
+
 # Section 01
 # ----------
 # Setup bash-it
@@ -32,6 +33,7 @@ export SHORT_TERM_LINE=true
 # Load bash-it
 source "$BASH_IT"/bash_it.sh
 
+
 # Section 02
 # ----------
 # Common setup
@@ -56,6 +58,10 @@ alias ls="ls -G"
 # Change rg defaults
 alias rg="rg --hidden --glob '!.git'"
 
+# Disable brew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+
 # Section 03
 # ----------
 # Setup PATH alterting tools
@@ -64,18 +70,16 @@ alias rg="rg --hidden --glob '!.git'"
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
-# Initialize nix
-# . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Section 04
 # ----------
 # Setup other tools
 
 # Initialize z
-eval "$(fasd --init auto)"
+. /usr/local/etc/profile.d/z.sh
 
 # Initialize direnv
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 # Vim mode
 set -o vi
