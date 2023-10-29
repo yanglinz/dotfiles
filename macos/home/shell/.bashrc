@@ -56,6 +56,9 @@ alias ls="ls -G"
 # Change rg defaults
 alias rg="rg --hidden --glob '!.git'"
 
+# Disable brew auto update
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Section 03
 # ----------
 # Setup PATH alterting tools
@@ -64,8 +67,6 @@ alias rg="rg --hidden --glob '!.git'"
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
-# Initialize nix
-# . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
 # Section 04
 # ----------
