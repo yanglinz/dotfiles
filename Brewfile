@@ -1,3 +1,4 @@
+brew "bash-completion"
 brew "cask"
 brew "dnsmasq", restart_service: true
 brew "git"
