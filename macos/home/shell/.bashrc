@@ -51,13 +51,10 @@ echo "                  "
   . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Create some aliases
-alias dc="docker-compose"
 # Output color listing directories
 alias ls="ls -G"
-alias ks="exa -l"
 # Change rg defaults
 alias rg="rg --hidden --glob '!.git'"
-alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 
 # Section 03
 # ----------
@@ -66,27 +63,9 @@ alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 # Add relevant dirs to path
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/go/bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.poetry/bin:$PATH
-
-# Initialize pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-# Make brew play nice with pyenv
-alias brew="env PATH=${PATH//$(pyenv root)\/shims:/} brew"
-
-# Initialize Volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 # Initialize nix
 # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
-# Initialize rust
-[[ -r "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
 # Section 04
 # ----------
@@ -97,17 +76,6 @@ eval "$(fasd --init auto)"
 
 # Initialize direnv
 eval "$(direnv hook bash)"
-
-# Setup Go
-export GOPATH="$HOME/go"
-# https://github.com/apex/apex/issues/426#issuecomment-290307874
-export AWS_SDK_LOAD_CONFIG=true
-
-# Load google cloud sdk
-[[ -r "$HOME/google-cloud-sdk/path.bash.inc" ]] &&
-  . "$HOME/google-cloud-sdk/path.bash.inc"
-[[ -r "$HOME/google-cloud-sdk/completion.bash.inc" ]] &&
-  . "$HOME/google-cloud-sdk/completion.bash.inc"
 
 # Vim mode
 set -o vi

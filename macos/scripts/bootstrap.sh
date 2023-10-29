@@ -40,34 +40,10 @@ function setup_bash_it() {
   fi
 }
 
-function setup_volta() {
-  echo "Setting up volta..."
-  if ! [ -x "$(command -v volta)" ]; then
-    curl https://get.volta.sh | bash
-  fi
-}
-
-function setup_poetry() {
-  echo "Setting up poetry..."
-  if [[ ! -d ~/.poetry ]] && [[ -z ${CI-} ]]; then
-    curl -sSL https://raw.githubusercontent.com/sdispater/poetry/master/get-poetry.py | python3
-  fi
-}
-
-function setup_pyenv() {
-  echo "Setting up pyenv"
-  if [[ -z ${CI-} ]]; then
-    pyenv install -s 3.10.0
-    pyenv global 3.10.0
-  fi
-}
-
 function setup() {
   setup_brew
   setup_nix
   setup_bash_it
-  setup_volta
-  setup_pyenv
   setup_poetry
 }
 

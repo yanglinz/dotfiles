@@ -10,12 +10,6 @@ Host github.com
   UseKeyChain yes
   IdentityFile ~/.ssh/github_id_rsa
 
-Host gecgithub01.walmart.com
-  IgnoreUnknown AddKeysToAgent,UseKeychain
-  AddKeysToAgent yes
-  UseKeyChain yes
-  IdentityFile ~/.ssh/walmart_id_rsa
-
 Host git.pbs.org
   IgnoreUnknown AddKeysToAgent,UseKeychain
   AddKeysToAgent yes
