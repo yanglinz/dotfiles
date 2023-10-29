@@ -66,13 +66,9 @@ alias vmrun="/Applications/VMware\ Fusion.app/Contents/Library/vmrun"
 # Add relevant dirs to path
 export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
 
 # Initialize nix
 # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-
-# Initialize rust
-[[ -r "$HOME/.cargo" ]] && . "$HOME/.cargo/env"
 
 # Section 04
 # ----------
