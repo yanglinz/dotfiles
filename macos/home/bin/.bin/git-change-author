@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
+# TODO: Make OLD_EMAIL and CORRECT_EMAIL script inputs
+
 git filter-branch --env-filter '
 
-OLD_EMAIL="Yanglin.Zhao@walmart.com"
+OLD_EMAIL="old@email.com"
 CORRECT_NAME="Yanglin Zhao"
-CORRECT_EMAIL="yz1876@gmail.com"
+CORRECT_EMAIL="new@email.com"
 
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
 then
