@@ -2,15 +2,16 @@
 .DS_Store
 
 # editors
-/.idea
+.idea/
 *.iml
-/.vscode
+.vscode/
 
 # python
-.venv
-
-# tools
-.envrc
+.venv/
 
 # temporary stash
-/.stash
+.stash/
+
+# direnv
+.envrc
+.direnv/
