@@ -40,9 +40,6 @@ function stow_link() {
   stow -t $HOME shell
   echo -e "${GREEN}Linked shell${RESET}"
 
-  stow -t $HOME terminal
-  echo -e "${GREEN}Linked terminal${RESET}"
-
   stow -t $HOME vim
   echo -e "${GREEN}Linked vim${RESET}"
 
@@ -72,9 +69,6 @@ function stow_unlink() {
 
   stow -t $HOME -D shell
   echo -e "${RED}Unlinked shell${RESET}"
-
-  stow -t $HOME -D terminal
-  echo -e "${RED}Unlinked terminal${RESET}"
 
   stow -t $HOME -D vim
   echo -e "${RED}Unlinked vim${RESET}"
