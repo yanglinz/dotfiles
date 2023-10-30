@@ -1,8 +1,10 @@
 brew "bash-completion"
 brew "cask"
+brew "direnv"
 brew "dnsmasq", restart_service: true
 brew "git"
 brew "neovim"
+brew "starship"
 brew "stow"
 brew "z"
 cask "docker"
