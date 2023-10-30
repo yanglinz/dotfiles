@@ -29,7 +29,7 @@ export PATH=$HOME/.bin:$PATH
 . /usr/local/etc/profile.d/z.sh
 
 # Initialize direnv
-# eval "$(direnv hook bash)"
+eval "$(direnv hook bash)"
 
 # Vim mode
 set -o vi
