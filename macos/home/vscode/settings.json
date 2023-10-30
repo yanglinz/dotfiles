@@ -1,6 +1,9 @@
 {
   // General editor settings
   // https://code.visualstudio.com/docs/getstarted/settings
+  "update.mode": "manual",
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": "relative",
