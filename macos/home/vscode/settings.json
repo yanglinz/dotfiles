@@ -1,6 +1,9 @@
 {
   // General editor settings
   // https://code.visualstudio.com/docs/getstarted/settings
+  "update.mode": "manual",
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
   "editor.lineNumbers": "relative",
@@ -9,7 +12,7 @@
   "window.zoomLevel": 0,
 
   // NeoVim
-  "vscode-neovim.neovimExecutablePaths.darwin": "/run/current-system/sw/bin/nvim",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
 
   // Custom file associations
   "files.associations": {
