@@ -1,5 +1,5 @@
 {
-  description = "Example JavaScript development environment for Zero to Nix";
+  description = "Project specific flake for dotfiles";
 
   # Flake inputs
   inputs = {
@@ -28,7 +28,8 @@
         default = pkgs.mkShell {
           # The Nix packages provided in the environment
           packages = with pkgs; [
-            nodejs_18 # Node.js 18, plus npm, npx, and corepack
+            shellcheck
+            shfmt
           ];
         };
       });
