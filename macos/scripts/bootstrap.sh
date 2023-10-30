@@ -33,18 +33,9 @@ function setup_nix() {
   fi
 }
 
-function setup_bash_it() {
-  echo "Setting up bash-it..."
-  if [ ! -d ~/.bash_it ]; then
-    git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-  fi
-}
-
 function setup() {
   setup_brew
   setup_nix
-  setup_bash_it
-  setup_poetry
 }
 
 setup

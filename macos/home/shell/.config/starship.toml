@@ -1,0 +1,35 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """\
+  $username\
+  $memory_usage\
+  $hostname\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $package\
+  $python\
+  $rust\
+  $nix_shell\
+  $env_var\
+  $line_break\
+  $cmd_duration\
+  $time\
+  $character\
+  """
+
+[character]
+format='\[$symbol\] '
+success_symbol = '[➜](bold green)'
+error_symbol = '[✗](bold red)'
+vimcmd_symbol = '[V](bold green) '
+
+[cmd_duration]
+disabled=true
+
+[git_branch]
+symbol=''
