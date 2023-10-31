@@ -14,7 +14,7 @@ eval "$(starship init bash)"
 
 # Create some aliases
 # Output color listing directories
-alias ls="ls -G"
+alias ls="ls --color=auto"
 # Change rg defaults
 alias rg="rg --hidden --glob '!.git'"
 
