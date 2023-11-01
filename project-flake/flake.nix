@@ -28,8 +28,10 @@
         default = pkgs.mkShell {
           # The Nix packages provided in the environment
           packages = with pkgs; [
+            nodejs_20
             shellcheck
             shfmt
+            yarn
           ];
         };
       });

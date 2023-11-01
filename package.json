@@ -3,9 +3,5 @@
   "version": "0.1.0",
   "main": "index.js",
   "private": true,
-  "license": "MIT",
-  "devDependencies": {
-    "generator-code": "^1.6.8",
-    "yo": "^4.3.0"
-  }
+  "license": "MIT"
 }
