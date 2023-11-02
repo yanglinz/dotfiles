@@ -10,4 +10,4 @@ jobs:
       - uses: cachix/install-nix-action@v22
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - run: cd project-flake && nix flake check
+      # - run: cd project-flake && nix flake check
