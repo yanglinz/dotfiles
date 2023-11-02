@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # If not running interactively, don't do anything
 case $- in
   *i*) ;;
@@ -9,8 +11,8 @@ esac
 eval "$(starship init bash)"
 
 # Load bash completion
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] &&
-  . "/usr/local/etc/profile.d/bash_completion.sh"
+# shellcheck disable=SC1091
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 # Create some aliases
 # Output color listing directories
@@ -26,6 +28,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.bin:$PATH
 
 # Initialize z
+# shellcheck disable=SC1091
 . /usr/local/etc/profile.d/z.sh
 
 # Initialize direnv
