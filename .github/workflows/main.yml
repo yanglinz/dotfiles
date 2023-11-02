@@ -3,6 +3,7 @@ name: Main Workflow
 on: [push]
 
 jobs:
+  runs-on: ubuntu-latest
   build:
     env:
       CI: true
