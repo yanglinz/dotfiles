@@ -8,8 +8,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: cachix/install-nix-action@v22
-        with:
-          # Mostly to avoid GitHub rate limiting
-          extra_nix_config: |
-	          access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
-      - run: nix develop --command make format
+      - run: nix develop --command ./bin/lint.sh
