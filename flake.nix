@@ -1,5 +1,5 @@
 {
-  description = "Project specific flake for dotfiles";
+  description = "Dotfiles project flake";
 
   # Flake inputs
   inputs = {
