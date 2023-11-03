@@ -2,4 +2,4 @@
 
 # Count lines
 # https://stackoverflow.com/questions/4822471/count-number-of-lines-in-a-git-repository
-cloc $(git ls-files)
+cloc "$(git ls-files)"
