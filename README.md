@@ -11,7 +11,7 @@ Here are some of the things that are included in these dotfiles:
 
 - [Setup scripts](scripts/bootstrap.sh) for bootstrapping new MacOS installations.
 - `$HOME` dotfiles managed via [GNU Stow](https://www.gnu.org/software/stow/).
-- Global packages and applications managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
+- Global packages and applications managed via [Brew](https://brew.sh/).
 - [Nix](https://nixos.org/) and [Nix Flakes](https://zero-to-nix.com/concepts/flakes) to manage per-project environment and tools.
 - Configuration and theme for [iTerm2](https://iterm2.com/).
 - Configurations for various shell related utilities like `bash`, `git`, `vim`, etc.
