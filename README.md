@@ -10,11 +10,10 @@ This repo houses my personal [dotfiles](https://dotfiles.github.io/).
 Here are some of the things that are included in these dotfiles:
 
 - [Setup scripts](scripts/bootstrap.sh) for bootstrapping new MacOS installations.
-- Symlinks managed by [GNU Stow](https://www.gnu.org/software/stow/).
-- Shell related dependencies managed via [Nix](https://nixos.org/) and
-  [Nix Darwin](https://github.com/LnL7/nix-darwin).
-- MacOS applications managed via [Brew Cask](https://github.com/Homebrew/homebrew-cask).
-- Configuration and theme for [kitty](https://sw.kovidgoyal.net/kitty/) terminal emulator.
+- `$HOME` dotfiles managed via [GNU Stow](https://www.gnu.org/software/stow/).
+- Global packages and applications managed via [Brew](https://brew.sh/).
+- [Nix](https://nixos.org/) and [Nix Flakes](https://zero-to-nix.com/concepts/flakes) to manage per-project environment and tools.
+- Configuration and theme for [iTerm2](https://iterm2.com/).
 - Configurations for various shell related utilities like `bash`, `git`, `vim`, etc.
 - One-off [`bin`](macos/home/bin/.bin) scripts.
 - Configuration for VSCode, including [locally managed extensions](macos/home/vscode-extensions).
