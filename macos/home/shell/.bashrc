@@ -7,7 +7,6 @@ case $- in
 esac
 
 # Setup starship
-
 eval "$(starship init bash)"
 
 # Load bash completion
