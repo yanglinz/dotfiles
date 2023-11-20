@@ -37,6 +37,16 @@ eval "$(direnv hook bash)"
 set -o vi
 
 # Setup alternative history tool
-# TODO: We need fix atuin syncing issue
-# eval "$(atuin init bash --disable-up-arrow)"
-# export ATUIN_CONFIG_DIR="${HOME}/.atuin"
+alias hh=hstr
+export HSTR_CONFIG=hicolor
+shopt -s histappend
+export HISTCONTROL=ignorespace
+export HISTFILESIZE=10000
+export HISTSIZE=${HISTFILESIZE}
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
+
+# If this is interactive shell, then bind hstr to Ctrl-r (for Vi mode check doc)
+if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\e^ihstr -- \n"'; fi
+
+# If this is interactive shell, then bind 'kill last command' to Ctrl-x k
+if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
