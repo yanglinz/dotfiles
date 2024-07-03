@@ -6,6 +6,11 @@
 *.iml
 .vscode/
 
+# xcode
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+
 # python
 .venv/
 
