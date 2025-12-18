@@ -8,18 +8,6 @@ ifeq ($(UNAME), Darwin)
 	@./macos/scripts/copy-root-config.sh
 endif
 
-.PHONY: link
-link:
-ifeq ($(UNAME), Darwin)
-	@./macos/scripts/stow.sh link
-endif
-
-.PHONY: unlink
-unlink:
-ifeq ($(UNAME), Darwin)
-	@./macos/scripts/stow.sh unlink
-endif
-
 .PHONY: drift
 drift:
 ifeq ($(UNAME), Darwin)
