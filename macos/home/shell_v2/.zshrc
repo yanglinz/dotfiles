@@ -23,7 +23,6 @@ export CLICOLOR=1
 
 # Homebrew
 eval "$(brew shellenv)"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Enable autocompletion
 # https://github.com/Homebrew/brew/blob/master/docs/Shell-Completion.md#configuring-completions-in-zsh
@@ -31,6 +30,7 @@ autoload -Uz compinit
 compinit
 
 # Adding tools to PATH
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$DOTFILES_SOURCE_DIR/bin"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -46,13 +46,11 @@ eval "$(zoxide init zsh)"
 # History search
 eval "$(atuin init zsh)"
 
-# Asdf
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-. ~/.asdf/plugins/golang/set-env.zsh
+# Mise
+eval "$(mise activate zsh)"
 
-# Ruby
-export GEM_HOME="$HOME/.gem"
-export PATH="$HOME/.gem/bin:$PATH"
+# AI
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # Make sure this is the last thing sourced in your ~/.zshrc file.
@@ -61,3 +59,12 @@ source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
 
 # SSH
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
+# Pnpm configuration
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
