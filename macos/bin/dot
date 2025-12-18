@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+
+import os
+from os import path
+import argparse
+from dataclasses import dataclass
+import filecmp
+import logging
+from pathlib import Path
+import shutil
+import subprocess
+
+
+logger = logging.getLogger(__name__)
+
+
+class L:
+    def __init__(self, message, **kwargs):
+        self.message = message
+        self.kwargs = kwargs
+
+    def __str__(self):
+        suffix = ", ".join([f"{k}={v}" for k, v in self.kwargs.items()])
+        return f" {self.message} [ {suffix} ]"
+
+
+@dataclass
+class SyncDirectory:
+    source: str
+    target: str
+
+    @property
+    def _abs_source(self):
+        return path.join(path.dirname(__file__), "..", self.source)
+
+    @property
+    def _abs_target(self):
+        return os.path.expanduser(self.target)
+
+    def _get_files(self):
+        for root, _, files in os.walk(self._abs_source):
+            for f in files:
+                source_path = path.join(root, f)
+                relative_source_path = path.relpath(source_path, self._abs_source)
+                target_path = path.join(self._abs_target, relative_source_path)
+                yield source_path, target_path
+
+    def diff(self):
+        for source_path, target_path in self._get_files():
+            if not path.exists(target_path):
+                logger.warning(L("Target file does not exist", target=target_path))
+
+            is_same = filecmp.cmp(source_path, target_path)
+            if not is_same:
+                subprocess.run(["difft", source_path, target_path])
+
+    def pull(self):
+        for source_path, target_path in self._get_files():
+            logger.info(
+                L("Attemping to pull file", source=target_path, target=source_path)
+            )
+
+            if not path.exists(target_path):
+                logger.warning(L("Target file does not exist", target=target_path))
+            else:
+                shutil.copy(target_path, source_path)
+                logger.info(
+                    L(
+                        "Successfully pulled file",
+                        source=target_path,
+                        target=source_path,
+                    )
+                )
+
+    def push(self):
+        for source_path, target_path in self._get_files():
+            logger.info(
+                L("Attemping to push file", source=source_path, target=target_path)
+            )
+            parent_dir = path.dirname(target_path)
+            if not path.exists(parent_dir):
+                os.makedirs(parent_dir)
+            shutil.copy(source_path, target_path)
+            logger.info(
+                L(
+                    "Successfully pushed file",
+                    source=source_path,
+                    target=target_path,
+                )
+            )
+
+
+def subcommand_diff():
+    if shutil.which("difft") is None:
+        raise Exception("difft is not installed")
+
+    for d in dotfiles:
+        d.diff()
+
+
+DOTFILES_VARS = f"""
+export DOTFILES_SOURCE_DIR={Path(__file__).parent.parent}
+"""
+
+
+def subcommand_push():
+    vars_path = path.join(path.expanduser("~"), ".dotfiles_vars")
+    logger.info(L("Creating ~/.dotfiles_vars file", target=vars_path))
+    with open(vars_path, "w") as f:
+        f.write(DOTFILES_VARS)
+
+    for d in dotfiles:
+        d.push()
+
+
+def subcommand_pull():
+    for d in dotfiles:
+        d.pull()
+
+
+subcommands = {
+    "diff": subcommand_diff,
+    "push": subcommand_push,
+    "pull": subcommand_pull,
+}
+
+
+dotfiles = [
+    SyncDirectory(source="home/shell_v2", target="~/"),
+    SyncDirectory(
+        source="home/vscode", target="~/Library/Application Support/Code/User"
+    ),
+]
+
+
+def main():
+    parser = argparse.ArgumentParser(prog="dot")
+    parser.add_argument("subcommand", choices=subcommands.keys())
+    # TODO: Vary the level based on verbosity flag
+    logging.basicConfig(level=logging.INFO)
+    subcommands[parser.parse_args().subcommand]()
+
+
+if __name__ == "__main__":
+    main()
