@@ -46,8 +46,6 @@ class SyncDirectory:
 
     def diff(self):
         for source_path, target_path in self._get_files():
-            # print("source_path", source_path)
-            # print("target_path", target_path)
             if not path.exists(target_path):
                 logger.warning(L("Target file does not exist", target=target_path))
                 continue
