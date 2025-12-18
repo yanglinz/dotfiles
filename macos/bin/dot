@@ -127,6 +127,8 @@ subcommands = {
 
 dotfiles = [
     SyncDirectory(source="home/shell_v2", target="~/"),
+    # TODO: Figure out a way to get sudo consistently
+    # SyncDirectory(source="root", target="/"),
     SyncDirectory(
         source="home/vscode", target="~/Library/Application Support/Code/User"
     ),
