@@ -1,0 +1,4 @@
+# This needs to be initialized with:
+# git config --global core.excludesFile '~/.global_gitignore'
+
+.DS_Store

@@ -1,0 +1,13 @@
+[project]
+name = "workflows"
+version = "0.1.0"
+description = "My personal Alfred custom workflow scripts"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.32.3",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
